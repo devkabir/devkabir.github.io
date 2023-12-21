@@ -1,0 +1,49 @@
+<script setup>
+import BaseButton from "./BaseButton.vue";
+</script>
+<template>
+  <section class="py-4 md:py-10">
+    <div class="container max-w-screen-xl px-4 mx-auto">
+      <nav class="flex items-center justify-between mb-5">
+        <img
+          src="./../assets/logo.svg"
+          alt="Logo of Dev kabir"
+          class="w-10 h-10"
+        />
+        <BaseButton
+          type="secondary"
+          href="./../assets/Resume-Dev-Kabir.pdf"
+          download
+        >
+          Get my CV
+        </BaseButton>
+      </nav>
+
+      <div class="flex flex-col gap-6">
+        <div class="flex justify-center">
+          <img
+            src="./../assets/devkabir.webp"
+            alt="Image of Dev kabir"
+            class="rounded-full w-72 h-72"
+          />
+        </div>
+        <div class="flex flex-col items-center gap-6">
+          <h1 class="text-lg font-bold uppercase text-slate-600 md:text-2xl">
+            Dev Kabir
+          </h1>
+
+          <h2 class="font-semibold leading-none text-slate-800 md:text-xl">
+            WordPress | Shopify | Laravel Expert with 4+ Years Experience
+          </h2>
+
+          <p class="font-medium text-slate-600 md:text-xl">
+            Automating Tasks to Boost Efficiency and Productivity
+          </p>
+          <BaseButton type="primary" href="mailto:dev.kabir01@gmail.com">
+            Hire me
+          </BaseButton>
+        </div>
+      </div>
+    </div>
+  </section>
+</template>

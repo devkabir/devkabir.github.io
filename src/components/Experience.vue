@@ -1,0 +1,93 @@
+<script setup>
+import SectionTitle from "./SectionTitle.vue";
+
+const section = {
+  title: "Professional Journey",
+  description:
+    "A snapshot of my professional trajectory and the impactful roles I've held.",
+  experience: [
+    {
+      company: "Fiverr",
+      location: "Remote",
+      role: "Shopify App Developer",
+      tenure: "July 2023 - Present",
+      duration: "· 6 months",
+    },
+    {
+      company: "WordPress",
+      location: "Self-Employed",
+      role: "WordPress Plugin Developer",
+      tenure: "Jan 2022 - Present",
+      duration: "· 2 years",
+    },
+    {
+      company: "Fiverr",
+      location: "Remote",
+      role: "WooCommerce & WordPress Plugin Developer",
+      tenure: "December 2019 - Present",
+      duration: "· 4 years",
+    },
+    {
+      company: "Technofelia",
+      location: "Dhaka, Bangladesh",
+      role: "Lead Developer",
+      tenure: "January 2020 - January 2022",
+      duration: "· 2 years",
+    },
+  ],
+};
+</script>
+<template>
+  <section class="py-10">
+    <div class="container max-w-screen-xl px-4 mx-auto">
+      <SectionTitle :title="section.title" :description="section.description" />
+
+      <div class="grid gap-10">
+        <div class="grid items-center grid-cols-3">
+          <h3 class="text-base font-medium text-slate-600 capitalize">
+            Company
+          </h3>
+          <h3
+            class="text-base font-medium text-center text-slate-600 capitalize"
+          >
+            Position
+          </h3>
+          <h3
+            class="text-base font-medium text-right text-slate-600 capitalize"
+          >
+            Years
+          </h3>
+        </div>
+        <div
+          class="grid items-center grid-cols-3"
+          v-for="(item, index) in section.experience"
+          :key="index"
+        >
+          <p
+            class="grid text-base font-medium text-slate-500 capitalize sm:flex sm:gap-2"
+          >
+            <span>{{ item.company }}</span>
+            <span class="font-normal text-slate-400"
+              >/ {{ item.location }}</span
+            >
+          </p>
+          <p
+            class="text-base font-medium text-center text-slate-500 capitalize"
+          >
+            {{ item.role }}
+          </p>
+          <p
+            class="grid justify-end text-base font-medium text-right text-slate-500 capitalize md:gap-2 lg:flex"
+          >
+            <span>
+              {{ item.tenure }}
+            </span>
+            <span class="font-normal text-slate-400">
+              {{ item.duration }}
+            </span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</template>
