@@ -1,5 +1,6 @@
 <script setup>
 import SectionTitle from "./SectionTitle.vue";
+import {generateExperienceTenure } from "../composables"
 
 const section = {
   title: "Professional Journey",
@@ -7,32 +8,32 @@ const section = {
     "A snapshot of my professional trajectory and the impactful roles I've held.",
   experience: [
     {
-      company: "Fiverr",
-      location: "Remote",
-      role: "Shopify App Developer",
-      tenure: "July 2023 - Present",
-      duration: "· 6 months",
+      company: "PHP Artisan",
+      location: "Freelance",
+      role: "Back End Developer",
+      start: "Jan 2024",
+      end: "Present",
     },
     {
       company: "WordPress",
       location: "Self-Employed",
       role: "WordPress Plugin Developer",
-      tenure: "Jan 2022 - Present",
-      duration: "· 2 years",
+      start: "Jan 2022",
+      end: "Present",
     },
     {
       company: "Fiverr",
       location: "Remote",
-      role: "WooCommerce & WordPress Plugin Developer",
-      tenure: "December 2019 - Present",
-      duration: "· 4 years",
+      role: "WooCommerce & Shopify App Developer",
+      start: "December 2019",
+      end: "December 2023",
     },
     {
       company: "Technofelia",
       location: "Dhaka, Bangladesh",
       role: "Lead Developer",
-      tenure: "January 2020 - January 2022",
-      duration: "· 2 years",
+      start: "January 2020",
+      end: "January 2022",
     },
   ],
 };
@@ -80,10 +81,10 @@ const section = {
             class="grid justify-end text-base font-medium text-right text-slate-500 capitalize md:gap-2 lg:flex"
           >
             <span>
-              {{ item.tenure }}
+              {{ generateExperienceTenure(item.start, item.end).tenureString }}
             </span>
             <span class="font-normal text-slate-400">
-              {{ item.duration }}
+              {{ generateExperienceTenure(item.start, item.end).durationString }}
             </span>
           </p>
         </div>
