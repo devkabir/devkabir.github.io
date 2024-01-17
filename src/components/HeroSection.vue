@@ -12,7 +12,7 @@ import BaseButton from "./BaseButton.vue";
         />
         <BaseButton
           type="secondary"
-          href="./../assets/Resume-Dev-Kabir.pdf"
+          href="/Resume-Dev-Kabir.pdf"
           download
         >
           Get my CV
