@@ -1,7 +1,7 @@
 <script setup>
 import Card from "./Card.vue";
 import SectionTitle from "./SectionTitle.vue";
-import Basebutton from "./basebutton.vue";
+import BaseButton from "./BaseButton.vue";
 
 const section = {
   title: "Feedback",
@@ -53,9 +53,9 @@ const section = {
         </Card>
       </div>
       <div class="flex justify-center py-4">
-        <Basebutton href="https://www.fiverr.com/developerkabir" type="primary">
+        <base-button href="https://www.fiverr.com/developerkabir" type="primary">
           Learn More
-        </Basebutton>
+        </base-button>
       </div>
     </div>
   </section>

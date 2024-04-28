@@ -8,10 +8,10 @@ const section = {
     "A snapshot of my professional trajectory and the impactful roles I've held.",
   experience: [
     {
-      company: "PHP Artisan",
-      location: "Freelance",
-      role: "Back End Developer",
-      start: "Jan 2024",
+      company: "WPMU DEV",
+      location: "Remote",
+      role: "WordPress Plugin Developer",
+      start: "April 2024",
       end: "Present",
     },
     {
