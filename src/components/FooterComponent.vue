@@ -5,10 +5,6 @@ const section = {
     "I'd love to hear from you. You can find me on these social media platforms.",
   icons: [
     {
-      icon: "md-alternateemail",
-      url: "mailto:dev.kabir01@gmail.com",
-    },
-    {
       icon: "ri-twitter-line",
       url: "https://twitter.com/DevKabir01",
     },

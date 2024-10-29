@@ -33,13 +33,10 @@ import BaseButton from "./BaseButton.vue";
           </h1>
 
           <h2 class="font-semibold leading-none text-slate-800 md:text-xl">
-            WordPress | Shopify | Laravel Expert with 4+ Years Experience
+            WordPress Plugin Developer | PHP & JavaScript Specialist | 150+ Plugins Developed
           </h2>
 
-          <p class="font-medium text-slate-600 md:text-xl">
-            Automating Tasks to Boost Efficiency and Productivity
-          </p>
-          <BaseButton type="primary" href="mailto:dev.kabir01@gmail.com">
+          <BaseButton type="primary" href="https://www.linkedin.com/in/dev-kabir/">
             Hire me
           </BaseButton>
         </div>

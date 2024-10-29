@@ -14,18 +14,18 @@ const section = {
       url: "https://wordpress.org/plugins/enable-cors/",
     },
     {
-      title: "WordPress Plugin Redesign",
+      title: "Defender",
       description:
-        "I changed the design of a WordPress plugin admin panel. I used PHP, vue.js with pinia, tailwindcss, and TypeScript. It's now easier to use and works better.",
+        "Defender is a powerful WordPress security plugin that provides a comprehensive suite of features to protect websites from threats.",
       icon: "bi-wordpress",
-      url: "https://www.fiverr.com/s/o01v0G",
+      url: "https://wpmudev.com/project/wp-defender/",
     },
     {
-      title: "Data Sync App",
+      title: "Slide Gutenberg Blocks",
       description:
-        "This app keeps data updated between your shop and vendors. It can connect any shop with any vendor. You can choose how often it updates.",
-      icon: "fa-shopify",
-      url: "https://www.fiverr.com/s/KqgxXk",
+        "This plugin can help you create dynamic and interactive slider with gutenberg blocks.",
+      icon: "bi-wordpress",
+      url: "https://pluximo.com/slide-gutenberg-blocks/",
     },
   ],
 };
@@ -35,7 +35,7 @@ const section = {
     <div class="container max-w-screen-xl px-4 mx-auto">
       <SectionTitle :title="section.title" :description="section.description" />
       <div class="flex flex-col items-center justify-center gap-10">
-        <div class="flex gap-4">
+        <div class="grid grid-cols-3 gap-4">
           <Card
             v-for="(item, index) in section.portfolio"
             :key="index"

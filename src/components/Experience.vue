@@ -21,20 +21,6 @@ const section = {
       start: "Jan 2022",
       end: "Present",
     },
-    {
-      company: "Fiverr",
-      location: "Remote",
-      role: "WooCommerce & Shopify App Developer",
-      start: "December 2019",
-      end: "December 2023",
-    },
-    {
-      company: "Technofelia",
-      location: "Dhaka, Bangladesh",
-      role: "Lead Developer",
-      start: "January 2020",
-      end: "January 2022",
-    },
   ],
 };
 </script>
@@ -80,10 +66,10 @@ const section = {
           <p
             class="grid justify-end text-base font-medium text-right text-slate-500 capitalize md:gap-2 lg:flex"
           >
-            <span>
+            <span class="block">
               {{ generateExperienceTenure(item.start, item.end).tenureString }}
             </span>
-            <span class="font-normal text-slate-400">
+            <span class="block font-normal text-slate-400">
               {{ generateExperienceTenure(item.start, item.end).durationString }}
             </span>
           </p>
