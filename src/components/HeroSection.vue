@@ -1,15 +1,12 @@
 <script setup>
 import BaseButton from "./BaseButton.vue";
+import Logo from "./Logo.vue";
 </script>
 <template>
   <section class="py-4 md:py-10">
     <div class="container max-w-screen-xl px-4 mx-auto">
       <nav class="flex items-center justify-between mb-5">
-        <img
-          src="./../assets/logo.svg"
-          alt="Logo of Dev kabir"
-          class="w-10 h-10"
-        />
+        <Logo/>
         <BaseButton
           type="secondary"
           href="/Resume-Dev-Kabir.pdf"
