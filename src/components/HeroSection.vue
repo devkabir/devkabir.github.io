@@ -9,8 +9,8 @@ import Logo from "./Logo.vue";
         <Logo/>
         <BaseButton
           type="secondary"
+          event_label="Resume Download"
           href="/Resume-Dev-Kabir.pdf"
-          download
         >
           Get my CV
         </BaseButton>
@@ -33,7 +33,7 @@ import Logo from "./Logo.vue";
             WordPress Plugin Developer | PHP & JavaScript Specialist | 150+ Plugins Developed
           </h2>
 
-          <BaseButton type="primary" href="https://www.linkedin.com/in/dev-kabir/">
+          <BaseButton type="primary" href="https://www.linkedin.com/in/dev-kabir/" event_label="Hire Me">
             Hire me
           </BaseButton>
         </div>
