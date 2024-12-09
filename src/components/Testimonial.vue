@@ -34,11 +34,7 @@ const section = {
       <SectionTitle :title="section.title" :description="section.description" />
 
       <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-        <Card
-          v-for="(item, index) in section.review"
-          :key="index"
-          type="primary"
-        >
+        <Card v-for="(item, index) in section.review" :key="index" type="primary">
           <p class="mb-4 font-normal text-slate-500 text-md">
             {{ item.review }}
           </p>
@@ -53,7 +49,7 @@ const section = {
         </Card>
       </div>
       <div class="flex justify-center py-4">
-        <base-button href="https://www.fiverr.com/developerkabir" type="primary">
+        <base-button href="https://www.fiverr.com/developerkabir" type="primary" event_label="Testimonial">
           Learn More
         </base-button>
       </div>

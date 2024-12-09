@@ -10,7 +10,8 @@
   },
   "dependencies": {
     "oh-vue-icons": "^1.0.0-rc3",
-    "vue": "^3.3.11"
+    "vue": "^3.3.11",
+    "vue-gtag": "^2.0.1"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.5.2",

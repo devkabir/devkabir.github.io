@@ -59,6 +59,7 @@ const section = {
           <BaseButton
             href="https://www.fiverr.com/developerkabir"
             type="primary"
+            event_label="Portfolio"
           >
             Learn More
           </BaseButton>
