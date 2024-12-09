@@ -21,6 +21,27 @@ const section = {
       start: "Jan 2022",
       end: "Present",
     },
+    {
+      company: "Roadmap Studios",
+      location: "Project-Based",
+      role: "WordPress Plugin Developer",
+      start: "Oct 2023",
+      end: "Mar 2024",
+    },
+    {
+      company: "LogiSwitch",
+      location: "Project-Based",
+      role: "WordPress Plugin Developer",
+      start: "Nov 2022",
+      end: "Sept 2023",
+    },
+    {
+      company: "Gompels",
+      location: "Project-Based",
+      role: "WordPress Plugin Developer",
+      start: "Nov 2021",
+      end: "Nov 2022",
+    },
   ],
 };
 </script>
@@ -31,16 +52,16 @@ const section = {
 
       <div class="grid gap-10">
         <div class="grid items-center grid-cols-3">
-          <h3 class="text-base font-medium text-slate-600 capitalize">
+          <h3 class="text-base font-bold capitalize text-slate-600">
             Company
           </h3>
           <h3
-            class="text-base font-medium text-center text-slate-600 capitalize"
+            class="text-base font-bold text-center capitalize text-slate-600"
           >
             Position
           </h3>
           <h3
-            class="text-base font-medium text-right text-slate-600 capitalize"
+            class="text-base font-bold text-right capitalize text-slate-600"
           >
             Years
           </h3>
@@ -51,20 +72,20 @@ const section = {
           :key="index"
         >
           <p
-            class="grid text-base font-medium text-slate-500 capitalize sm:flex sm:gap-2"
+            class="grid text-base font-medium capitalize text-slate-500 sm:flex sm:gap-2"
           >
-            <span>{{ item.company }}</span>
-            <span class="font-normal text-slate-400"
+            <span class="font-semibold">{{ item.company }}</span>
+            <span class="font-medium text-slate-400"
               >/ {{ item.location }}</span
             >
           </p>
           <p
-            class="text-base font-medium text-center text-slate-500 capitalize"
+            class="text-base font-medium text-center capitalize text-slate-500"
           >
             {{ item.role }}
           </p>
           <p
-            class="grid justify-end text-base font-medium text-right text-slate-500 capitalize md:gap-2 lg:flex"
+            class="grid justify-end text-base font-medium text-right capitalize text-slate-500 md:gap-2 lg:flex"
           >
             <span class="block">
               {{ generateExperienceTenure(item.start, item.end).tenureString }}

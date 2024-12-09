@@ -39,11 +39,11 @@ const section = {
           <Card
             v-for="(item, index) in section.portfolio"
             :key="index"
-            type="white"
+            type="secondary"
           >
             <a :href="item.url" rel="noopener noreferrer">
               <h4
-                class="mb-5 font-semibold text-slate-700 capitalize md:text-2xl"
+                class="mb-5 font-semibold capitalize text-slate-700 md:text-2xl"
               >
                 <v-icon :name="item.icon" class="w-auto h-8"></v-icon>
                 {{ item.title }}
