@@ -25,7 +25,7 @@ import Logo from "./Logo.vue";
           />
         </div>
         <div class="flex flex-col items-center gap-6">
-          <h1 class="text-lg font-bold uppercase text-slate-600 md:text-2xl">
+          <h1 class="text-lg font-bold text-slate-600 md:text-2xl">
             Dev Kabir
           </h1>
 

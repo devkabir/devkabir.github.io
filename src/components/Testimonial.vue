@@ -46,7 +46,7 @@ const section = {
             <h6 class="font-semibold text-slate-500 text-md">
               {{ item.author }}
             </h6>
-            <span class="text-sm font-medium text-slate-300">
+            <span class="text-sm font-medium text-slate-500">
               - {{ item.location }}
             </span>
           </div>

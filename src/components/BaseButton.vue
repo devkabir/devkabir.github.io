@@ -13,7 +13,7 @@ defineProps({
       'pointer-events-none ': !href,
       'text-white bg-slate-700 hover:bg-slate-50 hover:text-slate-700':
         type === 'primary',
-      'text-slate-700 bg-white hover:bg-slate-700 hover:text-white':
+      'text-slate-700 bg-slate-100 hover:bg-slate-700 hover:text-white':
         type === 'secondary',
     }"
   >
