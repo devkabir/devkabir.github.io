@@ -1,38 +1,16 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Briefcase, Calendar } from "lucide-react";
-
-const experiences = [
-  {
-    company: "WPMU DEV",
-    role: "WordPress Plugin Developer",
-    period: "March 2024 - Present",
-    description:
-      "Migrated core plugin structure from Vue 2 to Vue 3 (Composition API) across 60K+ lines of code. Contributed to Defender and Beehive plugins and shipped updates via a CI/CD pipeline with peer reviews.",
-    highlights: ["Vue 2→3 Migration", "60K+ Lines", "Defender", "Beehive"],
-    current: true,
-  },
-  {
-    company: "Freelance / Self-Employed",
-    role: "WordPress Plugin Developer",
-    period: "January 2022 - Present",
-    description:
-      "Created a CORS error-solving plugin adopted by 6,000+ websites worldwide and maintained long-term support and documentation for open-source plugins.",
-    highlights: ["6,000+ Websites", "CORS Plugin", "Open Source", "Long-Term Support"],
-    current: true,
-  },
-  {
-    company: "Fiverr",
-    role: "WordPress Plugin Developer",
-    period: "January 2020 - March 2024",
-    description:
-      "Delivered 38+ custom WordPress plugins with 5-star client ratings. Specialized in WooCommerce integrations using REST APIs to connect payment gateways, shipping providers, CRMs, and analytics platforms.",
-    highlights: ["38+ Projects", "5-Star Rating", "WooCommerce", "REST APIs"],
-    current: false,
-  },
-];
+import { usePortfolioData } from "@/hooks/usePortfolioData";
 
 const ExperienceSection = () => {
+  const { data, isLoading } = usePortfolioData();
+
+  if (isLoading || !data) {
+    return null;
+  }
+
+  const experiences = data.experience;
   return (
     <section id="experience" className="py-20 px-4 bg-background">
       <div className="max-w-4xl mx-auto">

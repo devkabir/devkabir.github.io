@@ -1,22 +1,15 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Quote } from "lucide-react";
-
-const testimonials = [
-  {
-    text: "Migrated core plugin structure from Vue 2 to Vue 3 across 60K+ lines and shipped updates through a CI/CD pipeline.",
-    author: "WPMU DEV",
-  },
-  {
-    text: "Created a CORS error-solving plugin adopted by 6,000+ websites worldwide, with ongoing maintenance and documentation.",
-    author: "Open Source",
-  },
-  {
-    text: "Delivered 38+ custom WordPress plugins with 5-star client ratings, including WooCommerce REST API integrations.",
-    author: "Fiverr",
-  },
-];
+import { usePortfolioData } from "@/hooks/usePortfolioData";
 
 const TestimonialsSection = () => {
+  const { data, isLoading } = usePortfolioData();
+
+  if (isLoading || !data) {
+    return null;
+  }
+
+  const testimonials = data.testimonials;
   return (
     <section id="testimonials" className="py-20 px-4 bg-background">
       <div className="max-w-6xl mx-auto">

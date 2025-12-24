@@ -1,9 +1,38 @@
-import { Linkedin, Mail, ChevronDown, Globe } from "lucide-react";
+import { Linkedin, Mail, ChevronDown, Globe, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { usePortfolioData } from "@/hooks/usePortfolioData";
+import { decodeEmail, getMailtoLink } from "@/utils/emailProtection";
 
 const HeroSection = () => {
+  const { data, isLoading } = usePortfolioData();
+
   const scrollToProjects = () => {
     document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  if (isLoading || !data) {
+    return (
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
+        <div className="animate-pulse text-muted-foreground">Loading...</div>
+      </section>
+    );
+  }
+
+  const { hero } = data;
+
+  const getIconComponent = (type: string) => {
+    switch (type) {
+      case "linkedin":
+        return Linkedin;
+      case "portfolio":
+        return Globe;
+      case "cv":
+        return Download;
+      case "email":
+        return Mail;
+      default:
+        return Mail;
+    }
   };
 
   return (
@@ -21,41 +50,48 @@ const HeroSection = () => {
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
         <div className="animate-fade-in">
           <span className="inline-block px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6 border border-primary/20">
-            WordPress Plugin Developer
+            {hero.badge}
           </span>
         </div>
 
         <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 animate-fade-in">
-          <span className="text-foreground">Dev</span>{" "}
+          <span className="text-foreground">{hero.name.firstName}</span>{" "}
           <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
-            Kabir
+            {hero.name.lastName}
           </span>
         </h1>
 
         <p className="text-xl md:text-2xl text-muted-foreground mb-8 animate-fade-in max-w-2xl mx-auto">
-          WordPress Plugin Developer • PHP & JavaScript Specialist •{" "}
-          <span className="text-primary font-semibold">150+ Plugins</span>
+          {hero.tagline}{" "}
+          <span className="text-primary font-semibold">{hero.highlight}</span>
         </p>
 
         <div className="flex flex-wrap justify-center gap-4 mb-12 animate-fade-in">
-          <a href="https://www.linkedin.com/in/dev-kabir" target="_blank" rel="noopener noreferrer">
-            <Button variant="outline" size="lg" className="gap-2 hover:bg-primary hover:text-primary-foreground transition-all duration-300">
-              <Linkedin className="w-5 h-5" />
-              LinkedIn
-            </Button>
-          </a>
-          <a href="https://devkabir.github.io/" target="_blank" rel="noopener noreferrer">
-            <Button variant="outline" size="lg" className="gap-2 hover:bg-primary hover:text-primary-foreground transition-all duration-300">
-              <Globe className="w-5 h-5" />
-              Portfolio
-            </Button>
-          </a>
-          <a href="mailto:dev.kabir01@gmail.com">
-            <Button variant="default" size="lg" className="gap-2">
-              <Mail className="w-5 h-5" />
-              Get in Touch
-            </Button>
-          </a>
+          {hero.socialLinks.map((link) => {
+            const IconComponent = getIconComponent(link.type);
+            const isPrimary = link.type === "email";
+            const isDownload = link.type === "cv";
+            const href = link.encoded ? getMailtoLink(link.url) : link.url;
+
+            return (
+              <a
+                key={link.type}
+                href={href}
+                target={href.startsWith("http") ? "_blank" : undefined}
+                rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
+                download={isDownload ? "Dev-Kabir-CV.pdf" : undefined}
+              >
+                <Button
+                  variant={isPrimary ? "default" : "outline"}
+                  size="lg"
+                  className={isPrimary ? "gap-2" : "gap-2 hover:bg-primary hover:text-primary-foreground transition-all duration-300"}
+                >
+                  <IconComponent className="w-5 h-5" />
+                  {link.label}
+                </Button>
+              </a>
+            );
+          })}
         </div>
 
         <Button
