@@ -5,19 +5,14 @@
       "firstName": "Dev",
       "lastName": "Kabir"
     },
-    "tagline": "WordPress Plugin Developer • PHP & JavaScript Specialist •",
-    "highlight": "150+ Plugins",
+    "tagline": "WordPress Plugin Developer • PHP & JavaScript Specialist • 150+ Plugins",
+    "highlight": "Learning Rust",
     "cvUrl": "/cv-dev-kabir.pdf",
     "socialLinks": [
       {
         "type": "linkedin",
         "label": "LinkedIn",
         "url": "https://www.linkedin.com/in/dev-kabir"
-      },
-      {
-        "type": "portfolio",
-        "label": "Portfolio",
-        "url": "https://devkabir.github.io/"
       },
       {
         "type": "cv",
@@ -35,8 +30,8 @@
   "about": {
     "title": "About Me",
     "introduction": [
-      "Hi there! I'm Dev Kabir, a WordPress plugin developer with 4+ years of experience. I've built over 150 plugins that help websites work better and automate tasks for users and businesses.",
-      "I work with PHP, JavaScript, HTML, CSS, MySQL, and the WordPress ecosystem, and I build WooCommerce integrations and REST APIs. On Fiverr, I've completed 38+ projects with a 5-star rating."
+      "Hi there! I'm Dev Kabir, a WordPress plugin developer with 4+ years of experience. I design and ship production-ready plugins that improve performance, automate workflows, and unlock new revenue for businesses.",
+      "I work with PHP, JavaScript, HTML, CSS, MySQL, and the WordPress ecosystem, building WooCommerce integrations and REST APIs. On Fiverr, I've completed 38+ projects with a 5-star rating. I'm currently learning Rust to deepen my systems programming skills."
     ],
     "skills": [
       "PHP",
@@ -51,7 +46,8 @@
       "Vue.js",
       "React",
       "WooCommerce",
-      "Laravel"
+      "Laravel",
+      "Rust (Learning)"
     ],
     "stats": [
       {
@@ -76,7 +72,7 @@
       "company": "WPMU DEV",
       "role": "WordPress Plugin Developer",
       "period": "March 2024 - Present",
-      "description": "Migrated core plugin structure from Vue 2 to Vue 3 (Composition API) across 60K+ lines of code. Contributed to Defender and Beehive plugins and shipped updates via a CI/CD pipeline with peer reviews.",
+      "description": "Led a Vue 2 to Vue 3 (Composition API) migration across 60K+ lines of a production plugin, improving maintainability and upgrade velocity. Contributed to Defender and Beehive and shipped releases through a CI/CD pipeline with rigorous peer review.",
       "highlights": [
         "Vue 2→3 Migration",
         "60K+ Lines",
@@ -89,7 +85,7 @@
       "company": "Freelance / Self-Employed",
       "role": "WordPress Plugin Developer",
       "period": "January 2022 - Present",
-      "description": "Created a CORS error-solving plugin adopted by 6,000+ websites worldwide and maintained long-term support and documentation for open-source plugins.",
+      "description": "Built and maintained a CORS error-solving plugin adopted by 6,000+ websites worldwide, with clear documentation and long-term support for open-source users.",
       "highlights": [
         "6,000+ Websites",
         "CORS Plugin",
@@ -102,7 +98,7 @@
       "company": "Fiverr",
       "role": "WordPress Plugin Developer",
       "period": "January 2020 - March 2024",
-      "description": "Delivered 38+ custom WordPress plugins with 5-star client ratings. Specialized in WooCommerce integrations using REST APIs to connect payment gateways, shipping providers, CRMs, and analytics platforms.",
+      "description": "Delivered 38+ custom WordPress plugins with consistent 5-star ratings. Specialized in WooCommerce integrations using REST APIs to connect payment gateways, shipping providers, CRMs, and analytics platforms.",
       "highlights": [
         "38+ Projects",
         "5-Star Rating",
@@ -115,7 +111,7 @@
   "projects": [
     {
       "title": "CORS Error Solver",
-      "description": "A WordPress plugin that resolves CORS issues and is used by 6,000+ websites worldwide.",
+      "description": "A WordPress plugin that eliminates CORS issues and powers 6,000+ live websites worldwide.",
       "icon": "Globe",
       "stats": "6,000+ Active Users",
       "tags": [
@@ -127,7 +123,7 @@
     },
     {
       "title": "Defender Security Plugin",
-      "description": "Contributed to WPMU DEV's Defender security plugin and shipped feature updates and improvements.",
+      "description": "Shipped security improvements and feature updates for WPMU DEV's Defender plugin in a high-traffic production environment.",
       "icon": "Shield",
       "stats": "Security Plugin",
       "tags": [
@@ -139,7 +135,7 @@
     },
     {
       "title": "Beehive Analytics",
-      "description": "Worked on the Beehive analytics plugin at WPMU DEV to help users track website performance.",
+      "description": "Enhanced Beehive analytics to help users measure and improve website performance.",
       "icon": "BarChart3",
       "stats": "Analytics Plugin",
       "tags": [
@@ -163,7 +159,7 @@
     },
     {
       "title": "Custom Plugin Suite",
-      "description": "A collection of 150+ custom WordPress plugins developed for various client needs, from simple utilities to complex systems.",
+      "description": "A suite of 150+ custom WordPress plugins, ranging from quick-win utilities to complex business systems.",
       "icon": "Puzzle",
       "stats": "150+ Plugins",
       "tags": [
@@ -175,7 +171,7 @@
     },
     {
       "title": "CI/CD Automation",
-      "description": "Shipped updates, bug fixes, and UX improvements in a CI/CD pipeline with peer code reviews.",
+      "description": "Shipped updates, bug fixes, and UX improvements through a CI/CD pipeline with peer code reviews.",
       "icon": "Zap",
       "stats": "CI/CD Pipeline",
       "tags": [
@@ -188,21 +184,21 @@
   ],
   "testimonials": [
     {
-      "text": "Migrated core plugin structure from Vue 2 to Vue 3 across 60K+ lines and shipped updates through a CI/CD pipeline.",
+      "text": "Led a Vue 2 to Vue 3 migration across 60K+ lines and shipped releases through a CI/CD pipeline.",
       "author": "WPMU DEV"
     },
     {
-      "text": "Created a CORS error-solving plugin adopted by 6,000+ websites worldwide, with ongoing maintenance and documentation.",
+      "text": "Built a CORS error-solving plugin adopted by 6,000+ websites worldwide, with ongoing maintenance and documentation.",
       "author": "Open Source"
     },
     {
-      "text": "Delivered 38+ custom WordPress plugins with 5-star client ratings, including WooCommerce REST API integrations.",
+      "text": "Delivered 38+ custom WordPress plugins with 5-star ratings, including WooCommerce REST API integrations.",
       "author": "Fiverr"
     }
   ],
   "contact": {
     "title": "Get in Touch",
-    "subtitle": "Ready to start your next WordPress project? Let's discuss how I can help bring your ideas to life.",
+    "subtitle": "Ready to ship a WordPress plugin that performs and scales? Let's build something reliable together.",
     "location": "Barisal Sadar Upazila, Barisal, Bangladesh",
     "cvUrl": "/cv-dev-kabir.pdf",
     "links": [
@@ -224,12 +220,6 @@
         "label": "LinkedIn",
         "value": "Connect with me",
         "href": "https://www.linkedin.com/in/dev-kabir"
-      },
-      {
-        "icon": "Github",
-        "label": "Portfolio",
-        "value": "devkabir.github.io",
-        "href": "https://devkabir.github.io/"
       },
       {
         "icon": "Download",

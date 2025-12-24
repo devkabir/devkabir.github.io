@@ -1,13 +1,33 @@
-import { Linkedin, Mail, ChevronDown, Globe, Download } from "lucide-react";
+import { Mail, ChevronDown, Globe, Download, LinkedinIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { usePortfolioData } from "@/hooks/usePortfolioData";
-import { decodeEmail, getMailtoLink } from "@/utils/emailProtection";
+import { getMailtoLink } from "@/utils/emailProtection";
 
 const HeroSection = () => {
   const { data, isLoading } = usePortfolioData();
 
   const scrollToProjects = () => {
-    document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" });
+    const target = document.getElementById("projects");
+    if (!target) return;
+
+    const startY = window.scrollY;
+    const targetY = target.getBoundingClientRect().top + window.scrollY;
+    const distance = targetY - startY;
+    const duration = 700;
+    let startTime: number | null = null;
+
+    const easeOutCubic = (t: number) => 1 - Math.pow(1 - t, 3);
+
+    const step = (timestamp: number) => {
+      if (startTime === null) startTime = timestamp;
+      const elapsed = timestamp - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const eased = easeOutCubic(progress);
+      window.scrollTo(0, startY + distance * eased);
+      if (progress < 1) requestAnimationFrame(step);
+    };
+
+    requestAnimationFrame(step);
   };
 
   if (isLoading || !data) {
@@ -23,7 +43,7 @@ const HeroSection = () => {
   const getIconComponent = (type: string) => {
     switch (type) {
       case "linkedin":
-        return Linkedin;
+        return LinkedinIcon;
       case "portfolio":
         return Globe;
       case "cv":
@@ -56,14 +76,18 @@ const HeroSection = () => {
 
         <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 animate-fade-in">
           <span className="text-foreground">{hero.name.firstName}</span>{" "}
-          <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-slate-900 via-indigo-500 to-cyan-400 dark:from-indigo-300 dark:via-sky-400 dark:to-cyan-300 bg-clip-text text-transparent drop-shadow-[0_8px_24px_rgba(56,189,248,0.25)] dark:drop-shadow-[0_10px_26px_rgba(59,130,246,0.25)]">
             {hero.name.lastName}
           </span>
         </h1>
 
-        <p className="text-xl md:text-2xl text-muted-foreground mb-8 animate-fade-in max-w-2xl mx-auto">
-          {hero.tagline}{" "}
-          <span className="text-primary font-semibold">{hero.highlight}</span>
+        <p className="text-xl md:text-2xl text-muted-foreground mb-4 animate-fade-in max-w-3xl mx-auto">
+          {hero.tagline}
+        </p>
+        <p className="max-w-2xl mx-auto mb-6">
+          <span className="inline-flex items-center rounded-full border border-border/60 bg-muted/60 px-4 py-1 text-sm md:text-base font-medium text-muted-foreground">
+            {hero.highlight}
+          </span>
         </p>
 
         <div className="flex flex-wrap justify-center gap-4 mb-12 animate-fade-in">

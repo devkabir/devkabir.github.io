@@ -1,5 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { Mail, Phone, Linkedin, Github, MapPin, Download } from "lucide-react";
+import { Mail, Phone, LinkedinIcon, Github, MapPin, Download } from "lucide-react";
 import { usePortfolioData } from "@/hooks/usePortfolioData";
 import { decodeEmail } from "@/utils/emailProtection";
 
@@ -19,7 +19,7 @@ const ContactSection = () => {
       case "Phone":
         return Phone;
       case "Linkedin":
-        return Linkedin;
+        return LinkedinIcon;
       case "Github":
         return Github;
       case "Download":
