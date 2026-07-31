@@ -20,7 +20,9 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ data }) => {
   const [copiedEmail, setCopiedEmail] = useState(false);
 
   const emailLink = data.links.find((l) => l.icon === 'Mail');
-  const decodedEmail = emailLink ? decodeValue(emailLink.value, emailLink.encoded) : '';
+  const decodedEmail = emailLink
+    ? decodeValue(emailLink.value, emailLink.encoded)
+    : '';
 
   const handleCopyEmail = () => {
     if (decodedEmail) {
@@ -63,13 +65,15 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ data }) => {
               if (isEmail) {
                 href = formatEmailUrl(link.value, link.encoded);
               }
-              const displayValue = isEmail ? decodeValue(link.value, link.encoded) : link.value;
+              const displayValue = isEmail
+                ? decodeValue(link.value, link.encoded)
+                : link.value;
 
               return (
                 <Card
                   key={idx}
                   variant="default"
-                  className="p-5 flex items-center justify-between group hover:border-[var(--color-accent-primary)] hover:shadow-md transition-all duration-300"
+                  className="p-5 flex items-center justify-between group hover:border-[var(--color-border-default)] hover:shadow-md transition-all duration-300"
                 >
                   <a
                     href={href}
@@ -96,11 +100,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ data }) => {
                       title="Copy Email Address"
                       className="p-2.5 rounded-[var(--radius-md)] text-[var(--color-text-muted)] hover:text-[var(--color-accent-primary)] hover:bg-[var(--color-bg-secondary)] active:scale-95 transition-all cursor-pointer shrink-0"
                     >
-                      <Icon
-                        name={copiedEmail ? 'Check' : 'FileText'}
-                        size={18}
-                        className={copiedEmail ? 'text-[var(--color-accent-primary)]' : ''}
-                      />
+                      <Icon name={copiedEmail ? 'Check' : 'FileText'} size={18} className={copiedEmail ? 'text-[var(--color-accent-primary)]' : ''} />
                     </button>
                   )}
                 </Card>
@@ -127,16 +127,16 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ data }) => {
                     window.location.href = `mailto:${decodedEmail}`;
                   }}
                 >
-                  <Icon
-                    name="Mail"
-                    size={16}
-                    className="transition-transform duration-300 group-hover/btn:translate-x-1"
-                  />
+                  <Icon name="Mail" size={16} className="transition-transform duration-300 group-hover/btn:translate-x-1" />
                   <span>Send Email</span>
                 </Button>
               )}
               {decodedEmail && (
-                <Button variant="outline" size="md" onClick={handleCopyEmail}>
+                <Button
+                  variant="outline"
+                  size="md"
+                  onClick={handleCopyEmail}
+                >
                   <Icon name={copiedEmail ? 'Check' : 'FileText'} size={16} />
                   <span>{copiedEmail ? 'Copied!' : 'Copy Address'}</span>
                 </Button>
@@ -148,3 +148,4 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ data }) => {
     </SectionWrapper>
   );
 };
+

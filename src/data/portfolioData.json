@@ -1,13 +1,13 @@
 {
   "hero": {
-    "badge": "WordPress Plugin Developer",
+    "badge": "Senior Web Developer & WordPress Specialist",
     "availability": "Available for WordPress & WooCommerce Projects",
     "name": {
       "firstName": "Dev",
       "lastName": "Kabir"
     },
-    "tagline": "WordPress Plugin Developer • PHP & JavaScript Specialist • 150+ Plugins",
-    "highlight": "Learning Rust",
+    "tagline": "PHP • React • JavaScript • MySQL",
+    "highlight": "5+ Years of Experience",
     "cvUrl": "/cv-dev-kabir.pdf",
     "socialLinks": [
       {
@@ -31,33 +31,34 @@
   "about": {
     "title": "About Me",
     "introduction": [
-      "Hi there! I'm Dev Kabir, a WordPress plugin developer with 4+ years of experience. I design and ship production-ready plugins that improve performance, automate workflows, and unlock new revenue for businesses.",
-      "I work with PHP, JavaScript, HTML, CSS, MySQL, and the WordPress ecosystem, building WooCommerce integrations and REST APIs. On Fiverr, I've completed 38+ projects with a 5-star rating. I'm currently learning Rust to deepen my systems programming skills."
+      "I'm Dev Kabir, a Senior Web Developer and WordPress Specialist with more than five years of experience building scalable web applications and fast, reliable WordPress plugins.",
+      "I work with PHP, JavaScript, React.js, Vue 3, HTML5, CSS3, Tailwind CSS, MySQL, Node.js, and the WordPress ecosystem. My experience includes custom plugin development, WooCommerce integrations, REST APIs, WP-CLI, performance optimization, and secure API development."
     ],
     "skills": [
       "PHP",
       "JavaScript",
-      "HTML",
-      "CSS",
+      "React.js",
+      "Vue 3",
+      "HTML5",
+      "CSS3",
+      "Tailwind CSS",
       "MySQL",
+      "Node.js",
       "WordPress",
-      "CORS",
-      "Google Analytics",
       "REST APIs",
-      "Vue.js",
-      "React",
+      "WP-CLI",
       "WooCommerce",
-      "Laravel",
-      "Rust (Learning)"
+      "Custom API Development",
+      "Performance Optimization"
     ],
     "stats": [
       {
-        "icon": "Puzzle",
-        "value": "150+",
-        "label": "Plugins Built"
+        "icon": "Code2",
+        "value": "5+",
+        "label": "Years of Experience"
       },
       {
-        "icon": "Code2",
+        "icon": "Puzzle",
         "value": "38+",
         "label": "Fiverr Projects"
       },
@@ -73,15 +74,15 @@
       "company": "WPMU DEV",
       "role": "WordPress Plugin Developer",
       "period": "March 2024 - Present",
-      "description": "Led a Vue 2 to Vue 3 (Composition API) migration across 60K+ lines of a production plugin, improving maintainability and upgrade velocity. Contributed to Defender and Beehive and shipped releases through a CI/CD pipeline with rigorous peer review.",
+      "description": "Migrated a core plugin structure from Vue 2 to Vue 3 using the Composition API, modernizing the architecture and reducing technical debt across 60K+ lines of code. Contributed to Defender and Beehive, shipped updates through a CI/CD pipeline, and collaborated with an international team.",
       "highlights": ["Vue 2→3 Migration", "60K+ Lines", "Defender", "Beehive"],
       "current": true
     },
     {
-      "company": "Freelance / Open Source",
+      "company": "WordPress",
       "role": "WordPress Plugin Developer",
       "period": "January 2022 - Present",
-      "description": "Built and maintained the Enable CORS plugin adopted by 6,000+ websites worldwide, with clear documentation and long-term support for open-source users.",
+      "description": "Created and maintained a CORS error-solving plugin adopted by 6,000+ websites worldwide, while providing long-term support, updates, and documentation for the open-source WordPress community.",
       "highlights": ["6,000+ Websites", "Enable CORS", "Open Source", "WordPress.org"],
       "url": "https://wordpress.org/plugins/enable-cors/#description",
       "current": true
@@ -90,7 +91,7 @@
       "company": "Fiverr",
       "role": "WordPress Plugin Developer",
       "period": "January 2020 - March 2024",
-      "description": "Delivered 38+ custom WordPress plugins with consistent 5-star ratings. Specialized in WooCommerce integrations using REST APIs to connect payment gateways, shipping providers, CRMs, and analytics platforms.",
+      "description": "Delivered 38+ custom WordPress plugins with consistent 5-star ratings. Built secure, scalable WooCommerce integrations with payment gateways, shipping providers, CRMs, and analytics platforms through REST APIs.",
       "highlights": ["38+ Projects", "5-Star Rating", "WooCommerce", "REST APIs"],
       "current": false
     }
@@ -98,7 +99,7 @@
   "projects": [
     {
       "title": "Enable CORS",
-      "description": "An official WordPress plugin (Enable CORS) that eliminates CORS issues and powers 6,000+ live websites worldwide.",
+      "description": "A WordPress plugin that solves CORS errors and is used by 6,000+ websites worldwide.",
       "icon": "Globe",
       "stats": "6,000+ Active Installs",
       "tags": ["WordPress.org", "CORS", "Security", "API"],
@@ -107,18 +108,18 @@
     },
     {
       "title": "Defender Security Plugin",
-      "description": "Shipped security improvements and feature updates for WPMU DEV's Defender plugin in a high-traffic production environment.",
+      "description": "Contributed security improvements, bug fixes, and UX updates to WPMU DEV's Defender plugin, used by tens of thousands of websites.",
       "icon": "Shield",
       "stats": "Security Plugin",
-      "tags": ["Vue.js", "Security", "WPMU DEV"],
+      "tags": ["Vue 3", "Security", "WPMU DEV"],
       "featured": true
     },
     {
       "title": "Beehive Analytics",
-      "description": "Enhanced Beehive analytics to help users measure and improve website performance.",
+      "description": "Contributed feature updates, bug fixes, and UX improvements to WPMU DEV's Beehive analytics plugin.",
       "icon": "BarChart3",
       "stats": "Analytics Plugin",
-      "tags": ["Analytics", "Vue.js", "WPMU DEV"],
+      "tags": ["Analytics", "Vue 3", "WPMU DEV"],
       "featured": false
     },
     {
@@ -130,11 +131,11 @@
       "featured": true
     },
     {
-      "title": "Custom Plugin Suite",
-      "description": "A suite of 150+ custom WordPress plugins, ranging from quick-win utilities to complex business systems.",
+      "title": "Secure API Integrations",
+      "description": "Designed secure, scalable APIs and reliable data synchronization between WooCommerce stores and external services.",
       "icon": "Puzzle",
-      "stats": "150+ Plugins",
-      "tags": ["WordPress", "PHP", "Custom"],
+      "stats": "Custom APIs",
+      "tags": ["REST API", "WooCommerce", "Data Sync"],
       "featured": false
     },
     {
@@ -148,11 +149,11 @@
   ],
   "testimonials": [
     {
-      "text": "Led a Vue 2 to Vue 3 migration across 60K+ lines and shipped releases through a CI/CD pipeline.",
+      "text": "Migrated a core plugin structure from Vue 2 to Vue 3 across 60K+ lines and shipped updates through a peer-reviewed CI/CD pipeline.",
       "author": "WPMU DEV"
     },
     {
-      "text": "Built a CORS error-solving plugin adopted by 6,000+ websites worldwide, with ongoing maintenance and documentation.",
+      "text": "Created a CORS error-solving plugin adopted by 6,000+ websites worldwide, with ongoing maintenance and documentation.",
       "author": "Open Source"
     },
     {

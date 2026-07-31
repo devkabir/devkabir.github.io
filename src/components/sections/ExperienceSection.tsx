@@ -82,19 +82,15 @@ export const ExperienceSection: React.FC<ExperienceSectionProps> = ({ data }) =>
                 <div key={idx} className="relative group pl-9 sm:pl-12">
                   {/* Timeline Node Dot */}
                   <div
-                    className={`absolute left-3 sm:left-4 top-[26px] sm:top-[34px] -translate-x-1/2 -translate-y-1/2 w-5 h-5 rounded-full border-4 transition-all duration-300 group-hover:scale-125 z-10 ${
-                      item.current
-                        ? 'bg-[var(--color-accent-primary)] border-[var(--color-bg-primary)] ring-4 ring-[var(--color-accent-light)] shadow-[0_0_14px_var(--color-accent-primary)]'
-                        : isNodeReached
-                          ? 'bg-[var(--color-accent-primary)] border-[var(--color-bg-primary)] scale-110 shadow-[0_0_8px_var(--color-accent-primary)]'
-                          : 'bg-[var(--color-accent-secondary)]/50 border-[var(--color-bg-primary)]'
-                    }`}
+                    className={`absolute left-3 sm:left-4 top-[26px] sm:top-[34px] -translate-x-1/2 -translate-y-1/2 w-5 h-5 rounded-full border-4 transition-all duration-300 group-hover:scale-125 z-10 ${item.current
+                      ? 'bg-[var(--color-accent-primary)] border-[var(--color-bg-primary)] ring-4 ring-[var(--color-accent-light)] shadow-[0_0_14px_var(--color-accent-primary)]'
+                      : isNodeReached
+                        ? 'bg-[var(--color-accent-primary)] border-[var(--color-bg-primary)] scale-110 shadow-[0_0_8px_var(--color-accent-primary)]'
+                        : 'bg-[var(--color-accent-secondary)]/50 border-[var(--color-bg-primary)]'
+                      }`}
                   />
 
-                  <Card
-                    variant="default"
-                    className="relative group-hover:border-[var(--color-accent-primary)]/50 transition-colors duration-300"
-                  >
+                  <Card variant="default" className="relative">
                     <CardHeader className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-[var(--color-border-subtle)] pb-3">
                       <div>
                         <div className="flex items-center gap-2">
@@ -139,11 +135,7 @@ export const ExperienceSection: React.FC<ExperienceSectionProps> = ({ data }) =>
                         <div className="pt-2 flex flex-wrap gap-2">
                           {item.highlights.map((highlight) => (
                             <Badge key={highlight} variant="secondary" size="sm">
-                              <Icon
-                                name="Check"
-                                size={12}
-                                className="text-[var(--color-accent-primary)]"
-                              />
+                              <Icon name="Check" size={12} className="text-[var(--color-accent-primary)]" />
                               {highlight}
                             </Badge>
                           ))}
@@ -160,3 +152,4 @@ export const ExperienceSection: React.FC<ExperienceSectionProps> = ({ data }) =>
     </SectionWrapper>
   );
 };
+
