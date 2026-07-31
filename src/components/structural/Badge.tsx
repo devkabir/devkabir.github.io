@@ -1,7 +1,7 @@
 import React, { HTMLAttributes } from 'react';
 
 export interface BadgeProps extends HTMLAttributes<HTMLSpanElement> {
-  variant?: 'primary' | 'secondary' | 'accent' | 'outline' | 'slate';
+  variant?: 'primary' | 'secondary' | 'accent' | 'outline' | 'slate' | 'success';
   size?: 'sm' | 'md';
   children: React.ReactNode;
 }
@@ -24,6 +24,8 @@ export const Badge: React.FC<BadgeProps> = ({
       'bg-[var(--color-accent-slate-light)] text-[var(--color-accent-secondary)] border border-[var(--color-border-subtle)]',
     outline:
       'bg-transparent text-[var(--color-text-secondary)] border border-[var(--color-border-default)]',
+    success:
+      'bg-emerald-500/15 text-emerald-600 border border-emerald-500/30 shadow-sm backdrop-blur-sm hover:border-emerald-500/50',
   };
 
   const sizeClasses = {

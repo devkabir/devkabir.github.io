@@ -39,13 +39,13 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ data }) => {
           {/* Badges & Live Availability */}
           <div className="flex flex-col items-center gap-3">
             {data.availability && (
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 border border-emerald-500/30 shadow-sm backdrop-blur-sm transition-all hover:border-emerald-500/50">
+              <Badge variant="success" size="md" className="px-4 py-1.5 text-xs sm:text-sm gap-2">
                 <span className="relative flex h-2.5 w-2.5">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
                 </span>
                 <span>{data.availability}</span>
-              </div>
+              </Badge>
             )}
 
             <div className="flex flex-wrap items-center justify-center gap-2">
