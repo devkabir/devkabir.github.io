@@ -6,6 +6,7 @@ import { Heading } from '../base/Heading';
 import { Paragraph } from '../base/Paragraph';
 import { Badge } from '../structural/Badge';
 import { Icon } from '../base/Icon';
+import { Link } from '../base/Link';
 import { ExperienceItem } from '../../types';
 
 export interface ExperienceSectionProps {
@@ -105,21 +106,21 @@ export const ExperienceSection: React.FC<ExperienceSectionProps> = ({ data }) =>
                             </Badge>
                           )}
                         </div>
-                        <p className="text-sm font-semibold text-[var(--color-accent-secondary)] flex items-center gap-1.5 mt-0.5">
+                        <Paragraph className="text-sm font-semibold text-[var(--color-accent-secondary)] flex items-center gap-1.5 mt-0.5">
                           {item.company}
                           {item.url && (
-                            <a
+                            <Link
                               href={item.url}
-                              target="_blank"
-                              rel="noopener noreferrer"
+                              variant="unstyled"
+                              isExternal
                               className="inline-flex items-center gap-1 text-xs text-[var(--color-accent-primary)] hover:underline ml-1"
                               aria-label={`View ${item.company} plugin page`}
                             >
                               <Icon name="ExternalLink" size={12} />
                               <span>WordPress.org</span>
-                            </a>
+                            </Link>
                           )}
-                        </p>
+                        </Paragraph>
                       </div>
 
                       <div className="text-xs font-mono font-medium text-[var(--color-text-muted)] bg-[var(--color-bg-secondary)] px-3 py-1 rounded-[var(--radius-full)] w-fit">

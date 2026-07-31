@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { SectionWrapper } from '../structural/SectionWrapper';
 import { ContentContainer } from '../structural/ContentContainer';
-import { Card, CardHeader, CardBody, CardFooter } from '../structural/Card';
+import { Card, CardHeader, CardBody } from '../structural/Card';
 import { Heading } from '../base/Heading';
 import { Paragraph } from '../base/Paragraph';
 import { Badge } from '../structural/Badge';
 import { Icon } from '../base/Icon';
 import { Link } from '../base/Link';
+import { Button } from '../base/Button';
 import { ProjectItem } from '../../types';
 
 export interface ProjectsSectionProps {
@@ -14,9 +15,9 @@ export interface ProjectsSectionProps {
 }
 
 export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ data }) => {
-  if (!data || data.length === 0) return null;
-
   const [filter, setFilter] = useState<'all' | 'featured'>('all');
+
+  if (!data || data.length === 0) return null;
 
   const displayedProjects = filter === 'featured' ? data.filter((p) => p.featured) : data;
 
@@ -39,7 +40,10 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ data }) => {
 
             {/* Filter Toggle Pills */}
             <div className="flex items-center gap-1.5 bg-[var(--color-bg-secondary)] p-1.5 rounded-[var(--radius-full)] border border-[var(--color-border-subtle)] shrink-0 self-start md:self-auto shadow-xs">
-              <button
+              <Button
+                variant="ghost"
+                size="sm"
+                magnetic={false}
                 onClick={() => setFilter('all')}
                 className={`text-xs font-bold px-4 py-2 rounded-[var(--radius-full)] transition-all duration-300 ease-out cursor-pointer active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-focus-ring)] ${
                   filter === 'all'
@@ -48,8 +52,11 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ data }) => {
                 }`}
               >
                 All Projects ({data.length})
-              </button>
-              <button
+              </Button>
+              <Button
+                variant="ghost"
+                size="sm"
+                magnetic={false}
                 onClick={() => setFilter('featured')}
                 className={`text-xs font-bold px-4 py-2 rounded-[var(--radius-full)] transition-all duration-300 ease-out cursor-pointer active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-focus-ring)] ${
                   filter === 'featured'
@@ -58,7 +65,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ data }) => {
                 }`}
               >
                 Featured ({data.filter((p) => p.featured).length})
-              </button>
+              </Button>
             </div>
           </div>
 
@@ -96,10 +103,10 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ data }) => {
                           {project.title}
                         </Heading>
                         {project.url && (
-                          <a
+                          <Link
                             href={project.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
+                            variant="unstyled"
+                            isExternal
                             className="text-[var(--color-accent-primary)] hover:text-[var(--color-accent-primary-hover)] transition-colors p-1"
                             title="View on WordPress.org"
                             aria-label={`View ${project.title} on WordPress.org`}
@@ -109,7 +116,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ data }) => {
                               size={18}
                               className="transition-transform duration-300 group-hover/card:translate-x-0.5 group-hover/card:-translate-y-0.5"
                             />
-                          </a>
+                          </Link>
                         )}
                       </div>
 

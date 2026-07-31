@@ -4,11 +4,9 @@ import { ContentContainer } from '../structural/ContentContainer';
 import { Badge } from '../structural/Badge';
 import { Heading } from '../base/Heading';
 import { Paragraph } from '../base/Paragraph';
-import { Button } from '../base/Button';
 import { Link } from '../base/Link';
 import { Icon } from '../base/Icon';
 import { HeroData } from '../../types';
-import { decodeValue, formatEmailUrl } from '../../utils/dataUtils';
 
 export interface HeroSectionProps {
   data: HeroData;
@@ -84,8 +82,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ data }) => {
 
           {/* Action Links - Clear CTA hierarchy: Primary: View Projects -> Secondary: Download CV -> Outline: Contact */}
           <div className="flex flex-wrap items-center justify-center gap-3 pt-2">
-            <a
+            <Link
               href="#projects"
+              variant="button-primary"
               onClick={(e) => {
                 e.preventDefault();
                 const projectsElem = document.getElementById('projects');
@@ -94,31 +93,28 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ data }) => {
                 }
               }}
             >
-              <Button variant="primary" size="md" className="group/btn">
-                <span>View Projects</span>
-                <Icon
-                  name="ArrowRight"
-                  size={16}
-                  className="transition-transform duration-300 group-hover/btn:translate-x-1"
-                />
-              </Button>
-            </a>
+              <span>View Projects</span>
+              <Icon
+                name="ArrowRight"
+                size={16}
+                className="transition-transform duration-300 group-hover/btn:translate-x-1"
+              />
+            </Link>
 
             {data.cvUrl && (
-              <a href={data.cvUrl} target="_blank" rel="noopener noreferrer">
-                <Button variant="secondary" size="md" className="group/btn">
-                  <Icon
-                    name="Download"
-                    size={16}
-                    className="transition-transform duration-300 group-hover/btn:translate-y-0.5"
-                  />
-                  <span>Download CV</span>
-                </Button>
-              </a>
+              <Link href={data.cvUrl} variant="button-secondary" isExternal>
+                <Icon
+                  name="Download"
+                  size={16}
+                  className="transition-transform duration-300 group-hover/btn:translate-y-0.5"
+                />
+                <span>Download CV</span>
+              </Link>
             )}
 
-            <a
+            <Link
               href="#contact"
+              variant="button-outline"
               onClick={(e) => {
                 e.preventDefault();
                 const contactElem = document.getElementById('contact');
@@ -127,22 +123,21 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ data }) => {
                 }
               }}
             >
-              <Button variant="outline" size="md" className="group/btn">
-                <Icon
-                  name="Mail"
-                  size={16}
-                  className="transition-transform duration-300 group-hover/btn:scale-110"
-                />
-                <span>Contact Me</span>
-              </Button>
-            </a>
+              <Icon
+                name="Mail"
+                size={16}
+                className="transition-transform duration-300 group-hover/btn:scale-110"
+              />
+              <span>Contact Me</span>
+            </Link>
           </div>
         </div>
 
         {/* Enhanced High-Contrast Scroll Indicator */}
         <div className="mt-12 pt-2 flex flex-col items-center justify-center gap-2">
-          <a
+          <Link
             href="#about"
+            variant="unstyled"
             onClick={handleScrollToAbout}
             aria-label="Scroll down to About section"
             className="group flex flex-col items-center gap-2 text-[var(--color-text-primary)] hover:text-[var(--color-accent-primary)] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-focus-ring)] rounded-full p-1 cursor-pointer"
@@ -163,7 +158,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ data }) => {
                 />
               </div>
             </div>
-          </a>
+          </Link>
         </div>
       </ContentContainer>
     </SectionWrapper>

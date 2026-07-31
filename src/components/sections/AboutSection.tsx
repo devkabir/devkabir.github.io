@@ -43,9 +43,9 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ data }) => {
 
               {/* Skill pills quick list */}
               <div className="pt-4">
-                <p className="text-xs font-bold uppercase tracking-wider text-[var(--color-text-muted)] mb-3">
+                <Paragraph className="text-xs font-bold uppercase tracking-wider text-[var(--color-text-muted)] mb-3">
                   Core Technical Stack
-                </p>
+                </Paragraph>
                 <div className="flex flex-wrap gap-2">
                   {data.skills.map((skill) => (
                     <Badge
@@ -63,16 +63,18 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ data }) => {
             {/* Stats Cards Grid */}
             <div className="lg:col-span-5 grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-1 gap-4">
               {data.stats.map((stat, idx) => (
-                <Card key={idx} variant="default" className="flex items-center gap-4 p-5">
-                  <div className="w-12 h-12 rounded-[var(--radius-md)] bg-[var(--color-accent-light)] text-[var(--color-accent-primary)] flex items-center justify-center shrink-0">
-                    <Icon name={stat.icon} size={24} />
-                  </div>
-                  <div>
-                    <div className="text-2xl sm:text-3xl font-extrabold text-[var(--color-text-primary)]">
-                      {stat.value}
+                <Card key={idx} variant="default" className="h-full p-5">
+                  <div className="flex h-full items-center gap-4">
+                    <div className="w-12 h-12 rounded-[var(--radius-md)] bg-[var(--color-accent-light)] text-[var(--color-accent-primary)] flex items-center justify-center shrink-0">
+                      <Icon name={stat.icon} size={24} />
                     </div>
-                    <div className="text-xs font-semibold text-[var(--color-text-secondary)]">
-                      {stat.label}
+                    <div className="min-w-0">
+                      <div className="text-2xl sm:text-3xl font-extrabold text-[var(--color-text-primary)]">
+                        {stat.value}
+                      </div>
+                      <div className="text-xs font-semibold text-[var(--color-text-secondary)]">
+                        {stat.label}
+                      </div>
                     </div>
                   </div>
                 </Card>

@@ -1,7 +1,8 @@
 import React, { AnchorHTMLAttributes, forwardRef, useState, useRef } from 'react';
 
 export interface LinkProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
-  variant?: 'inline' | 'nav' | 'button-primary' | 'button-secondary' | 'button-outline';
+  variant?:
+    'unstyled' | 'inline' | 'nav' | 'button-primary' | 'button-secondary' | 'button-outline';
   isExternal?: boolean;
   magnetic?: boolean;
   children: React.ReactNode;
@@ -65,6 +66,8 @@ export const Link = forwardRef<HTMLAnchorElement, LinkProps>(
     const externalAttrs = isExternal ? { target: '_blank', rel: 'noopener noreferrer' } : {};
 
     const variantClasses = {
+      unstyled:
+        'focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-focus-ring)] rounded-[var(--radius-sm)]',
       inline:
         'text-[var(--color-accent-primary)] hover:text-[var(--color-accent-primary-hover)] underline underline-offset-4 decoration-1 hover:decoration-2 transition-colors duration-[var(--transition-fast)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-focus-ring)] rounded-[var(--radius-sm)]',
       nav: 'text-[var(--color-text-secondary)] hover:text-[var(--color-accent-primary)] font-medium text-sm transition-colors duration-[var(--transition-fast)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-focus-ring)] py-[var(--space-xs)] px-[var(--space-sm)] rounded-[var(--radius-sm)]',

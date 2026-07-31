@@ -6,15 +6,16 @@ import { Heading } from '../base/Heading';
 import { Paragraph } from '../base/Paragraph';
 import { Badge } from '../structural/Badge';
 import { Icon } from '../base/Icon';
+import { Button } from '../base/Button';
 
 export interface SkillsSectionProps {
   skills: string[];
 }
 
 export const SkillsSection: React.FC<SkillsSectionProps> = ({ skills }) => {
-  if (!skills || skills.length === 0) return null;
-
   const [activeCategory, setActiveCategory] = useState<string>('All');
+
+  if (!skills || skills.length === 0) return null;
 
   // Categorize skills cleanly
   const categories = [
@@ -126,7 +127,10 @@ export const SkillsSection: React.FC<SkillsSectionProps> = ({ skills }) => {
             {categories.map((cat) => {
               const isActive = activeCategory === cat.name;
               return (
-                <button
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  magnetic={false}
                   key={cat.name}
                   onClick={() => setActiveCategory(cat.name)}
                   className={`text-xs font-bold px-4 py-2 rounded-[var(--radius-full)] transition-all duration-300 ease-out cursor-pointer active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-focus-ring)] ${
@@ -136,7 +140,7 @@ export const SkillsSection: React.FC<SkillsSectionProps> = ({ skills }) => {
                   }`}
                 >
                   {cat.name}
-                </button>
+                </Button>
               );
             })}
           </div>

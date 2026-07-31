@@ -64,12 +64,12 @@ export const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ data }
                     {item.author.substring(0, 2).toUpperCase()}
                   </div>
                   <div>
-                    <div className="text-sm font-bold text-[var(--color-text-primary)]">
+                    <Paragraph className="text-sm font-bold text-[var(--color-text-primary)]">
                       {item.author}
-                    </div>
-                    <div className="text-xs text-[var(--color-text-muted)]">
+                    </Paragraph>
+                    <Paragraph size="sm" variant="muted" className="text-xs">
                       Verified Client / Ecosystem
-                    </div>
+                    </Paragraph>
                   </div>
                 </div>
               </Card>

@@ -5,6 +5,7 @@ import { Card } from '../structural/Card';
 import { Heading } from '../base/Heading';
 import { Paragraph } from '../base/Paragraph';
 import { Button } from '../base/Button';
+import { Link } from '../base/Link';
 import { Badge } from '../structural/Badge';
 import { Icon } from '../base/Icon';
 import { ContactData } from '../../types';
@@ -15,9 +16,9 @@ export interface ContactSectionProps {
 }
 
 export const ContactSection: React.FC<ContactSectionProps> = ({ data }) => {
-  if (!data) return null;
-
   const [copiedEmail, setCopiedEmail] = useState(false);
+
+  if (!data) return null;
 
   const emailLink = data.links.find((l) => l.icon === 'Mail');
   const decodedEmail = emailLink ? decodeValue(emailLink.value, emailLink.encoded) : '';
@@ -44,10 +45,10 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ data }) => {
               {data.subtitle}
             </Paragraph>
             {data.location && (
-              <div className="inline-flex items-center gap-1.5 text-xs font-semibold text-[var(--color-text-muted)] bg-[var(--color-bg-secondary)] px-3 py-1.5 rounded-[var(--radius-full)] border border-[var(--color-border-subtle)] mt-2">
+              <Badge variant="secondary" size="md" className="mt-2">
                 <Icon name="MapPin" size={14} className="text-[var(--color-accent-primary)]" />
                 {data.location}
-              </div>
+              </Badge>
             )}
           </div>
 
@@ -55,7 +56,6 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ data }) => {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {data.links.map((link, idx) => {
               const isEmail = link.icon === 'Mail';
-              const isPhone = link.icon === 'Phone';
               const isCv = link.icon === 'Download';
               const isLinkedin = link.icon === 'Linkedin';
 
@@ -71,10 +71,10 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ data }) => {
                   variant="default"
                   className="p-5 flex items-center justify-between group hover:border-[var(--color-border-default)] hover:shadow-md transition-all duration-300"
                 >
-                  <a
+                  <Link
                     href={href}
-                    target={isLinkedin || isCv ? '_blank' : '_self'}
-                    rel={isLinkedin || isCv ? 'noopener noreferrer' : undefined}
+                    variant="unstyled"
+                    isExternal={isLinkedin || isCv}
                     className="flex items-center gap-4 flex-1 focus:outline-none min-w-0"
                   >
                     <div className="w-12 h-12 shrink-0 rounded-[var(--radius-md)] bg-[var(--color-accent-light)] text-[var(--color-accent-primary)] flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
@@ -88,20 +88,24 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ data }) => {
                         {displayValue}
                       </div>
                     </div>
-                  </a>
+                  </Link>
 
                   {isEmail && (
-                    <button
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      magnetic={false}
                       onClick={handleCopyEmail}
                       title="Copy Email Address"
-                      className="p-2.5 rounded-[var(--radius-md)] text-[var(--color-text-muted)] hover:text-[var(--color-accent-primary)] hover:bg-[var(--color-bg-secondary)] active:scale-95 transition-all cursor-pointer shrink-0"
+                      aria-label="Copy email address"
+                      className="min-h-0 p-2.5 text-[var(--color-text-muted)] shrink-0"
                     >
                       <Icon
                         name={copiedEmail ? 'Check' : 'FileText'}
                         size={18}
                         className={copiedEmail ? 'text-[var(--color-accent-primary)]' : ''}
                       />
-                    </button>
+                    </Button>
                   )}
                 </Card>
               );
@@ -109,7 +113,10 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ data }) => {
           </div>
 
           {/* Quick Action CTA Banner */}
-          <div className="p-6 sm:p-8 rounded-[var(--radius-lg)] bg-[var(--color-bg-card)] border border-[var(--color-border-subtle)] shadow-[var(--shadow-sm)] flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left">
+          <Card
+            hoverEffect={false}
+            className="p-6 sm:p-8 flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left"
+          >
             <div className="space-y-1">
               <Heading level={3} className="text-lg font-bold">
                 Prefer email directly?
@@ -142,7 +149,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ data }) => {
                 </Button>
               )}
             </div>
-          </div>
+          </Card>
         </div>
       </ContentContainer>
     </SectionWrapper>
