@@ -1,35 +1,103 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dev Kabir | WordPress Plugin Developer</title>
-  <meta name="description"
-    content="Dev Kabir is a WordPress plugin developer specializing in PHP and JavaScript, with 150+ plugins built and experience at WPMU DEV." />
-  <meta name="author" content="Dev Kabir" />
+    <!-- Primary Meta Tags -->
+    <title>Dev Kabir — WordPress Plugin Developer & PHP/JS Specialist</title>
+    <meta name="title" content="Dev Kabir — WordPress Plugin Developer & PHP/JS Specialist" />
+    <meta
+      name="description"
+      content="Portfolio of Dev Kabir, WordPress Plugin Developer and creator of Enable CORS plugin with 6,000+ active installs. Specializing in custom WordPress plugins, WooCommerce integrations, REST APIs, and PHP optimization."
+    />
+    <meta
+      name="keywords"
+      content="Dev Kabir, WordPress Plugin Developer, Enable CORS plugin, WooCommerce Developer, Custom WordPress Plugins, PHP Specialist, REST API Integration, Open Source Developer"
+    />
+    <meta name="author" content="Dev Kabir" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#18232D" />
 
-  <!-- Favicons -->
-  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-  <link rel="manifest" href="/site.webmanifest" />
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://wordpress.org/plugins/enable-cors/#description" />
+    <meta
+      property="og:title"
+      content="Dev Kabir — WordPress Plugin Developer & PHP/JS Specialist"
+    />
+    <meta
+      property="og:description"
+      content="WordPress Plugin Developer with 150+ plugins built and creator of Enable CORS plugin powering 6,000+ websites worldwide."
+    />
+    <meta
+      property="og:image"
+      content="https://s.w.org/style/images/about/WordPress-logotype-wmark.png"
+    />
 
-  <meta property="og:title" content="Dev Kabir | WordPress Plugin Developer" />
-  <meta property="og:description"
-    content="WordPress plugin developer specializing in PHP and JavaScript, with 150+ plugins and experience at WPMU DEV." />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="/placeholder.svg" />
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:title" content="Dev Kabir — WordPress Plugin Developer" />
+    <meta
+      property="twitter:description"
+      content="Custom WordPress plugins, WooCommerce solutions, REST APIs & creator of Enable CORS plugin."
+    />
 
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:site" content="@portfolio" />
-  <meta name="twitter:image" content="/placeholder.svg" />
-</head>
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
 
-<body>
-  <div id="root"></div>
-  <script type="module" src="/src/main.tsx"></script>
-</body>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
 
+    <!-- JSON-LD Structured Data Schema for SEO -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Dev Kabir",
+        "jobTitle": "WordPress Plugin Developer",
+        "knowsAbout": [
+          "WordPress Plugin Development",
+          "PHP 8.3",
+          "WooCommerce REST APIs",
+          "JavaScript",
+          "Enable CORS Plugin",
+          "Custom Web Application Development"
+        ],
+        "description": "WordPress Plugin Developer and PHP & JavaScript Specialist with 150+ custom plugins built and creator of the Enable CORS plugin with 6,000+ active installs on WordPress.org.",
+        "sameAs": [
+          "https://wordpress.org/plugins/enable-cors/#description",
+          "https://www.linkedin.com/"
+        ]
+      }
+    </script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PB459VVX7S"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'G-PB459VVX7S');
+    </script>
+  </head>
+
+  <body
+    class="bg-app-primary text-app-primary antialiased font-sans transition-colors duration-300"
+  >
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
 </html>
