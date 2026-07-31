@@ -82,77 +82,72 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ data }) => {
             </Paragraph>
           </div>
 
-          {/* Action Links - Sorted by CTA priority (Primary: Email/Get in Touch -> Secondary: CV -> Outline: LinkedIn) */}
+          {/* Action Links - Clear CTA hierarchy: Primary: View Projects -> Secondary: Download CV -> Outline: Contact */}
           <div className="flex flex-wrap items-center justify-center gap-3 pt-2">
-            {[...data.socialLinks]
-              .sort((a, b) => {
-                const order: Record<string, number> = { email: 1, cv: 2, linkedin: 3 };
-                return (order[a.type] || 99) - (order[b.type] || 99);
-              })
-              .map((link) => {
-                const isEmail = link.type === 'email';
-                const href = isEmail ? formatEmailUrl(link.url, link.encoded) : link.url;
-                const isExternal = link.type === 'linkedin' || link.type === 'cv';
-
-                if (link.type === 'email') {
-                  return (
-                    <Link key={link.label} href={href} variant="button-primary">
-                      <Icon
-                        name="Mail"
-                        size={16}
-                        className="transition-transform duration-300 group-hover/btn:translate-x-1"
-                      />
-                      <span>{link.label}</span>
-                    </Link>
-                  );
+            <a
+              href="#projects"
+              onClick={(e) => {
+                e.preventDefault();
+                const projectsElem = document.getElementById('projects');
+                if (projectsElem) {
+                  projectsElem.scrollIntoView({ behavior: 'smooth' });
                 }
+              }}
+            >
+              <Button variant="primary" size="md" className="group/btn">
+                <span>View Projects</span>
+                <Icon
+                  name="ArrowRight"
+                  size={16}
+                  className="transition-transform duration-300 group-hover/btn:translate-x-1"
+                />
+              </Button>
+            </a>
 
-                if (link.type === 'cv') {
-                  return (
-                    <Link
-                      key={link.label}
-                      href={href}
-                      isExternal={isExternal}
-                      variant="button-secondary"
-                    >
-                      <Icon
-                        name="Download"
-                        size={16}
-                        className="transition-transform duration-300 group-hover/btn:translate-y-1"
-                      />
-                      <span>{link.label}</span>
-                    </Link>
-                  );
+            {data.cvUrl && (
+              <a href={data.cvUrl} target="_blank" rel="noopener noreferrer">
+                <Button variant="secondary" size="md" className="group/btn">
+                  <Icon
+                    name="Download"
+                    size={16}
+                    className="transition-transform duration-300 group-hover/btn:translate-y-0.5"
+                  />
+                  <span>Download CV</span>
+                </Button>
+              </a>
+            )}
+
+            <a
+              href="#contact"
+              onClick={(e) => {
+                e.preventDefault();
+                const contactElem = document.getElementById('contact');
+                if (contactElem) {
+                  contactElem.scrollIntoView({ behavior: 'smooth' });
                 }
-
-                return (
-                  <Link
-                    key={link.label}
-                    href={href}
-                    isExternal={isExternal}
-                    variant="button-outline"
-                  >
-                    <Icon
-                      name={link.type === 'linkedin' ? 'Linkedin' : 'ExternalLink'}
-                      size={16}
-                      className="transition-transform duration-300 group-hover/btn:-translate-y-0.5 group-hover/btn:translate-x-0.5"
-                    />
-                    <span>{link.label}</span>
-                  </Link>
-                );
-              })}
+              }}
+            >
+              <Button variant="outline" size="md" className="group/btn">
+                <Icon
+                  name="Mail"
+                  size={16}
+                  className="transition-transform duration-300 group-hover/btn:scale-110"
+                />
+                <span>Contact Me</span>
+              </Button>
+            </a>
           </div>
         </div>
 
-        {/* Enhanced Scroll Indicator */}
+        {/* Enhanced High-Contrast Scroll Indicator */}
         <div className="mt-12 pt-2 flex flex-col items-center justify-center gap-2">
           <a
             href="#about"
             onClick={handleScrollToAbout}
             aria-label="Scroll down to About section"
-            className="group flex flex-col items-center gap-2 text-[var(--color-text-muted)] hover:text-[var(--color-accent-primary)] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-focus-ring)] rounded-full p-1 cursor-pointer"
+            className="group flex flex-col items-center gap-2 text-[var(--color-text-primary)] hover:text-[var(--color-accent-primary)] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-focus-ring)] rounded-full p-1 cursor-pointer"
           >
-            <span className="text-[10px] font-extrabold tracking-[0.22em] uppercase text-[var(--color-text-muted)] group-hover:text-[var(--color-accent-primary)] transition-colors animate-pulse">
+            <span className="text-[11px] font-extrabold tracking-[0.2em] uppercase text-[var(--color-text-primary)] group-hover:text-[var(--color-accent-primary)] transition-colors">
               Scroll Down
             </span>
             <div className="relative flex items-center justify-center">
@@ -160,11 +155,11 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ data }) => {
               <span className="absolute inset-0 rounded-full bg-[var(--color-accent-primary)]/20 animate-ping opacity-75 group-hover:opacity-100" />
 
               {/* Floating glassmorphic arrow container with bounce effect */}
-              <div className="relative w-11 h-11 rounded-full bg-[var(--color-bg-card)]/90 backdrop-blur-md border border-[var(--color-border-default)] shadow-lg group-hover:shadow-xl group-hover:shadow-[var(--color-accent-primary)]/20 group-hover:border-[var(--color-accent-primary)]/60 flex items-center justify-center transition-all duration-300 group-hover:scale-110 animate-bounce">
+              <div className="relative w-11 h-11 rounded-full bg-[var(--color-bg-card)] border border-[var(--color-border-default)] shadow-md group-hover:shadow-lg group-hover:border-[var(--color-accent-primary)] flex items-center justify-center transition-all duration-300 group-hover:scale-110 animate-bounce">
                 <Icon
                   name="ChevronDown"
                   size={20}
-                  className="text-[var(--color-accent-primary)] transition-transform duration-300 group-hover:translate-y-0.5"
+                  className="text-[var(--color-text-primary)] group-hover:text-[var(--color-accent-primary)] transition-colors duration-300"
                 />
               </div>
             </div>

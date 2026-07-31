@@ -129,10 +129,10 @@ export const SkillsSection: React.FC<SkillsSectionProps> = ({ skills }) => {
                 <button
                   key={cat.name}
                   onClick={() => setActiveCategory(cat.name)}
-                  className={`text-xs font-semibold px-4 py-2 rounded-[var(--radius-full)] transition-all duration-[var(--transition-fast)] cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-focus-ring)] ${
+                  className={`text-xs font-bold px-4 py-2 rounded-[var(--radius-full)] transition-all duration-300 ease-out cursor-pointer active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-focus-ring)] ${
                     isActive
-                      ? 'bg-[var(--color-accent-primary)] text-[var(--color-text-inverse)] shadow-[var(--shadow-accent)]'
-                      : 'bg-[var(--color-bg-card)] text-[var(--color-text-secondary)] border border-[var(--color-border-subtle)] hover:bg-[var(--color-bg-secondary)]'
+                      ? 'bg-[var(--color-accent-primary)] text-[var(--color-text-inverse)] shadow-[var(--shadow-accent)] scale-100'
+                      : 'bg-[var(--color-bg-card)] text-[var(--color-text-secondary)] border border-[var(--color-border-subtle)] hover:border-[var(--color-border-default)] hover:bg-[var(--color-bg-secondary)] hover:text-[var(--color-text-primary)] shadow-xs'
                   }`}
                 >
                   {cat.name}
@@ -141,7 +141,7 @@ export const SkillsSection: React.FC<SkillsSectionProps> = ({ skills }) => {
             })}
           </div>
 
-          {/* Skill Cards Grid */}
+          {/* Skill Cards Grid with smooth entry transition */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
             {filteredSkills.map((skill) => {
               const info = skillDetailsMap[skill] || {
@@ -151,30 +151,35 @@ export const SkillsSection: React.FC<SkillsSectionProps> = ({ skills }) => {
               };
 
               return (
-                <Card
+                <div
                   key={skill}
-                  variant="default"
-                  className="flex flex-col justify-between p-5 space-y-3"
+                  className="transition-all duration-300 ease-out animate-in fade-in-50 zoom-in-95"
                 >
-                  <div className="space-y-2">
-                    <div className="flex items-center justify-between">
-                      <div className="w-10 h-10 rounded-[var(--radius-md)] bg-[var(--color-accent-slate-light)] text-[var(--color-accent-secondary)] flex items-center justify-center">
-                        <Icon name={info.icon} size={20} />
+                  <Card
+                    variant="default"
+                    hoverEffect
+                    className="flex flex-col justify-between p-5 space-y-3 h-full"
+                  >
+                    <div className="space-y-2">
+                      <div className="flex items-center justify-between">
+                        <div className="w-10 h-10 rounded-[var(--radius-md)] bg-[var(--color-accent-slate-light)] text-[var(--color-accent-secondary)] flex items-center justify-center group-hover/card:bg-[var(--color-accent-primary)] group-hover/card:text-[var(--color-text-inverse)] group-hover/card:scale-110 transition-all duration-300">
+                          <Icon name={info.icon} size={20} />
+                        </div>
+                        {skill.includes('Rust') && (
+                          <Badge variant="accent" size="sm">
+                            Learning
+                          </Badge>
+                        )}
                       </div>
-                      {skill.includes('Rust') && (
-                        <Badge variant="accent" size="sm">
-                          Learning
-                        </Badge>
-                      )}
+                      <Heading level={4} className="text-base font-bold">
+                        {skill}
+                      </Heading>
+                      <Paragraph size="sm" variant="muted">
+                        {info.desc}
+                      </Paragraph>
                     </div>
-                    <Heading level={4} className="text-base font-bold">
-                      {skill}
-                    </Heading>
-                    <Paragraph size="sm" variant="muted">
-                      {info.desc}
-                    </Paragraph>
-                  </div>
-                </Card>
+                  </Card>
+                </div>
               );
             })}
           </div>

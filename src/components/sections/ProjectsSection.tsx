@@ -37,24 +37,24 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ data }) => {
               </Paragraph>
             </div>
 
-            {/* Filter Toggle */}
-            <div className="flex items-center gap-2 bg-[var(--color-bg-secondary)] p-1.5 rounded-[var(--radius-full)] border border-[var(--color-border-subtle)] shrink-0 self-start md:self-auto">
+            {/* Filter Toggle Pills */}
+            <div className="flex items-center gap-1.5 bg-[var(--color-bg-secondary)] p-1.5 rounded-[var(--radius-full)] border border-[var(--color-border-subtle)] shrink-0 self-start md:self-auto shadow-xs">
               <button
                 onClick={() => setFilter('all')}
-                className={`text-xs font-semibold px-4 py-2 rounded-[var(--radius-full)] transition-all cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-focus-ring)] ${
+                className={`text-xs font-bold px-4 py-2 rounded-[var(--radius-full)] transition-all duration-300 ease-out cursor-pointer active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-focus-ring)] ${
                   filter === 'all'
-                    ? 'bg-[var(--color-accent-primary)] text-[var(--color-text-inverse)] shadow-[var(--shadow-accent)]'
-                    : 'text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)]'
+                    ? 'bg-[var(--color-accent-primary)] text-[var(--color-text-inverse)] shadow-[var(--shadow-accent)] scale-100'
+                    : 'text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] hover:bg-[var(--color-bg-card)]'
                 }`}
               >
                 All Projects ({data.length})
               </button>
               <button
                 onClick={() => setFilter('featured')}
-                className={`text-xs font-semibold px-4 py-2 rounded-[var(--radius-full)] transition-all cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-focus-ring)] ${
+                className={`text-xs font-bold px-4 py-2 rounded-[var(--radius-full)] transition-all duration-300 ease-out cursor-pointer active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-focus-ring)] ${
                   filter === 'featured'
-                    ? 'bg-[var(--color-accent-primary)] text-[var(--color-text-inverse)] shadow-[var(--shadow-accent)]'
-                    : 'text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)]'
+                    ? 'bg-[var(--color-accent-primary)] text-[var(--color-text-inverse)] shadow-[var(--shadow-accent)] scale-100'
+                    : 'text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] hover:bg-[var(--color-bg-card)]'
                 }`}
               >
                 Featured ({data.filter((p) => p.featured).length})
@@ -62,70 +62,81 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ data }) => {
             </div>
           </div>
 
-          {/* Project Grid */}
+          {/* Project Grid with smooth entry transition */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {displayedProjects.map((project, idx) => (
-              <Card
-                key={idx}
-                variant="default"
-                hoverEffect
-                className="flex flex-col justify-between h-full"
+            {displayedProjects.map((project) => (
+              <div
+                key={project.title}
+                className="transition-all duration-300 ease-out animate-in fade-in-50 zoom-in-95"
               >
-                <div>
-                  <CardHeader className="flex items-center justify-between gap-2">
-                    <div className="w-12 h-12 rounded-[var(--radius-md)] bg-[var(--color-accent-light)] text-[var(--color-accent-primary)] flex items-center justify-center shrink-0">
-                      <Icon name={project.icon} size={24} />
-                    </div>
-                    {project.featured && (
-                      <Badge variant="accent" size="sm">
-                        <Icon name="Star" size={12} />
-                        Featured
-                      </Badge>
-                    )}
-                  </CardHeader>
-
-                  <CardBody>
-                    <div className="flex items-start justify-between gap-2">
-                      <Heading level={3} className="text-lg font-bold">
-                        {project.title}
-                      </Heading>
-                      {project.url && (
-                        <a
-                          href={project.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-[var(--color-accent-primary)] hover:text-[var(--color-accent-primary-hover)] transition-colors p-1"
-                          title="View on WordPress.org"
-                          aria-label={`View ${project.title} on WordPress.org`}
-                        >
-                          <Icon name="ExternalLink" size={18} />
-                        </a>
+                <Card
+                  variant="default"
+                  hoverEffect
+                  className="flex flex-col justify-between h-full"
+                >
+                  <div>
+                    <CardHeader className="flex items-center justify-between gap-2">
+                      <div className="w-12 h-12 rounded-[var(--radius-md)] bg-[var(--color-accent-light)] text-[var(--color-accent-primary)] flex items-center justify-center shrink-0 group-hover/card:bg-[var(--color-accent-primary)] group-hover/card:text-[var(--color-text-inverse)] group-hover/card:scale-110 transition-all duration-300">
+                        <Icon name={project.icon} size={24} />
+                      </div>
+                      {project.featured && (
+                        <Badge variant="accent" size="sm">
+                          <Icon name="Star" size={12} />
+                          Featured
+                        </Badge>
                       )}
+                    </CardHeader>
+
+                    <CardBody>
+                      <div className="flex items-start justify-between gap-2">
+                        <Heading
+                          level={3}
+                          className="text-lg font-bold group-hover/card:text-[var(--color-accent-primary)] transition-colors duration-300"
+                        >
+                          {project.title}
+                        </Heading>
+                        {project.url && (
+                          <a
+                            href={project.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-[var(--color-accent-primary)] hover:text-[var(--color-accent-primary-hover)] transition-colors p-1"
+                            title="View on WordPress.org"
+                            aria-label={`View ${project.title} on WordPress.org`}
+                          >
+                            <Icon
+                              name="ExternalLink"
+                              size={18}
+                              className="transition-transform duration-300 group-hover/card:translate-x-0.5 group-hover/card:-translate-y-0.5"
+                            />
+                          </a>
+                        )}
+                      </div>
+
+                      <Paragraph size="sm" variant="secondary" className="line-clamp-3 mt-1">
+                        {project.description}
+                      </Paragraph>
+                    </CardBody>
+                  </div>
+
+                  <div className="mt-6 pt-4 border-t border-[var(--color-border-subtle)] space-y-3">
+                    {/* Stats Pill */}
+                    <div className="flex items-center gap-1.5 text-xs font-semibold text-[var(--color-accent-secondary)]">
+                      <Icon name="Zap" size={14} className="text-[var(--color-accent-primary)]" />
+                      {project.stats}
                     </div>
 
-                    <Paragraph size="sm" variant="secondary" className="line-clamp-3 mt-1">
-                      {project.description}
-                    </Paragraph>
-                  </CardBody>
-                </div>
-
-                <div className="mt-6 pt-4 border-t border-[var(--color-border-subtle)] space-y-3">
-                  {/* Stats Pill */}
-                  <div className="flex items-center gap-1.5 text-xs font-semibold text-[var(--color-accent-secondary)]">
-                    <Icon name="Zap" size={14} className="text-[var(--color-accent-primary)]" />
-                    {project.stats}
+                    {/* Tags */}
+                    <div className="flex flex-wrap gap-1.5">
+                      {project.tags.map((tag) => (
+                        <Badge key={tag} variant="secondary" size="sm">
+                          {tag}
+                        </Badge>
+                      ))}
+                    </div>
                   </div>
-
-                  {/* Tags */}
-                  <div className="flex flex-wrap gap-1.5">
-                    {project.tags.map((tag) => (
-                      <Badge key={tag} variant="secondary" size="sm">
-                        {tag}
-                      </Badge>
-                    ))}
-                  </div>
-                </div>
-              </Card>
+                </Card>
+              </div>
             ))}
           </div>
         </div>

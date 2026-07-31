@@ -18,8 +18,7 @@ export const Card: React.FC<CardProps> = ({
       'bg-[var(--color-bg-card)] border border-[var(--color-border-subtle)] shadow-[var(--shadow-sm)]',
     elevated:
       'bg-[var(--color-bg-card)] border border-[var(--color-border-subtle)] shadow-[var(--shadow-md)]',
-    bordered:
-      'bg-[var(--color-bg-card)] border-2 border-[var(--color-border-default)] shadow-none',
+    bordered: 'bg-[var(--color-bg-card)] border-2 border-[var(--color-border-default)] shadow-none',
     glass:
       'bg-[var(--color-bg-glass)] border border-[var(--color-border-subtle)] backdrop-blur-md shadow-[var(--shadow-sm)]',
   };
@@ -71,8 +70,10 @@ export const CardFooter: React.FC<HTMLAttributes<HTMLDivElement>> = ({
   children,
   ...props
 }) => (
-  <div className={`mt-[var(--space-md)] pt-[var(--space-sm)] border-t border-[var(--color-border-subtle)] ${className}`} {...props}>
+  <div
+    className={`mt-[var(--space-md)] pt-[var(--space-sm)] border-t border-[var(--color-border-subtle)] ${className}`}
+    {...props}
+  >
     {children}
   </div>
 );
-

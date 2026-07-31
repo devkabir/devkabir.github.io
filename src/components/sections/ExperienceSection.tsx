@@ -54,24 +54,25 @@ export const ExperienceSection: React.FC<ExperienceSectionProps> = ({ data }) =>
 
           {/* Timeline Cards */}
           <div ref={timelineContainerRef} className="relative space-y-8 sm:space-y-10">
-            {/* Timeline Base Track Line */}
-            <div className="absolute left-3 sm:left-4 top-6 bottom-6 w-1 bg-[var(--color-border-subtle)]/60 -translate-x-1/2 rounded-full overflow-hidden" />
+            {/* Timeline Vertical Track & Animated Drawing Line */}
+            <div className="absolute left-3 sm:left-4 top-[30px] sm:top-[38px] bottom-[30px] sm:bottom-[38px] w-1 -translate-x-1/2 pointer-events-none z-0">
+              {/* Base Track Line */}
+              <div className="absolute inset-0 bg-[var(--color-border-subtle)]/60 rounded-full" />
 
-            {/* Timeline Animated Drawing Line */}
-            <div className="absolute left-3 sm:left-4 top-6 bottom-6 w-1 -translate-x-1/2 rounded-full overflow-hidden pointer-events-none z-0">
+              {/* Active Fill Line */}
               <div
                 className="w-full bg-gradient-to-b from-[var(--color-accent-primary)] via-[var(--color-accent-vibrant)] to-[var(--color-accent-secondary)] shadow-[0_0_12px_var(--color-accent-vibrant)] transition-all duration-150 ease-out rounded-full"
                 style={{ height: `${lineProgress * 100}%` }}
               />
-            </div>
 
-            {/* Glowing Leading Pulse Tip */}
-            {lineProgress > 0 && lineProgress < 1 && (
-              <div
-                className="absolute left-3 sm:left-4 -translate-x-1/2 w-3 h-3 rounded-full bg-[var(--color-accent-primary)] shadow-[0_0_12px_var(--color-accent-primary)] z-10 transition-all duration-150 ease-out animate-pulse pointer-events-none"
-                style={{ top: `calc(24px + ${lineProgress} * (100% - 48px))` }}
-              />
-            )}
+              {/* Glowing Leading Pulse Tip */}
+              {lineProgress > 0 && lineProgress < 1 && (
+                <div
+                  className="absolute left-1/2 -translate-x-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-[var(--color-accent-primary)] shadow-[0_0_12px_var(--color-accent-primary)] z-10 transition-all duration-150 ease-out animate-pulse"
+                  style={{ top: `${lineProgress * 100}%` }}
+                />
+              )}
+            </div>
 
             {data.map((item, idx) => {
               // Calculate if line has reached or passed this card node
@@ -82,12 +83,13 @@ export const ExperienceSection: React.FC<ExperienceSectionProps> = ({ data }) =>
                 <div key={idx} className="relative group pl-9 sm:pl-12">
                   {/* Timeline Node Dot */}
                   <div
-                    className={`absolute left-3 sm:left-4 top-[26px] sm:top-[34px] -translate-x-1/2 -translate-y-1/2 w-5 h-5 rounded-full border-4 transition-all duration-300 group-hover:scale-125 z-10 ${item.current
-                      ? 'bg-[var(--color-accent-primary)] border-[var(--color-bg-primary)] ring-4 ring-[var(--color-accent-light)] shadow-[0_0_14px_var(--color-accent-primary)]'
-                      : isNodeReached
-                        ? 'bg-[var(--color-accent-primary)] border-[var(--color-bg-primary)] scale-110 shadow-[0_0_8px_var(--color-accent-primary)]'
-                        : 'bg-[var(--color-accent-secondary)]/50 border-[var(--color-bg-primary)]'
-                      }`}
+                    className={`absolute left-3 sm:left-4 top-[30px] sm:top-[38px] -translate-x-1/2 -translate-y-1/2 w-5 h-5 rounded-full border-4 transition-all duration-300 group-hover:scale-125 z-10 ${
+                      item.current
+                        ? 'bg-[var(--color-accent-primary)] border-[var(--color-bg-primary)] ring-4 ring-[var(--color-accent-light)] shadow-[0_0_14px_var(--color-accent-primary)]'
+                        : isNodeReached
+                          ? 'bg-[var(--color-accent-primary)] border-[var(--color-bg-primary)] scale-110 shadow-[0_0_8px_var(--color-accent-primary)]'
+                          : 'bg-[var(--color-accent-secondary)]/50 border-[var(--color-bg-primary)]'
+                    }`}
                   />
 
                   <Card variant="default" className="relative">
@@ -135,7 +137,11 @@ export const ExperienceSection: React.FC<ExperienceSectionProps> = ({ data }) =>
                         <div className="pt-2 flex flex-wrap gap-2">
                           {item.highlights.map((highlight) => (
                             <Badge key={highlight} variant="secondary" size="sm">
-                              <Icon name="Check" size={12} className="text-[var(--color-accent-primary)]" />
+                              <Icon
+                                name="Check"
+                                size={12}
+                                className="text-[var(--color-accent-primary)]"
+                              />
                               {highlight}
                             </Badge>
                           ))}
@@ -152,4 +158,3 @@ export const ExperienceSection: React.FC<ExperienceSectionProps> = ({ data }) =>
     </SectionWrapper>
   );
 };
-
