@@ -1,7 +1,7 @@
 import React from 'react';
 import { SectionWrapper } from '../structural/SectionWrapper';
 import { ContentContainer } from '../structural/ContentContainer';
-import { Card } from '../structural/Card';
+import { Card, CardBody, CardFooter, CardHeader } from '../structural/Card';
 import { Heading } from '../base/Heading';
 import { Paragraph } from '../base/Paragraph';
 import { Badge } from '../structural/Badge';
@@ -36,20 +36,24 @@ export const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ data }
               <Card
                 key={idx}
                 variant="default"
-                className="flex flex-col justify-between p-6 space-y-6 relative"
+                hoverEffect={false}
+                className="h-full p-6 transition-all duration-300 ease-out hover:border-[var(--color-border-default)] hover:shadow-[var(--shadow-md)]"
+                contentClassName="grid h-full grid-rows-[auto_1fr_auto]"
               >
                 {/* Decorative Quote Mark */}
                 <div className="absolute top-4 right-4 text-[var(--color-border-default)] opacity-40 select-none pointer-events-none">
                   <span className="text-6xl font-serif leading-none">“</span>
                 </div>
 
-                <div className="space-y-4 relative z-10">
+                <CardHeader>
                   <div className="flex items-center gap-1 text-amber-500">
                     {[...Array(5)].map((_, i) => (
                       <Icon key={i} name="Star" size={16} className="fill-amber-500" />
                     ))}
                   </div>
+                </CardHeader>
 
+                <CardBody className="pb-6">
                   <Paragraph
                     size="md"
                     variant="primary"
@@ -57,10 +61,10 @@ export const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ data }
                   >
                     "{item.text}"
                   </Paragraph>
-                </div>
+                </CardBody>
 
-                <div className="pt-4 border-t border-[var(--color-border-subtle)] flex items-center gap-3">
-                  <div className="w-9 h-9 rounded-full bg-[var(--color-accent-primary)] text-[var(--color-text-inverse)] flex items-center justify-center font-bold text-xs shadow-[var(--shadow-accent)]">
+                <CardFooter className="!mt-0 !pt-4 flex items-center gap-3">
+                  <div className="w-9 h-9 shrink-0 rounded-full bg-[var(--color-accent-primary)] text-[var(--color-text-inverse)] flex items-center justify-center font-bold text-xs shadow-[var(--shadow-accent)]">
                     {item.author.substring(0, 2).toUpperCase()}
                   </div>
                   <div>
@@ -71,7 +75,7 @@ export const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ data }
                       Verified Client / Ecosystem
                     </Paragraph>
                   </div>
-                </div>
+                </CardFooter>
               </Card>
             ))}
           </div>

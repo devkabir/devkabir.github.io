@@ -69,7 +69,8 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ data }) => {
                 <Card
                   key={idx}
                   variant="default"
-                  className="p-5 flex items-center justify-between group hover:border-[var(--color-border-default)] hover:shadow-md transition-all duration-300"
+                  className="p-5 group hover:border-[var(--color-border-default)] hover:shadow-md transition-all duration-300"
+                  contentClassName="flex items-center justify-between"
                 >
                   <Link
                     href={href}
@@ -115,7 +116,8 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ data }) => {
           {/* Quick Action CTA Banner */}
           <Card
             hoverEffect={false}
-            className="p-6 sm:p-8 flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left"
+            className="p-6 sm:p-8"
+            contentClassName="grid grid-cols-1 sm:grid-cols-[minmax(0,1fr)_auto] items-center gap-6 text-center sm:text-left"
           >
             <div className="space-y-1">
               <Heading level={3} className="text-lg font-bold">
@@ -125,7 +127,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ data }) => {
                 Send an email or connect on LinkedIn to start a conversation.
               </Paragraph>
             </div>
-            <div className="flex flex-wrap items-center justify-center gap-3 shrink-0">
+            <div className="flex flex-wrap items-center justify-center sm:justify-end gap-3">
               {decodedEmail && (
                 <Button
                   variant="primary"

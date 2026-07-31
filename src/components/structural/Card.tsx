@@ -3,12 +3,14 @@ import React, { HTMLAttributes } from 'react';
 export interface CardProps extends HTMLAttributes<HTMLDivElement> {
   variant?: 'default' | 'elevated' | 'bordered' | 'glass';
   hoverEffect?: boolean;
+  contentClassName?: string;
   children: React.ReactNode;
 }
 
 export const Card: React.FC<CardProps> = ({
   variant = 'default',
   hoverEffect = true,
+  contentClassName = '',
   className = '',
   children,
   ...props
@@ -40,7 +42,7 @@ export const Card: React.FC<CardProps> = ({
         />
       )}
 
-      <div className="relative z-0">{children}</div>
+      <div className={`relative z-0 ${contentClassName}`}>{children}</div>
     </div>
   );
 };

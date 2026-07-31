@@ -123,20 +123,21 @@ export const SkillsSection: React.FC<SkillsSectionProps> = ({ skills }) => {
           </div>
 
           {/* Category Filter Pills */}
-          <div className="flex flex-wrap items-center justify-center gap-2">
+          <div className="flex w-fit max-w-full flex-wrap items-center justify-center gap-1.5 mx-auto p-1.5 rounded-[var(--radius-full)] bg-[var(--color-bg-card)] border border-[var(--color-border-subtle)] shadow-xs">
             {categories.map((cat) => {
               const isActive = activeCategory === cat.name;
               return (
                 <Button
-                  variant="ghost"
+                  variant={isActive ? 'primary' : 'ghost'}
                   size="sm"
                   magnetic={false}
                   key={cat.name}
                   onClick={() => setActiveCategory(cat.name)}
-                  className={`text-xs font-bold px-4 py-2 rounded-[var(--radius-full)] transition-all duration-300 ease-out cursor-pointer active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-focus-ring)] ${
+                  aria-pressed={isActive}
+                  className={`!rounded-[var(--radius-full)] !px-4 !py-2 font-bold duration-300 ease-out ${
                     isActive
-                      ? 'bg-[var(--color-accent-primary)] text-[var(--color-text-inverse)] shadow-[var(--shadow-accent)] scale-100'
-                      : 'bg-[var(--color-bg-card)] text-[var(--color-text-secondary)] border border-[var(--color-border-subtle)] hover:border-[var(--color-border-default)] hover:bg-[var(--color-bg-secondary)] hover:text-[var(--color-text-primary)] shadow-xs'
+                      ? ''
+                      : '!text-[var(--color-text-secondary)] hover:!bg-[var(--color-bg-secondary)] hover:!text-[var(--color-text-primary)]'
                   }`}
                 >
                   {cat.name}

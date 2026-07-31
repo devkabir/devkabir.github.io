@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { SectionWrapper } from '../structural/SectionWrapper';
 import { ContentContainer } from '../structural/ContentContainer';
-import { Card, CardHeader, CardBody } from '../structural/Card';
+import { Card, CardHeader, CardBody, CardFooter } from '../structural/Card';
 import { Heading } from '../base/Heading';
 import { Paragraph } from '../base/Paragraph';
 import { Badge } from '../structural/Badge';
@@ -26,7 +26,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ data }) => {
       <ContentContainer>
         <div className="space-y-12">
           {/* Header */}
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
             <div className="space-y-3">
               <Badge variant="accent" size="sm">
                 Portfolio Showcase
@@ -41,27 +41,29 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ data }) => {
             {/* Filter Toggle Pills */}
             <div className="flex items-center gap-1.5 bg-[var(--color-bg-secondary)] p-1.5 rounded-[var(--radius-full)] border border-[var(--color-border-subtle)] shrink-0 self-start md:self-auto shadow-xs">
               <Button
-                variant="ghost"
+                variant={filter === 'all' ? 'primary' : 'ghost'}
                 size="sm"
                 magnetic={false}
                 onClick={() => setFilter('all')}
-                className={`text-xs font-bold px-4 py-2 rounded-[var(--radius-full)] transition-all duration-300 ease-out cursor-pointer active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-focus-ring)] ${
+                aria-pressed={filter === 'all'}
+                className={`!rounded-[var(--radius-full)] !px-4 !py-2 font-bold duration-300 ease-out ${
                   filter === 'all'
-                    ? 'bg-[var(--color-accent-primary)] text-[var(--color-text-inverse)] shadow-[var(--shadow-accent)] scale-100'
-                    : 'text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] hover:bg-[var(--color-bg-card)]'
+                    ? ''
+                    : '!text-[var(--color-text-secondary)] hover:!text-[var(--color-text-primary)] hover:!bg-[var(--color-bg-card)]'
                 }`}
               >
                 All Projects ({data.length})
               </Button>
               <Button
-                variant="ghost"
+                variant={filter === 'featured' ? 'primary' : 'ghost'}
                 size="sm"
                 magnetic={false}
                 onClick={() => setFilter('featured')}
-                className={`text-xs font-bold px-4 py-2 rounded-[var(--radius-full)] transition-all duration-300 ease-out cursor-pointer active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-focus-ring)] ${
+                aria-pressed={filter === 'featured'}
+                className={`!rounded-[var(--radius-full)] !px-4 !py-2 font-bold duration-300 ease-out ${
                   filter === 'featured'
-                    ? 'bg-[var(--color-accent-primary)] text-[var(--color-text-inverse)] shadow-[var(--shadow-accent)] scale-100'
-                    : 'text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] hover:bg-[var(--color-bg-card)]'
+                    ? ''
+                    : '!text-[var(--color-text-secondary)] hover:!text-[var(--color-text-primary)] hover:!bg-[var(--color-bg-card)]'
                 }`}
               >
                 Featured ({data.filter((p) => p.featured).length})
@@ -79,9 +81,10 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ data }) => {
                 <Card
                   variant="default"
                   hoverEffect
-                  className="flex flex-col justify-between h-full"
+                  className="h-full"
+                  contentClassName="flex h-full flex-col"
                 >
-                  <div>
+                  <div className="pb-6">
                     <CardHeader className="flex items-center justify-between gap-2">
                       <div className="w-12 h-12 rounded-[var(--radius-md)] bg-[var(--color-accent-light)] text-[var(--color-accent-primary)] flex items-center justify-center shrink-0 group-hover/card:bg-[var(--color-accent-primary)] group-hover/card:text-[var(--color-text-inverse)] group-hover/card:scale-110 transition-all duration-300">
                         <Icon name={project.icon} size={24} />
@@ -126,7 +129,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ data }) => {
                     </CardBody>
                   </div>
 
-                  <div className="mt-6 pt-4 border-t border-[var(--color-border-subtle)] space-y-3">
+                  <CardFooter className="!mt-auto !pt-4 space-y-3">
                     {/* Stats Pill */}
                     <div className="flex items-center gap-1.5 text-xs font-semibold text-[var(--color-accent-secondary)]">
                       <Icon name="Zap" size={14} className="text-[var(--color-accent-primary)]" />
@@ -141,7 +144,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ data }) => {
                         </Badge>
                       ))}
                     </div>
-                  </div>
+                  </CardFooter>
                 </Card>
               </div>
             ))}
