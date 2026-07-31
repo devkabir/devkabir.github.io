@@ -1,63 +1,82 @@
-@import 'tailwindcss';
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'DM Sans', system-ui, -apple-system, sans-serif;
+  --font-display: 'Bricolage Grotesque', 'DM Sans', system-ui, sans-serif;
+  --font-mono: 'Fira Code', monospace;
+}
 
 @layer base {
+  body {
+    font-family: var(--font-sans);
+  }
+
+  h1, h2, h3, h4, h5, h6, .font-display {
+    font-family: var(--font-display);
+  }
+
+  code, pre, .font-mono {
+    font-family: var(--font-mono);
+  }
+
   :root {
     /* Reference Image: Stormy Morning Palette */
-    --color-palette-steel: #6a89a7;
-    --color-palette-ice: #bdddfc;
-    --color-palette-sky: #88bdf2;
+    --color-palette-steel: #6A89A7;
+    --color-palette-ice: #BDDDFC;
+    --color-palette-sky: #88BDF2;
     --color-palette-dark: #384959;
 
     /* Aliases for gradient & palette bindings */
-    --color-palette-canvas: #f2f7fc;
-    --color-palette-sand: #bdddfc;
-    --color-palette-coral: #88bdf2;
+    --color-palette-canvas: #F2F7FC;
+    --color-palette-sand: #BDDDFC;
+    --color-palette-coral: #88BDF2;
     --color-palette-slate: #384959;
 
     /* Theme Tokens - Light Mode */
-    --color-bg-primary: #f2f7fc;
-    --color-bg-secondary: #e3eff9;
-    --color-bg-tertiary: #bdddfc;
-    --color-bg-card: #ffffff;
-    --color-bg-card-hover: #f6fafe;
+    --color-bg-primary: #F2F7FC;
+    --color-bg-secondary: #E3EFF9;
+    --color-bg-tertiary: #BDDDFC;
+    --color-bg-card: #FFFFFF;
+    --color-bg-card-hover: #F6FAFE;
     --color-bg-glass: rgba(242, 247, 252, 0.85);
 
-    --color-text-primary: #1a2633;
+    --color-text-primary: #1A2633;
     --color-text-secondary: #384959;
-    --color-text-muted: #5e7891;
-    --color-text-inverse: #ffffff;
+    --color-text-muted: #5E7891;
+    --color-text-inverse: #FFFFFF;
 
     --color-accent-primary: #384959;
     --color-accent-primary-hover: #263340;
-    --color-accent-secondary: #6a89a7;
-    --color-accent-secondary-hover: #52708e;
-    --color-accent-vibrant: #88bdf2;
+    --color-accent-secondary: #6A89A7;
+    --color-accent-secondary-hover: #52708E;
+    --color-accent-vibrant: #88BDF2;
     --color-accent-light: rgba(136, 189, 242, 0.22);
     --color-accent-slate-light: rgba(106, 137, 167, 0.18);
 
-    --color-border-subtle: #d8e6f3;
-    --color-border-default: #bdddfc;
-    --color-border-accent: #6a89a7;
+    --color-border-subtle: #D8E6F3;
+    --color-border-default: #BDDDFC;
+    --color-border-accent: #6A89A7;
 
     --color-focus-ring: rgba(136, 189, 242, 0.5);
 
     /* Typography */
-    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-    --font-mono: 'JetBrains Mono', monospace;
+    --font-sans: 'DM Sans', system-ui, -apple-system, sans-serif;
+    --font-display: 'Bricolage Grotesque', 'DM Sans', system-ui, sans-serif;
+    --font-mono: 'Fira Code', monospace;
 
     /* Spacing Scale */
-    --space-xs: 0.25rem; /* 4px */
-    --space-sm: 0.5rem; /* 8px */
-    --space-md: 1rem; /* 16px */
-    --space-lg: 1.5rem; /* 24px */
-    --space-xl: 2.5rem; /* 40px */
-    --space-2xl: 4rem; /* 64px */
+    --space-xs: 0.25rem;   /* 4px */
+    --space-sm: 0.5rem;    /* 8px */
+    --space-md: 1rem;      /* 16px */
+    --space-lg: 1.5rem;    /* 24px */
+    --space-xl: 2.5rem;    /* 40px */
+    --space-2xl: 4rem;     /* 64px */
 
     /* Border Radius Scale */
     --radius-sm: 0.375rem; /* 6px */
     --radius-md: 0.625rem; /* 10px */
-    --radius-lg: 1rem; /* 16px */
-    --radius-xl: 1.5rem; /* 24px */
+    --radius-lg: 1rem;     /* 16px */
+    --radius-xl: 1.5rem;   /* 24px */
     --radius-full: 9999px;
 
     /* Elevation & Shadows */
@@ -65,8 +84,7 @@
     --shadow-md: 0 4px 14px -2px rgba(56, 73, 89, 0.1), 0 2px 6px -1px rgba(56, 73, 89, 0.05);
     --shadow-lg: 0 12px 32px -4px rgba(56, 73, 89, 0.14), 0 4px 12px -2px rgba(56, 73, 89, 0.08);
     --shadow-accent: 0 8px 24px -4px rgba(56, 73, 89, 0.3);
-    --shadow-card-hover:
-      0 10px 28px -4px rgba(136, 189, 242, 0.4), 0 0 16px 0 rgba(189, 221, 252, 0.5);
+    --shadow-card-hover: 0 10px 28px -4px rgba(136, 189, 242, 0.4), 0 0 16px 0 rgba(189, 221, 252, 0.5);
 
     /* Borders */
     --border-sm: 1px solid var(--color-border-subtle);
@@ -85,29 +103,29 @@
 
   .dark {
     /* Theme Tokens - Dark Mode */
-    --color-bg-primary: #18232d;
-    --color-bg-secondary: #22303d;
-    --color-bg-tertiary: #2d3e4e;
-    --color-bg-card: #1f2d38;
+    --color-bg-primary: #18232D;
+    --color-bg-secondary: #22303D;
+    --color-bg-tertiary: #2D3E4E;
+    --color-bg-card: #1F2D38;
     --color-bg-card-hover: #283947;
     --color-bg-glass: rgba(24, 35, 45, 0.85);
 
-    --color-text-primary: #f0f6fc;
-    --color-text-secondary: #bdddfc;
-    --color-text-muted: #8aa4bc;
-    --color-text-inverse: #18232d;
+    --color-text-primary: #F0F6FC;
+    --color-text-secondary: #BDDDFC;
+    --color-text-muted: #8AA4BC;
+    --color-text-inverse: #18232D;
 
-    --color-accent-primary: #88bdf2;
-    --color-accent-primary-hover: #a7d0fc;
-    --color-accent-secondary: #6a89a7;
-    --color-accent-secondary-hover: #82a2c0;
-    --color-accent-vibrant: #bdddfc;
+    --color-accent-primary: #88BDF2;
+    --color-accent-primary-hover: #A7D0FC;
+    --color-accent-secondary: #6A89A7;
+    --color-accent-secondary-hover: #82A2C0;
+    --color-accent-vibrant: #BDDDFC;
     --color-accent-light: rgba(136, 189, 242, 0.22);
     --color-accent-slate-light: rgba(106, 137, 167, 0.25);
 
-    --color-border-subtle: #283a4a;
+    --color-border-subtle: #283A4A;
     --color-border-default: #384959;
-    --color-border-accent: #88bdf2;
+    --color-border-accent: #88BDF2;
 
     --color-focus-ring: rgba(136, 189, 242, 0.5);
 
@@ -115,54 +133,26 @@
     --shadow-md: 0 4px 16px -2px rgba(0, 0, 0, 0.5);
     --shadow-lg: 0 12px 36px -4px rgba(0, 0, 0, 0.6);
     --shadow-accent: 0 8px 24px -4px rgba(136, 189, 242, 0.35);
-    --shadow-card-hover:
-      0 12px 32px -4px rgba(136, 189, 242, 0.35), 0 0 20px 0 rgba(189, 221, 252, 0.3);
+    --shadow-card-hover: 0 12px 32px -4px rgba(136, 189, 242, 0.35), 0 0 20px 0 rgba(189, 221, 252, 0.3);
   }
 }
 
 /* Utility Design System Classes referencing Design Tokens */
-.bg-app-primary {
-  background-color: var(--color-bg-primary);
-}
-.bg-app-secondary {
-  background-color: var(--color-bg-secondary);
-}
-.bg-app-tertiary {
-  background-color: var(--color-bg-tertiary);
-}
-.bg-app-card {
-  background-color: var(--color-bg-card);
-}
-.bg-app-glass {
-  background-color: var(--color-bg-glass);
-  backdrop-filter: blur(12px);
-}
+.bg-app-primary { background-color: var(--color-bg-primary); }
+.bg-app-secondary { background-color: var(--color-bg-secondary); }
+.bg-app-tertiary { background-color: var(--color-bg-tertiary); }
+.bg-app-card { background-color: var(--color-bg-card); }
+.bg-app-glass { background-color: var(--color-bg-glass); backdrop-filter: blur(12px); }
 
-.text-app-primary {
-  color: var(--color-text-primary);
-}
-.text-app-secondary {
-  color: var(--color-text-secondary);
-}
-.text-app-muted {
-  color: var(--color-text-muted);
-}
-.text-app-accent {
-  color: var(--color-accent-primary);
-}
-.text-app-slate {
-  color: var(--color-accent-secondary);
-}
+.text-app-primary { color: var(--color-text-primary); }
+.text-app-secondary { color: var(--color-text-secondary); }
+.text-app-muted { color: var(--color-text-muted); }
+.text-app-accent { color: var(--color-accent-primary); }
+.text-app-slate { color: var(--color-accent-secondary); }
 
-.border-app-subtle {
-  border-color: var(--color-border-subtle);
-}
-.border-app-default {
-  border-color: var(--color-border-default);
-}
-.border-app-accent {
-  border-color: var(--color-border-accent);
-}
+.border-app-subtle { border-color: var(--color-border-subtle); }
+.border-app-default { border-color: var(--color-border-default); }
+.border-app-accent { border-color: var(--color-border-accent); }
 
 .token-button-primary {
   background-color: var(--color-accent-primary);
@@ -251,8 +241,7 @@
 
 /* Ambient Floating Orbs Keyframes */
 @keyframes orb-float-1 {
-  0%,
-  100% {
+  0%, 100% {
     transform: translate3d(0, 0, 0) scale(1);
   }
   33% {
@@ -264,8 +253,7 @@
 }
 
 @keyframes orb-float-2 {
-  0%,
-  100% {
+  0%, 100% {
     transform: translate3d(0, 0, 0) scale(1);
   }
   33% {
@@ -277,8 +265,7 @@
 }
 
 @keyframes orb-float-3 {
-  0%,
-  100% {
+  0%, 100% {
     transform: translate3d(0, 0, 0) scale(1.05);
   }
   50% {
@@ -297,3 +284,4 @@
 .animate-orb-3 {
   animation: orb-float-3 25s ease-in-out infinite;
 }
+
