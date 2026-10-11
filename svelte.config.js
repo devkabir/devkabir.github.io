@@ -7,6 +7,12 @@ export default {
 	extensions: ['.svelte', '.svx', '.md'],
 	preprocess: [vitePreprocess(), mdsvex({ extensions: ['.svx', '.md'] })],
 	kit: {
-		adapter: adapter({ fallback: '404.html' })
+		adapter: adapter({ fallback: '404.html' }),
+		prerender: {
+			handleHttpError: ({ path, message }) => {
+				if (path.startsWith('/projects/')) return;
+				throw new Error(message);
+			}
+		}
 	}
 };

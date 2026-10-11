@@ -5,6 +5,7 @@
 	import { projects } from '$lib/content';
 	import Badge from '$lib/components/Badge.svelte';
 	import Button from '$lib/components/Button.svelte';
+	import Card from '$lib/components/Card.svelte';
 	import { ChevronLeft, ChevronRight } from '@lucide/svelte';
 
 	const tabs = [
@@ -201,69 +202,101 @@
 	</div>
 </div>
 
-<!-- 1.6 Featured Projects Carousel -->
-<section id="projects" aria-labelledby="projects-heading" class="mx-auto max-w-[1100px] px-4 py-4">
-	<div class="rounded-card border border-line bg-card p-4 shadow-xs">
-		<div class="mb-3 flex items-center justify-between">
-			<h2 id="projects-heading" class="text-lg font-bold text-text">Featured Projects</h2>
-			{#if isOverflowing}
-				<div class="flex gap-2">
-					<button
-						type="button"
-						onclick={() => scrollCarousel('prev')}
-						disabled={!canScrollPrev}
-						aria-label="Previous projects"
-						class="inline-flex min-h-11 min-w-11 cursor-pointer items-center justify-center rounded-full bg-hover text-text transition-colors hover:bg-line/40 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent disabled:pointer-events-none disabled:opacity-40"
-					>
-						<ChevronLeft class="size-5" />
-					</button>
-					<button
-						type="button"
-						onclick={() => scrollCarousel('next')}
-						disabled={!canScrollNext}
-						aria-label="Next projects"
-						class="inline-flex min-h-11 min-w-11 cursor-pointer items-center justify-center rounded-full bg-hover text-text transition-colors hover:bg-line/40 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent disabled:pointer-events-none disabled:opacity-40"
-					>
-						<ChevronRight class="size-5" />
-					</button>
-				</div>
-			{/if}
+<!-- 1.7 Two-Column Layout -->
+<div class="mx-auto max-w-[1100px] px-4 py-4">
+	<div class="grid grid-cols-1 gap-4 lg:grid-cols-[2fr_3fr]">
+		<!-- Sidebar Column (~40%) -->
+		<div class="flex min-w-0 flex-col gap-4">
+			<section id="about" aria-labelledby="about-heading">
+				<Card>
+					<h2 id="about-heading" class="text-lg font-bold text-text">About</h2>
+					<p class="mt-2 text-sm text-muted">About details and background coming soon.</p>
+				</Card>
+			</section>
+
+			<section id="experience" aria-labelledby="experience-heading">
+				<Card>
+					<h2 id="experience-heading" class="text-lg font-bold text-text">Experience</h2>
+					<p class="mt-2 text-sm text-muted">Work history and experience timeline coming soon.</p>
+				</Card>
+			</section>
 		</div>
 
-		<ul
-			bind:this={carouselEl}
-			onscroll={updateScrollState}
-			class="flex snap-x snap-mandatory gap-4 overflow-x-auto pb-2"
-		>
-			{#each featuredProjects as project (project.slug)}
-				<li class="w-56 shrink-0 snap-start">
-					<a
-						href="/projects/{project.slug}"
-						class="group flex h-full flex-col overflow-hidden rounded-md border border-line bg-card transition-colors hover:border-accent/40 hover:bg-hover/30 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+		<!-- Feed Column (~60%) -->
+		<div class="flex min-w-0 flex-col gap-4">
+			<!-- 1.6 Featured Projects Carousel -->
+			<section id="projects" aria-labelledby="projects-heading">
+				<Card>
+					<div class="mb-3 flex items-center justify-between">
+						<h2 id="projects-heading" class="text-lg font-bold text-text">Featured Projects</h2>
+						{#if isOverflowing}
+							<div class="flex gap-2">
+								<button
+									type="button"
+									onclick={() => scrollCarousel('prev')}
+									disabled={!canScrollPrev}
+									aria-label="Previous projects"
+									class="inline-flex min-h-11 min-w-11 cursor-pointer items-center justify-center rounded-full bg-hover text-text transition-colors hover:bg-line/40 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent disabled:pointer-events-none disabled:opacity-40"
+								>
+									<ChevronLeft class="size-5" />
+								</button>
+								<button
+									type="button"
+									onclick={() => scrollCarousel('next')}
+									disabled={!canScrollNext}
+									aria-label="Next projects"
+									class="inline-flex min-h-11 min-w-11 cursor-pointer items-center justify-center rounded-full bg-hover text-text transition-colors hover:bg-line/40 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent disabled:pointer-events-none disabled:opacity-40"
+								>
+									<ChevronRight class="size-5" />
+								</button>
+							</div>
+						{/if}
+					</div>
+
+					<ul
+						bind:this={carouselEl}
+						onscroll={updateScrollState}
+						class="flex snap-x snap-mandatory gap-4 overflow-x-auto pb-2"
 					>
-						<img
-							src={project.thumb}
-							alt=""
-							width="224"
-							height="168"
-							loading="lazy"
-							class="aspect-[4/3] w-full object-cover"
-						/>
-						<div class="flex flex-1 flex-col p-3">
-							<Badge class="mb-1.5 self-start">{project.status}</Badge>
-							<h3 class="font-semibold text-text group-hover:text-accent">
-								{project.title}
-							</h3>
-							<p class="mt-1 line-clamp-1 text-xs text-muted">
-								{project.summary}
-							</p>
-							<span class="mt-auto pt-3 text-xs font-semibold text-accent">
-								View Details &rarr;
-							</span>
-						</div>
-					</a>
-				</li>
-			{/each}
-		</ul>
+						{#each featuredProjects as project (project.slug)}
+							<li class="w-56 shrink-0 snap-start">
+								<a
+									href="/projects/{project.slug}"
+									class="group flex h-full flex-col overflow-hidden rounded-md border border-line bg-card transition-colors hover:border-accent/40 hover:bg-hover/30 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+								>
+									<img
+										src={project.thumb}
+										alt=""
+										width="224"
+										height="168"
+										loading="lazy"
+										class="aspect-[4/3] w-full object-cover"
+									/>
+									<div class="flex flex-1 flex-col p-3">
+										<Badge class="mb-1.5 self-start">{project.status}</Badge>
+										<h3 class="font-semibold text-text group-hover:text-accent">
+											{project.title}
+										</h3>
+										<p class="mt-1 line-clamp-1 text-xs text-muted">
+											{project.summary}
+										</p>
+										<span class="mt-auto pt-3 text-xs font-semibold text-accent">
+											View Details &rarr;
+										</span>
+									</div>
+								</a>
+							</li>
+						{/each}
+					</ul>
+				</Card>
+			</section>
+
+			<section id="feed" aria-labelledby="feed-heading">
+				<Card>
+					<h2 id="feed-heading" class="text-lg font-bold text-text">Posts</h2>
+					<p class="mt-2 text-sm text-muted">Recent posts and updates coming soon.</p>
+				</Card>
+			</section>
+		</div>
 	</div>
-</section>
+</div>

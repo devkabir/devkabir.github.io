@@ -227,10 +227,10 @@ All decisions are final; nothing left to decide before implementation.
 
 ### 1.7 Two-Column Layout
 
-- [ ] Centered container (~1100px); CSS Grid sidebar/feed ~40/60; stacks to one column on mobile like Facebook
-- [ ] Facebook-style section cards: white surface, ~8px radius, ~16px gaps, card heading spacing per reference
-- [ ] `min-width: 0` on columns to prevent overflow
-- [ ] Attach section IDs (`feed`, `about`, `projects`, `experience`) to actual DOM elements, not unforwarded component props
+- [x] Centered container (~1100px); CSS Grid sidebar/feed ~40/60; stacks to one column on mobile like Facebook
+- [x] Facebook-style section cards: white surface, ~8px radius, ~16px gaps, card heading spacing per reference
+- [x] `min-width: 0` on columns to prevent overflow
+- [x] Attach section IDs (`feed`, `about`, `projects`, `experience`) to actual DOM elements, not unforwarded component props
 
 ### 1.8 Sidebar
 
