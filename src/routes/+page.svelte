@@ -14,7 +14,27 @@
 	import ContactCard from '$lib/components/ContactCard.svelte';
 	import StatusCard from '$lib/components/StatusCard.svelte';
 	import ProjectPost from '$lib/components/ProjectPost.svelte';
+	import Seo from '$lib/components/Seo.svelte';
+	import { env } from '$env/dynamic/public';
 	import { ChevronLeft, ChevronRight } from '@lucide/svelte';
+
+	const siteUrl = (env.PUBLIC_SITE_URL || '').replace(/\/+$/, '');
+	const personSchema = JSON.stringify({
+		'@context': 'https://schema.org',
+		'@type': 'Person',
+		name: site.name,
+		jobTitle: site.title,
+		url: siteUrl || undefined,
+		address: {
+			'@type': 'PostalAddress',
+			addressLocality: site.location
+		},
+		worksFor: {
+			'@type': 'Organization',
+			name: site.workplace
+		},
+		sameAs: site.socials.map((s) => s.url)
+	});
 
 	const tabs = [
 		{ label: 'Posts', href: '/#feed' },
@@ -75,6 +95,12 @@
 		});
 	}
 </script>
+
+<Seo />
+
+<svelte:head>
+	{@html `<script type="application/ld+json">${personSchema}<\/script>`}
+</svelte:head>
 
 <svelte:window onclick={closeMenu} />
 

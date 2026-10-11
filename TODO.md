@@ -281,18 +281,18 @@ All decisions are final; nothing left to decide before implementation.
 
 ### 1.13 SEO
 
-- [ ] Reusable SEO component for page metadata
-- [ ] Global title template
-- [ ] Unique title and meta description on every page (case studies generated from frontmatter)
-- [ ] Canonical URLs built from `PUBLIC_SITE_URL` (decide trailing-slash behavior)
-- [ ] Open Graph + X card metadata (absolute public URLs for images)
+- [x] Reusable SEO component for page metadata
+- [x] Global title template
+- [x] Unique title and meta description on every page (case studies generated from frontmatter)
+- [x] Canonical URLs built from `PUBLIC_SITE_URL` (decide trailing-slash behavior)
+- [x] Open Graph + X card metadata (absolute public URLs for images)
 - [ ] Default social share image (1200×630) + per-project images
-- [ ] Favicon
-- [ ] `sitemap.xml` generated from all indexable public routes (homepage, published case studies, later pages), excluding drafts and error pages
-- [ ] `robots.txt` with sitemap reference
-- [ ] `noindex` on preview/staging deployments
-- [ ] Person structured data on homepage (verified name, job title, URL, social profiles)
-- [ ] Custom 404 page
+- [x] Favicon
+- [x] `sitemap.xml` generated from all indexable public routes (homepage, published case studies, later pages), excluding drafts and error pages
+- [x] `robots.txt` with sitemap reference
+- [x] `noindex` on preview/staging deployments
+- [x] Person structured data on homepage (verified name, job title, URL, social profiles)
+- [x] Custom 404 page
 
 ### 1.14 Analytics (GA4)
 

@@ -6,6 +6,7 @@
 	import Badge from '$lib/components/Badge.svelte';
 	import Button from '$lib/components/Button.svelte';
 	import Card from '$lib/components/Card.svelte';
+	import Seo from '$lib/components/Seo.svelte';
 	import { ChevronLeft, ExternalLink, GitFork } from '@lucide/svelte';
 
 	let { data }: { data: PageData } = $props();
@@ -25,13 +26,12 @@
 	];
 </script>
 
-<svelte:head>
-	<title>{project.title}</title>
-	<meta name="description" content={project.summary} />
-	<meta property="og:title" content={project.title} />
-	<meta property="og:description" content={project.summary} />
-	<meta property="og:image" content={project.thumb} />
-</svelte:head>
+<Seo
+	title={project.title}
+	description={project.summary}
+	image="/images/projects/{project.slug}-full.png"
+	type="article"
+/>
 
 <div class="mx-auto max-w-[1100px] px-4 py-4">
 	<!-- Profile tab navigation anchors -->
