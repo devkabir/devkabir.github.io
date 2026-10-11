@@ -297,18 +297,18 @@ All decisions are final; nothing left to decide before implementation.
 ### 1.14 Analytics (GA4)
 
 - [ ] Create GA4 property and web data stream
-- [ ] Load gtag only in production, from `PUBLIC_GA_ID`
-- [ ] Analytics failure never blocks rendering or navigation
-- [ ] Choose one page_view method for client-side navigation: GA4 Enhanced Measurement history-change tracking OR manual `page_view` in `afterNavigate` — not both
+- [x] Load gtag only in production, from `PUBLIC_GA_ID`
+- [x] Analytics failure never blocks rendering or navigation
+- [x] Choose one page_view method for client-side navigation: GA4 Enhanced Measurement history-change tracking OR manual `page_view` in `afterNavigate` — not both
 - [ ] Keep Enhanced Measurement outbound clicks and file downloads on for general reporting only — never mark them as key events
-- [ ] Distinct custom events for important actions: `contact_click`, `copy_email`, `resume_download`, `meeting_click`, `live_demo_click`, `github_click`
+- [x] Distinct custom events for important actions: `contact_click`, `copy_email`, `resume_download`, `meeting_click`, `live_demo_click`, `github_click`
 - [ ] Mark `contact_click`, `copy_email`, `resume_download` and `meeting_click` as key events
-- [ ] Event names describe clicks, not completed contacts or bookings
+- [x] Event names describe clicks, not completed contacts or bookings
 - [ ] Set data retention to the longest available option
 - [ ] Exclude own traffic (internal traffic filter)
-- [ ] Never send email addresses or other personal data in event parameters
-- [ ] Decide on Consent Mode based on visitor regions; add a short privacy note to the site
-- [ ] If a CSP header is configured: allow Google Analytics domains
+- [x] Never send email addresses or other personal data in event parameters
+- [x] Decide on Consent Mode based on visitor regions; add a short privacy note to the site
+- [x] If a CSP header is configured: allow Google Analytics domains (N/A — no CSP configured)
 
 ### 1.15 Search Console & Bing
 

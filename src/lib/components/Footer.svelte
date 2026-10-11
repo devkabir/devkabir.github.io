@@ -98,9 +98,15 @@
 			</div>
 		</div>
 
-		<!-- Copyright -->
-		<div class="mt-8 border-t border-line pt-4 text-xs text-muted">
+		<!-- Copyright & Privacy -->
+		<div
+			class="mt-8 flex flex-col gap-1 border-t border-line pt-4 text-xs text-muted sm:flex-row sm:items-center sm:justify-between"
+		>
 			<p>© {currentYear} {site.name}. All rights reserved.</p>
+			<p>
+				Uses Google Analytics for anonymous usage statistics. No personal data or email addresses
+				are collected.
+			</p>
 		</div>
 	</div>
 </footer>
