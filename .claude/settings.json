@@ -1,0 +1,14 @@
+{
+	"hooks": {
+		"UserPromptSubmit": [
+			{
+				"hooks": [
+					{
+						"type": "command",
+						"command": "jq -Rn --rawfile rules \"$CLAUDE_PROJECT_DIR/CLAUDE.md\" '{hookSpecificOutput:{hookEventName:\"UserPromptSubmit\",additionalContext:(\"MANDATORY output rules for this response:\\n\" + $rules)}}' 2>/dev/null || true"
+					}
+				]
+			}
+		]
+	}
+}

@@ -166,15 +166,15 @@ All decisions are final; nothing left to decide before implementation.
 
 ### 1.2 Content Pipeline
 
-- [ ] Configure mdsvex and verify it works with SvelteKit 2
-- [ ] Create `content/projects` directory
-- [ ] Create `content/blog` directory (empty until Phase 3)
-- [ ] Define required project frontmatter fields
+- [x] Configure mdsvex and verify it works with SvelteKit 2
+- [x] Create `content/projects` directory
+- [x] Create `content/blog` directory (empty until Phase 3)
+- [x] Define required project frontmatter fields
 - [ ] Define required blog frontmatter fields
-- [ ] Implement content discovery with `import.meta.glob`
-- [ ] Validate required frontmatter and unique slugs (fail the build on error)
+- [x] Implement content discovery with `import.meta.glob`
+- [x] Validate required frontmatter and unique slugs (fail the build on error)
 - [ ] Exclude draft/unpublished content from production builds, generated routes and the sitemap
-- [ ] Generate project index from Markdown metadata
+- [x] Generate project index from Markdown metadata
 
 ### 1.3 Theme
 
