@@ -275,9 +275,9 @@ All decisions are final; nothing left to decide before implementation.
 
 ### 1.12 Footer
 
-- [ ] Brand, nav links, social links (from `site.ts`), email
-- [ ] Copyright with dynamic year
-- [ ] Back to Top
+- [x] Brand, nav links, social links (from `site.ts`), email
+- [x] Copyright with dynamic year
+- [x] Back to Top
 
 ### 1.13 SEO
 

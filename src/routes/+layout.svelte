@@ -2,6 +2,7 @@
 	import '../app.css';
 	import favicon from '$lib/assets/favicon.svg';
 	import Header from '$lib/components/Header.svelte';
+	import Footer from '$lib/components/Footer.svelte';
 	import type { Snippet } from 'svelte';
 
 	let { children }: { children: Snippet } = $props();
@@ -14,4 +15,5 @@
 <div class="min-h-screen bg-page font-sans text-text">
 	<Header />
 	{@render children()}
+	<Footer />
 </div>
