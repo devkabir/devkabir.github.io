@@ -188,19 +188,19 @@ All decisions are final; nothing left to decide before implementation.
 
 ### 1.4 Header
 
-- [ ] Sticky Facebook-style header, ~56px (respect safe-area inset)
-- [ ] Left: brand name/logo (own mark)
-- [ ] Center: site-level tabs with Facebook-style active underline — Home now; dedicated pages added in Phase 2
-- [ ] Right: circular icon buttons (social, theme toggle) + small avatar
-- [ ] Header does not repeat profile section links
-- [ ] Hide unfinished routes (Blog) from navigation
-- [ ] No command palette trigger until that feature exists
-- [ ] Active link highlight with `aria-current`
+- [x] Sticky Facebook-style header, ~56px (respect safe-area inset)
+- [x] Left: brand name/logo (own mark)
+- [x] Center: site-level tabs with Facebook-style active underline — Home now; dedicated pages added in Phase 2
+- [x] Right: circular icon buttons (social, theme toggle) + small avatar
+- [x] Header does not repeat profile section links
+- [x] Hide unfinished routes (Blog) from navigation
+- [x] No command palette trigger until that feature exists
+- [x] Active link highlight with `aria-current`
 - [ ] Social icons (from `site.ts`, Simple Icons)
-- [ ] Theme toggle
-- [ ] Facebook-style mobile navigation
-- [ ] Mobile menu: Esc to close, restore focus to the toggle on close
-- [ ] Trap focus only if the mobile menu is a modal drawer/dialog
+- [x] Theme toggle
+- [x] Facebook-style mobile navigation
+- [x] Mobile menu: Esc to close, restore focus to the toggle on close
+- [x] Trap focus only if the mobile menu is a modal drawer/dialog
 
 ### 1.5 Profile Header
 
