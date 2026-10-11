@@ -2,7 +2,10 @@
 	import { page } from '$app/state';
 	import { site } from '$lib/site';
 	import { track } from '$lib/track';
+	import { projects } from '$lib/content';
+	import Badge from '$lib/components/Badge.svelte';
 	import Button from '$lib/components/Button.svelte';
+	import { ChevronLeft, ChevronRight } from '@lucide/svelte';
 
 	const tabs = [
 		{ label: 'Posts', href: '/#feed' },
@@ -27,6 +30,40 @@
 			navigator.clipboard.writeText(site.email);
 		} catch {}
 		if (menu) menu.open = false;
+	}
+
+	const featuredProjects = projects.filter((p) => p.featured);
+
+	let carouselEl = $state<HTMLElement>();
+	let canScrollPrev = $state(false);
+	let canScrollNext = $state(false);
+	let isOverflowing = $state(false);
+
+	function updateScrollState() {
+		if (!carouselEl) return;
+		const { scrollLeft, scrollWidth, clientWidth } = carouselEl;
+		isOverflowing = scrollWidth > clientWidth + 1;
+		canScrollPrev = scrollLeft > 1;
+		canScrollNext = scrollLeft < scrollWidth - clientWidth - 1;
+	}
+
+	$effect(() => {
+		if (!carouselEl) return;
+		updateScrollState();
+
+		const ro = new ResizeObserver(() => updateScrollState());
+		ro.observe(carouselEl);
+		return () => ro.disconnect();
+	});
+
+	function scrollCarousel(direction: 'prev' | 'next') {
+		if (!carouselEl) return;
+		const distance = carouselEl.clientWidth * 0.75;
+		const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+		carouselEl.scrollBy({
+			left: direction === 'next' ? distance : -distance,
+			behavior: reducedMotion ? 'auto' : 'smooth'
+		});
 	}
 </script>
 
@@ -163,3 +200,70 @@
 		</div>
 	</div>
 </div>
+
+<!-- 1.6 Featured Projects Carousel -->
+<section id="projects" aria-labelledby="projects-heading" class="mx-auto max-w-[1100px] px-4 py-4">
+	<div class="rounded-card border border-line bg-card p-4 shadow-xs">
+		<div class="mb-3 flex items-center justify-between">
+			<h2 id="projects-heading" class="text-lg font-bold text-text">Featured Projects</h2>
+			{#if isOverflowing}
+				<div class="flex gap-2">
+					<button
+						type="button"
+						onclick={() => scrollCarousel('prev')}
+						disabled={!canScrollPrev}
+						aria-label="Previous projects"
+						class="inline-flex min-h-11 min-w-11 cursor-pointer items-center justify-center rounded-full bg-hover text-text transition-colors hover:bg-line/40 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent disabled:pointer-events-none disabled:opacity-40"
+					>
+						<ChevronLeft class="size-5" />
+					</button>
+					<button
+						type="button"
+						onclick={() => scrollCarousel('next')}
+						disabled={!canScrollNext}
+						aria-label="Next projects"
+						class="inline-flex min-h-11 min-w-11 cursor-pointer items-center justify-center rounded-full bg-hover text-text transition-colors hover:bg-line/40 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent disabled:pointer-events-none disabled:opacity-40"
+					>
+						<ChevronRight class="size-5" />
+					</button>
+				</div>
+			{/if}
+		</div>
+
+		<ul
+			bind:this={carouselEl}
+			onscroll={updateScrollState}
+			class="flex snap-x snap-mandatory gap-4 overflow-x-auto pb-2"
+		>
+			{#each featuredProjects as project (project.slug)}
+				<li class="w-56 shrink-0 snap-start">
+					<a
+						href="/projects/{project.slug}"
+						class="group flex h-full flex-col overflow-hidden rounded-md border border-line bg-card transition-colors hover:border-accent/40 hover:bg-hover/30 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+					>
+						<img
+							src={project.thumb}
+							alt=""
+							width="224"
+							height="168"
+							loading="lazy"
+							class="aspect-[4/3] w-full object-cover"
+						/>
+						<div class="flex flex-1 flex-col p-3">
+							<Badge class="mb-1.5 self-start">{project.status}</Badge>
+							<h3 class="font-semibold text-text group-hover:text-accent">
+								{project.title}
+							</h3>
+							<p class="mt-1 line-clamp-1 text-xs text-muted">
+								{project.summary}
+							</p>
+							<span class="mt-auto pt-3 text-xs font-semibold text-accent">
+								View Details &rarr;
+							</span>
+						</div>
+					</a>
+				</li>
+			{/each}
+		</ul>
+	</div>
+</section>

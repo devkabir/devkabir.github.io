@@ -215,15 +215,15 @@ All decisions are final; nothing left to decide before implementation.
 
 ### 1.6 Featured Projects Carousel
 
-- [ ] Carousel wrapped in `<section id="projects">`
-- [ ] Carousel built with CSS scroll-snap (no JS library)
-- [ ] Compact Facebook-style horizontally scrolling preview cards: thumbnail, title, one-line description, status badge, View Details
+- [x] Carousel wrapped in `<section id="projects">`
+- [x] Carousel built with CSS scroll-snap (no JS library)
+- [x] Compact Facebook-style horizontally scrolling preview cards: thumbnail, title, one-line description, status badge, View Details
 - [ ] Card images use the curated 4:3 thumbnails; spacing matches reference
-- [ ] Keep carousel short; detailed content stays in the feed (no duplication)
-- [ ] Prev/next buttons, hidden when no overflow, disabled at scroll boundaries
-- [ ] Respect reduced motion for programmatic scrolling
+- [x] Keep carousel short; detailed content stays in the feed (no duplication)
+- [x] Prev/next buttons, hidden when no overflow, disabled at scroll boundaries
+- [x] Respect reduced motion for programmatic scrolling
 - [ ] Usable without JavaScript (native horizontal scroll)
-- [ ] Keyboard and touch support with accessible names
+- [x] Keyboard and touch support with accessible names
 
 ### 1.7 Two-Column Layout
 
