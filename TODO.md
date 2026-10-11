@@ -199,19 +199,19 @@ All decisions are final; nothing left to decide before implementation.
 
 ### 1.5 Profile Header
 
-- [ ] Cover at Facebook profile cover proportions (optimized image)
-- [ ] Circular avatar (~168px desktop) overlapping the cover bottom edge
-- [ ] Name, designation, tagline positioned like a Facebook profile identity block
-- [ ] Location: Barisal, Bangladesh
-- [ ] Current workplace: WPMU DEV
-- [ ] Availability status (from `site.ts`)
-- [ ] CTA: Hire Me / Contact
-- [ ] CTA: Download Resume
-- [ ] More Actions dropdown: Book a Meeting, Copy Email (accessible menu pattern)
-- [ ] Profile actions right-aligned on desktop, full-width row on mobile
-- [ ] Separator line, then profile tabs: Posts (`/#feed`), About (`/#about`), Projects (`/#projects`), Experience (`/#experience`)
-- [ ] Active profile tab highlight with `aria-current`
-- [ ] Facebook-style responsive profile behavior (centered avatar and name on mobile)
+- [x] Cover at Facebook profile cover proportions (optimized image)
+- [x] Circular avatar (~168px desktop) overlapping the cover bottom edge
+- [x] Name, designation, tagline positioned like a Facebook profile identity block
+- [x] Location: Barisal, Bangladesh
+- [x] Current workplace: WPMU DEV
+- [x] Availability status (from `site.ts`)
+- [x] CTA: Hire Me / Contact
+- [x] CTA: Download Resume
+- [x] More Actions dropdown: Book a Meeting, Copy Email (accessible menu pattern)
+- [x] Profile actions right-aligned on desktop, full-width row on mobile
+- [x] Separator line, then profile tabs: Posts (`/#feed`), About (`/#about`), Projects (`/#projects`), Experience (`/#experience`)
+- [x] Active profile tab highlight with `aria-current`
+- [x] Facebook-style responsive profile behavior (centered avatar and name on mobile)
 
 ### 1.6 Featured Projects Carousel
 

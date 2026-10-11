@@ -54,12 +54,36 @@ export const educations: Education[] = [
 ];
 
 export const techStack: Tech[] = [
-	{ name: 'PHP / WordPress', category: 'Backend', evidence: '5+ years, 38+ custom plugins & WPMU DEV products' },
+	{
+		name: 'PHP / WordPress',
+		category: 'Backend',
+		evidence: '5+ years, 38+ custom plugins & WPMU DEV products'
+	},
 	{ name: 'Vue 3 / Vue 2', category: 'Frontend', evidence: '60K+ LOC migration at WPMU DEV' },
-	{ name: 'JavaScript / TypeScript', category: 'Languages', evidence: '5+ years across all web & plugin projects' },
-	{ name: 'React.js', category: 'Frontend', evidence: 'IDB-BISEW diploma & custom web applications' },
-	{ name: 'Tailwind CSS / CSS3', category: 'Frontend', evidence: 'Modern web applications & UI components' },
-	{ name: 'REST APIs & Integrations', category: 'Backend', evidence: 'WooCommerce third-party integrations & custom APIs' },
-	{ name: 'MySQL', category: 'Database', evidence: '5+ years backend data modeling & performance optimization' },
+	{
+		name: 'JavaScript / TypeScript',
+		category: 'Languages',
+		evidence: '5+ years across all web & plugin projects'
+	},
+	{
+		name: 'React.js',
+		category: 'Frontend',
+		evidence: 'IDB-BISEW diploma & custom web applications'
+	},
+	{
+		name: 'Tailwind CSS / CSS3',
+		category: 'Frontend',
+		evidence: 'Modern web applications & UI components'
+	},
+	{
+		name: 'REST APIs & Integrations',
+		category: 'Backend',
+		evidence: 'WooCommerce third-party integrations & custom APIs'
+	},
+	{
+		name: 'MySQL',
+		category: 'Database',
+		evidence: '5+ years backend data modeling & performance optimization'
+	},
 	{ name: 'Node.js', category: 'Backend', evidence: 'Custom tooling and API development' }
 ];
