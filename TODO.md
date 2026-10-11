@@ -234,11 +234,11 @@ All decisions are final; nothing left to decide before implementation.
 
 ### 1.8 Sidebar
 
-- [ ] IntroCard (wrapped in `<section id="about">`): summary, specializations (WordPress/WooCommerce, Shopify Apps, Security, AI/Agent Integration), experience years, workplace, location, education, email, links
-- [ ] HighlightsCard: verified achievements only, each with source link
-- [ ] SkillsCloud: tech stack grouped by category, with logos and evidence labels: PHP, JavaScript, React, Vue 3, WordPress, WooCommerce, Node.js, MySQL, Tailwind CSS
-- [ ] ExperienceCard (wrapped in `<section id="experience">`): company, role, date range, expandable details
-- [ ] EducationCard
+- [x] IntroCard (wrapped in `<section id="about">`): summary, specializations (WordPress/WooCommerce, Shopify Apps, Security, AI/Agent Integration), experience years, workplace, location, education, email, links
+- [x] HighlightsCard: verified achievements only, each with source link
+- [x] SkillsCloud: tech stack grouped by category, with logos and evidence labels: PHP, JavaScript, React, Vue 3, WordPress, WooCommerce, Node.js, MySQL, Tailwind CSS
+- [x] ExperienceCard (wrapped in `<section id="experience">`): company, role, date range, expandable details
+- [x] EducationCard
 
 ### 1.9 Main Feed
 

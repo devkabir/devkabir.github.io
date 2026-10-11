@@ -6,6 +6,11 @@
 	import Badge from '$lib/components/Badge.svelte';
 	import Button from '$lib/components/Button.svelte';
 	import Card from '$lib/components/Card.svelte';
+	import IntroCard from '$lib/components/IntroCard.svelte';
+	import HighlightsCard from '$lib/components/HighlightsCard.svelte';
+	import SkillsCloud from '$lib/components/SkillsCloud.svelte';
+	import ExperienceCard from '$lib/components/ExperienceCard.svelte';
+	import EducationCard from '$lib/components/EducationCard.svelte';
 	import { ChevronLeft, ChevronRight } from '@lucide/svelte';
 
 	const tabs = [
@@ -208,18 +213,18 @@
 		<!-- Sidebar Column (~40%) -->
 		<div class="flex min-w-0 flex-col gap-4">
 			<section id="about" aria-labelledby="about-heading">
-				<Card>
-					<h2 id="about-heading" class="text-lg font-bold text-text">About</h2>
-					<p class="mt-2 text-sm text-muted">About details and background coming soon.</p>
-				</Card>
+				<IntroCard />
 			</section>
 
+			<HighlightsCard />
+
+			<SkillsCloud />
+
 			<section id="experience" aria-labelledby="experience-heading">
-				<Card>
-					<h2 id="experience-heading" class="text-lg font-bold text-text">Experience</h2>
-					<p class="mt-2 text-sm text-muted">Work history and experience timeline coming soon.</p>
-				</Card>
+				<ExperienceCard />
 			</section>
+
+			<EducationCard />
 		</div>
 
 		<!-- Feed Column (~60%) -->

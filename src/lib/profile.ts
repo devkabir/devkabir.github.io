@@ -1,4 +1,48 @@
-import type { Experience, Education, Tech } from './types';
+import type { Experience, Education, Tech, Highlight } from './types';
+
+export const specializations: string[] = [
+	'WordPress/WooCommerce',
+	'Shopify Apps',
+	'Security',
+	'AI/Agent Integration'
+];
+
+export const highlights: Highlight[] = [
+	{
+		label: 'Created open-source CORS error-solving plugin adopted by 6,000+ websites worldwide',
+		source: 'https://wordpress.org/plugins/enable-cors/'
+	},
+	{
+		label: 'Delivered 38+ custom WordPress plugins with consistent 5-star client ratings',
+		source: ''
+	},
+	{
+		label: 'Migrated 60K+ lines of code to Vue 3 Composition API at WPMU DEV',
+		source: ''
+	}
+];
+
+export function formatPeriod(start: string, end?: string): string {
+	const months = [
+		'Jan',
+		'Feb',
+		'Mar',
+		'Apr',
+		'May',
+		'Jun',
+		'Jul',
+		'Aug',
+		'Sep',
+		'Oct',
+		'Nov',
+		'Dec'
+	];
+	const format = (ym: string) => {
+		const [year, m] = ym.split('-');
+		return `${months[parseInt(m, 10) - 1]} ${year}`;
+	};
+	return `${format(start)} – ${end ? format(end) : 'Present'}`;
+}
 
 export const bio = {
 	intro:
@@ -68,12 +112,14 @@ export const techStack: Tech[] = [
 	{
 		name: 'React.js',
 		category: 'Frontend',
-		evidence: 'IDB-BISEW diploma & custom web applications'
+		evidence: 'IDB-BISEW diploma & custom web applications',
+		icon: 'react'
 	},
 	{
 		name: 'Tailwind CSS / CSS3',
 		category: 'Frontend',
-		evidence: 'Modern web applications & UI components'
+		evidence: 'Modern web applications & UI components',
+		icon: 'tailwindcss'
 	},
 	{
 		name: 'REST APIs & Integrations',
@@ -83,7 +129,13 @@ export const techStack: Tech[] = [
 	{
 		name: 'MySQL',
 		category: 'Database',
-		evidence: '5+ years backend data modeling & performance optimization'
+		evidence: '5+ years backend data modeling & performance optimization',
+		icon: 'mysql'
 	},
-	{ name: 'Node.js', category: 'Backend', evidence: 'Custom tooling and API development' }
+	{
+		name: 'Node.js',
+		category: 'Backend',
+		evidence: 'Custom tooling and API development',
+		icon: 'nodedotjs'
+	}
 ];

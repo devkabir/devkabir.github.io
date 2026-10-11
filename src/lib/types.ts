@@ -38,6 +38,13 @@ export interface Tech {
 	category: string;
 	/** Evidence label, e.g. "4 years" or "6 projects" — never a proficiency level. */
 	evidence: string;
+	/** Simple Icons slug if applicable. */
+	icon?: string;
+}
+
+export interface Highlight {
+	label: string; // the claim, as verified
+	source: string; // public URL backing it; '' when no public source exists
 }
 
 export interface Experience {
