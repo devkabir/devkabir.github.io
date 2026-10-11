@@ -85,7 +85,7 @@
 					target="_blank"
 					rel="noopener noreferrer"
 					onclick={() => track('live_demo_click')}
-					class="inline-flex min-h-11 flex-1 min-w-[7.5rem] items-center justify-center gap-2 px-3 py-2 font-medium text-text transition-colors hover:bg-hover active:bg-line/40 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+					class="inline-flex min-h-11 min-w-[7.5rem] flex-1 items-center justify-center gap-2 px-3 py-2 font-medium text-text transition-colors hover:bg-hover focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent active:bg-line/40"
 				>
 					<ExternalLink class="size-4 shrink-0 text-muted" aria-hidden="true" />
 					<span>Live Demo</span>
@@ -94,7 +94,7 @@
 
 			<a
 				href="/projects/{project.slug}"
-				class="inline-flex min-h-11 flex-1 min-w-[7.5rem] items-center justify-center gap-2 px-3 py-2 font-medium text-text transition-colors hover:bg-hover active:bg-line/40 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+				class="inline-flex min-h-11 min-w-[7.5rem] flex-1 items-center justify-center gap-2 px-3 py-2 font-medium text-text transition-colors hover:bg-hover focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent active:bg-line/40"
 			>
 				<BookOpen class="size-4 shrink-0 text-muted" aria-hidden="true" />
 				<span>Read Case Study</span>
@@ -106,7 +106,7 @@
 					target="_blank"
 					rel="noopener noreferrer"
 					onclick={() => track('github_click')}
-					class="inline-flex min-h-11 flex-1 min-w-[7.5rem] items-center justify-center gap-2 px-3 py-2 font-medium text-text transition-colors hover:bg-hover active:bg-line/40 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+					class="inline-flex min-h-11 min-w-[7.5rem] flex-1 items-center justify-center gap-2 px-3 py-2 font-medium text-text transition-colors hover:bg-hover focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent active:bg-line/40"
 				>
 					<GitFork class="size-4 shrink-0 text-muted" aria-hidden="true" />
 					<span>GitHub</span>

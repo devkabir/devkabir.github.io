@@ -11,6 +11,7 @@
 	import SkillsCloud from '$lib/components/SkillsCloud.svelte';
 	import ExperienceCard from '$lib/components/ExperienceCard.svelte';
 	import EducationCard from '$lib/components/EducationCard.svelte';
+	import ContactCard from '$lib/components/ContactCard.svelte';
 	import StatusCard from '$lib/components/StatusCard.svelte';
 	import ProjectPost from '$lib/components/ProjectPost.svelte';
 	import { ChevronLeft, ChevronRight } from '@lucide/svelte';
@@ -227,6 +228,10 @@
 			</section>
 
 			<EducationCard />
+
+			<section id="contact" aria-labelledby="contact-heading">
+				<ContactCard />
+			</section>
 		</div>
 
 		<!-- Feed Column (~60%) -->

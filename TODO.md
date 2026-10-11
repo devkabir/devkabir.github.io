@@ -269,9 +269,9 @@ All decisions are final; nothing left to decide before implementation.
 
 ### 1.11 Contact
 
-- [ ] Email shown as selectable text + Copy button
-- [ ] Meeting booking link
-- [ ] LinkedIn / GitHub links
+- [x] Email shown as selectable text + Copy button
+- [x] Meeting booking link
+- [x] LinkedIn / GitHub links
 
 ### 1.12 Footer
 

@@ -37,7 +37,7 @@
 	<!-- Profile tab navigation anchors -->
 	<nav
 		aria-label="Profile navigation"
-		class="mb-4 flex gap-1 overflow-x-auto border-b border-line bg-card px-2 pt-1 rounded-card"
+		class="mb-4 flex gap-1 overflow-x-auto rounded-card border-b border-line bg-card px-2 pt-1"
 	>
 		{#each tabs as tab}
 			<a
@@ -130,7 +130,7 @@
 
 		<!-- Case Study Content: styled without typography plugin -->
 		<Card
-			class="p-4 sm:p-6 [&>h3]:mt-6 [&>h3:first-child]:mt-0 [&>h3]:mb-2 [&>h3]:text-lg [&>h3]:font-bold [&>h3]:text-text [&>p]:mb-4 [&>p]:text-sm [&>p]:leading-relaxed [&>p]:text-text [&>ul]:mb-4 [&>ul]:list-disc [&>ul]:pl-5 [&>ul]:text-sm [&>ul]:leading-relaxed [&>ul]:text-text [&>ul>li]:mb-1.5"
+			class="p-4 sm:p-6 [&>h3]:mt-6 [&>h3]:mb-2 [&>h3]:text-lg [&>h3]:font-bold [&>h3]:text-text [&>h3:first-child]:mt-0 [&>p]:mb-4 [&>p]:text-sm [&>p]:leading-relaxed [&>p]:text-text [&>ul]:mb-4 [&>ul]:list-disc [&>ul]:pl-5 [&>ul]:text-sm [&>ul]:leading-relaxed [&>ul]:text-text [&>ul>li]:mb-1.5"
 		>
 			<project.component />
 		</Card>
