@@ -1,0 +1,52 @@
+@import 'tailwindcss';
+
+/* Dark mode is driven by data-theme on <html>, set by the init script in app.html. */
+@custom-variant dark (&:where([data-theme='dark'], [data-theme='dark'] *));
+
+@theme {
+	--font-sans:
+		system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
+		'Apple Color Emoji', 'Segoe UI Emoji';
+
+	/* Light theme — Design Direction starting values */
+	--color-page: #f0f2f5;
+	--color-card: #ffffff;
+	--color-text: #050505;
+	--color-muted: #65676b;
+	--color-accent: #0866ff;
+	--color-line: #ced0d4;
+	--color-hover: #f2f2f2;
+
+	--radius-card: 8px;
+}
+
+[data-theme='dark'] {
+	--color-page: #18191a;
+	--color-card: #242526;
+	--color-text: #e4e6eb;
+	--color-muted: #b0b3b8;
+	--color-accent: #2d88ff;
+	--color-line: #3e4042;
+	--color-hover: #3a3b3c;
+	color-scheme: dark;
+}
+
+@layer base {
+	html {
+		scroll-behavior: smooth;
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		html {
+			scroll-behavior: auto;
+		}
+
+		*,
+		*::before,
+		*::after {
+			animation-duration: 0.01ms !important;
+			animation-iteration-count: 1 !important;
+			transition-duration: 0.01ms !important;
+		}
+	}
+}

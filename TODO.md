@@ -150,18 +150,18 @@ All decisions are final; nothing left to decide before implementation.
 
 ### 1.1 Project Setup
 
-- [ ] Initialize SvelteKit 2 project with TypeScript
-- [ ] Pin SvelteKit 2 and commit the dependency lockfile
-- [ ] Install Tailwind CSS v4 (`@tailwindcss/vite`, CSS-first config with `@theme`)
-- [ ] Install and configure `adapter-static`
-- [ ] Install `@lucide/svelte` for UI icons
-- [ ] Add Simple Icons (or approved SVGs) for brand/technology logos
-- [ ] Configure ESLint and Prettier
-- [ ] Configure fonts (self-hosted or preloaded, `font-display: swap`)
-- [ ] Define theme tokens as CSS variables (light + dark)
-- [ ] Create `src/lib/site.ts` — single source for name, email, social links, resume URL, availability
-- [ ] Define production site URL and GA4 measurement ID as public env vars (`PUBLIC_SITE_URL`, `PUBLIC_GA_ID`)
-- [ ] Define TypeScript types: Project, Tech, Experience, Education
+- [x] Initialize SvelteKit 2 project with TypeScript
+- [x] Pin SvelteKit 2 and commit the dependency lockfile
+- [x] Install Tailwind CSS v4 (`@tailwindcss/vite`, CSS-first config with `@theme`)
+- [x] Install and configure `adapter-static`
+- [x] Install `@lucide/svelte` for UI icons
+- [x] Add Simple Icons (or approved SVGs) for brand/technology logos
+- [x] Configure ESLint and Prettier
+- [x] Configure fonts (self-hosted or preloaded, `font-display: swap`)
+- [x] Define theme tokens as CSS variables (light + dark)
+- [x] Create `src/lib/site.ts` — single source for name, email, social links, resume URL, availability
+- [x] Define production site URL and GA4 measurement ID as public env vars (`PUBLIC_SITE_URL`, `PUBLIC_GA_ID`)
+- [x] Define TypeScript types: Project, Tech, Experience, Education
 - [ ] Create base UI components: Button, Card, Badge, Avatar
 
 ### 1.2 Content Pipeline
