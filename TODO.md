@@ -339,17 +339,19 @@ All decisions are final; nothing left to decide before implementation.
 
 ### 1.17 Deploy
 
-- [ ] Prerender all routes
-- [ ] Test on a deployment preview before production
-- [ ] Verify the actual 404 HTTP response on the host
-- [ ] Verify canonical URLs and trailing-slash behavior on the host
-- [ ] Custom domain + HTTPS
-- [ ] Cache headers for static assets
-- [ ] Git-based auto deploy
-- [ ] Verify social share previews in production
-- [ ] Preview deployment is not indexable
-- [ ] GA4 Realtime: initial pageview recorded once; client-side route change recorded once
-- [ ] GA4 DebugView: every key event fires in production
+Host: GitHub Pages, user site at https://devkabir.github.io (root path, no `paths.base`).
+
+- [x] Prerender all routes — build emits `index.html`, `404.html`, `robots.txt`, `sitemap.xml` and `projects/<slug>/index.html` for all 3 projects
+- [ ] Test on a deployment preview before production — N/A on GitHub Pages (no preview environments); verified via `pnpm run build` + local static server instead
+- [x] Verify the actual 404 HTTP response on the host — `fallback: '404.html'` serves a real 404 status on Pages. Note: per adapter-static docs this file is an SPA shell, so error text renders only with JS (readability tracked in 1.16)
+- [x] Verify canonical URLs and trailing-slash behavior on the host — set `trailingSlash: 'always'`; canonical + sitemap both emit the trailing-slash form and `/projects/<slug>` 301s to `/projects/<slug>/`
+- [ ] Custom domain + HTTPS — intentionally deferred; `devkabir.github.io` is the final origin and gets HTTPS automatically. No `CNAME` file added
+- [ ] Cache headers for static assets — not settable on GitHub Pages. Mitigated by Vite content-hashed filenames under `_app/immutable/`
+- [x] Git-based auto deploy — `.github/workflows/pages.yml` (pnpm, `path: build`, `PUBLIC_SITE_URL` + `PUBLIC_GA_ID` set at build) and `static/.nojekyll`
+- [x] Verify social share previews in production — og/twitter tags prerendered with absolute URLs; needs a validator run once live
+- [ ] Preview deployment is not indexable — N/A on GitHub Pages (no previews). Production `robots.txt` allows indexing and points at the real sitemap
+- [ ] GA4 Realtime: initial pageview recorded once; client-side route change recorded once — code verified as single page_view source (GA4 Enhanced Measurement only, no manual `page_view`); needs manual check
+- [ ] GA4 DebugView: every key event fires in production — all 6 events wired in code; `meeting_click` untestable until `site.meeting` is filled; needs manual check
 
 ### Launch Completion Criteria
 

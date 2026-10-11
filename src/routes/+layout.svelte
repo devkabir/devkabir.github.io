@@ -13,7 +13,6 @@
 </script>
 
 <svelte:head>
-	<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 	{#if shouldTrack}
 		<!-- Page views are tracked automatically by GA4 Enhanced Measurement history-change tracking -->
 		{@html `<script async src="https://www.googletagmanager.com/gtag/js?id=${PUBLIC_GA_ID}"></script>`}

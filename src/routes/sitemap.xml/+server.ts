@@ -13,7 +13,7 @@ export const GET: RequestHandler = async () => {
 			lastmod: new Date().toISOString().split('T')[0]
 		},
 		...projects.map((p) => ({
-			loc: siteUrl ? `${siteUrl}/projects/${p.slug}` : `/projects/${p.slug}`,
+			loc: siteUrl ? `${siteUrl}/projects/${p.slug}/` : `/projects/${p.slug}/`,
 			lastmod: p.date.split('T')[0]
 		}))
 	];

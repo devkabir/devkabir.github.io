@@ -1,0 +1,11 @@
+{
+	"name": "Dev Kabir — Senior Web Developer & WordPress Specialist",
+	"short_name": "Dev Kabir",
+	"icons": [
+		{ "src": "/android-chrome-192x192.png", "sizes": "192x192", "type": "image/png" },
+		{ "src": "/android-chrome-512x512.png", "sizes": "512x512", "type": "image/png" }
+	],
+	"theme_color": "#f0f2f5",
+	"background_color": "#f0f2f5",
+	"display": "standalone"
+}

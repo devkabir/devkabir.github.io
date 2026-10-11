@@ -35,8 +35,10 @@
 			: `${title} | ${site.name}`
 	);
 
-	let pathname = $derived(page.url.pathname.replace(/\/+$/, '') || '/');
-	let canonicalUrl = $derived(toAbsolute(pathname === '/' ? '' : pathname));
+	let pathname = $derived(
+		page.url.pathname.endsWith('/') ? page.url.pathname : `${page.url.pathname}/`
+	);
+	let canonicalUrl = $derived(toAbsolute(pathname));
 	let imageUrl = $derived(toAbsolute(image));
 	let shouldNoindex = $derived(noindex || dev || !siteUrl);
 </script>

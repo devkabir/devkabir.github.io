@@ -24,7 +24,10 @@
 		'@type': 'Person',
 		name: site.name,
 		jobTitle: site.title,
-		url: siteUrl || undefined,
+		description: site.tagline,
+		url: siteUrl ? `${siteUrl}/` : undefined,
+		image: siteUrl ? `${siteUrl}/images/avatar.png` : undefined,
+		email: `mailto:${site.email}`,
 		address: {
 			'@type': 'PostalAddress',
 			addressLocality: site.location
