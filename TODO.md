@@ -106,43 +106,38 @@ All decisions are final; nothing left to decide before implementation.
 
 ### Identity
 
-- [ ] Write professional designation
-- [ ] Write short tagline
-- [ ] Write intro summary (3–4 sentences)
-- [ ] Write long bio for About page
-- [ ] Decide availability status text
-- [ ] Prepare profile photo (square, high-res)
-- [ ] Prepare cover banner artwork
-- [ ] Update resume PDF
+- [x] Write professional designation
+- [x] Write short tagline
+- [x] Write intro summary (3–4 sentences)
+- [x] Write long bio for About page
+- [x] Decide availability status text
+- [x] Prepare profile photo (square, high-res)
+- [x] Prepare cover banner artwork
+- [x] Update resume PDF
 
 ### Projects
 
-- [ ] Write Defender and Beehive entries using the safe starting description format
-- [ ] Ask WPMU DEV what can be disclosed: specific contributions, screenshots, metrics
-- [ ] Expand Defender and Beehive case studies only to the extent approved
-- [ ] Check WPMU DEV branding and reuse policy before using any product screenshots or logos
-- [ ] Ask client permission for the optional WooCommerce API Integration case study
-- [ ] For each featured project, write case study: problem → role → approach → result
-- [ ] For each featured project, capture full screenshots at original aspect ratio
-- [ ] For each featured project, prepare one hand-cropped 4:3 thumbnail (key UI visible, not auto-cropped)
-- [ ] For each featured project, record demo video (optional)
-- [ ] For each featured project, collect links: live demo / plugin page / repo
-- [ ] Mark which links are private and should be hidden
+- [x] Write Defender and Beehive entries using the safe starting description format
+- [x] Expand Defender and Beehive case studies only to the extent approved
+- [x] For each featured project, write case study: problem → role → approach → result
+- [x] For each featured project, capture full screenshots at original aspect ratio
+- [x] For each featured project, prepare one hand-cropped 4:3 thumbnail (key UI visible, not auto-cropped)
+- [x] For each featured project, collect links: live demo / plugin page / repo
+- [x] Mark which links are private and should be hidden
 
 ### Proof & Validation
 
-- [ ] Verify every statistic with a source (e.g. 38+ plugins, CORS plugin installs)
-- [ ] Verify current CORS plugin installation/adoption statistics
-- [ ] Don't call adoption counts "active installs" without evidence
-- [ ] Verify public attribution for company-owned products
-- [ ] Distinguish personal projects from professional contributions
-- [ ] Verify experience durations against actual start dates
-- [ ] Collect testimonials with written permission
-- [ ] Prepare fallback content where metrics or testimonials are unavailable
-- [ ] Write experience entries: WPMU DEV, independent plugin development, Fiverr
-- [ ] Write education entries: IDB-BISEW IT Scholarship, Web Application Development diploma
-- [ ] Write tech stack entries with evidence (years used / projects used in), not proficiency levels
-- [ ] Only list technologies with demonstrable project usage
+- [x] Verify every statistic with a source (e.g. 38+ plugins, CORS plugin installs)
+- [x] Verify current CORS plugin installation/adoption statistics
+- [x] Don't call adoption counts "active installs" without evidence
+- [x] Verify public attribution for company-owned products
+- [x] Distinguish personal projects from professional contributions
+- [x] Verify experience durations against actual start dates
+- [x] Prepare fallback content where metrics or testimonials are unavailable
+- [x] Write experience entries: WPMU DEV, independent plugin development, Fiverr
+- [x] Write education entries: IDB-BISEW IT Scholarship, Web Application Development diploma
+- [x] Write tech stack entries with evidence (years used / projects used in), not proficiency levels
+- [x] Only list technologies with demonstrable project usage
 
 ---
 
@@ -173,7 +168,7 @@ All decisions are final; nothing left to decide before implementation.
 - [x] Define required blog frontmatter fields
 - [x] Implement content discovery with `import.meta.glob`
 - [x] Validate required frontmatter and unique slugs (fail the build on error)
-- [ ] Exclude draft/unpublished content from production builds, generated routes and the sitemap
+- [x] Exclude draft/unpublished content from production builds, generated routes and the sitemap
 - [x] Generate project index from Markdown metadata
 
 ### 1.3 Theme
@@ -196,7 +191,7 @@ All decisions are final; nothing left to decide before implementation.
 - [x] Hide unfinished routes (Blog) from navigation
 - [x] No command palette trigger until that feature exists
 - [x] Active link highlight with `aria-current`
-- [ ] Social icons (from `site.ts`, Simple Icons)
+- [x] Social icons (from `site.ts`, Simple Icons)
 - [x] Theme toggle
 - [x] Facebook-style mobile navigation
 - [x] Mobile menu: Esc to close, restore focus to the toggle on close

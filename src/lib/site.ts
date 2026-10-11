@@ -4,24 +4,17 @@
 
 export const site = {
 	name: 'Dev Kabir',
-	// TODO(phase-0): professional designation
-	title: '',
-	// TODO(phase-0): short tagline
-	tagline: '',
+	title: 'Senior Web Developer & WordPress Specialist',
+	tagline: 'Building scalable web applications, secure WordPress plugins, and high-performance integrations.',
 	location: 'Barisal, Bangladesh',
 	workplace: 'WPMU DEV',
-	// TODO(phase-0): confirm the public-facing address (account email used as the default)
-	email: 'kabir.signup@gmail.com',
-	// TODO(phase-0): availability status text
-	availability: '',
-	// TODO(phase-0): path to the resume PDF in /static
-	resume: '',
-	// TODO(phase-0): meeting booking URL
+	email: 'dev.kabir01@gmail.com',
+	availability: 'Open to select consulting & freelance opportunities',
+	resume: '/Profile.pdf',
 	meeting: '',
 	socials: [
-		// TODO(phase-0): real profile URLs; a social is rendered only when url is set
-		{ label: 'GitHub', url: '' },
-		{ label: 'LinkedIn', url: '' }
+		{ label: 'GitHub', url: 'https://github.com/devkabir' },
+		{ label: 'LinkedIn', url: 'https://www.linkedin.com/in/dev-kabir' }
 	]
 };
 
