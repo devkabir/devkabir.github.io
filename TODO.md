@@ -255,17 +255,17 @@ All decisions are final; nothing left to decide before implementation.
 
 ### 1.10 Project Case Study Page
 
-- [ ] `/projects/[slug]` route from mdsvex content
-- [ ] `export const prerender = true` with explicit `entries` from the project index
-- [ ] 404 for unknown slugs
-- [ ] Hero, overview, role, problem, approach, technical details, stack
-- [ ] Screenshot gallery at natural aspect ratio (no cropping)
-- [ ] Results (only verified)
-- [ ] Live Demo / Repo buttons
-- [ ] Related projects
-- [ ] Back to Projects link (to `/#projects`)
-- [ ] Profile tab anchors reach the right homepage section from this page
-- [ ] Per-project title, description, OG image
+- [x] `/projects/[slug]` route from mdsvex content
+- [x] `export const prerender = true` with explicit `entries` from the project index
+- [x] 404 for unknown slugs
+- [x] Hero, overview, role, problem, approach, technical details, stack
+- [x] Screenshot gallery at natural aspect ratio (no cropping)
+- [x] Results (only verified)
+- [x] Live Demo / Repo buttons
+- [x] Related projects
+- [x] Back to Projects link (to `/#projects`)
+- [x] Profile tab anchors reach the right homepage section from this page
+- [x] Per-project title, description, OG image
 
 ### 1.11 Contact
 
