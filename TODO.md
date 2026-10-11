@@ -242,16 +242,16 @@ All decisions are final; nothing left to decide before implementation.
 
 ### 1.9 Main Feed
 
-- [ ] Feed wrapped in `<section id="feed">`
-- [ ] StatusCard styled like the Facebook post composer: small avatar + rounded surface showing current focus and tech tags (no manual timestamp, or pull at build time)
-- [ ] StatusCard is clearly read-only — must not look like visitors can type or post
-- [ ] ProjectPost styled as a timeline post: header with avatar, name, date and status indicator
-- [ ] Post body: overview, problem, stack in Facebook-like post typography; media below the text
+- [x] Feed wrapped in `<section id="feed">`
+- [x] StatusCard styled like the Facebook post composer: small avatar + rounded surface showing current focus and tech tags (no manual timestamp, or pull at build time)
+- [x] StatusCard is clearly read-only — must not look like visitors can type or post
+- [x] ProjectPost styled as a timeline post: header with avatar, name, date and status indicator
+- [x] Post body: overview, problem, stack in Facebook-like post typography; media below the text
 - [ ] Facebook-style single image / gallery layouts for post media, screenshots at natural aspect ratio (reserve width/height to avoid layout shift)
-- [ ] Horizontal post-action row (Facebook action bar style): Live Demo / Read Case Study / GitHub — hide any that are missing or private
-- [ ] Hover, press and focus feedback matching the reference
+- [x] Horizontal post-action row (Facebook action bar style): Live Demo / Read Case Study / GitHub — hide any that are missing or private
+- [x] Hover, press and focus feedback matching the reference
 - [ ] Optional testimonial quote block
-- [ ] External links use `rel="noopener noreferrer"`
+- [x] External links use `rel="noopener noreferrer"`
 
 ### 1.10 Project Case Study Page
 

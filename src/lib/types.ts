@@ -21,6 +21,7 @@ export interface Project {
 	title: string;
 	date: string;
 	summary: string;
+	problem: string;
 	status: ProjectStatus;
 	/** Curated 4:3 carousel thumbnail. */
 	thumb: string;

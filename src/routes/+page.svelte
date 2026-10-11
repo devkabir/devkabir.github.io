@@ -11,6 +11,8 @@
 	import SkillsCloud from '$lib/components/SkillsCloud.svelte';
 	import ExperienceCard from '$lib/components/ExperienceCard.svelte';
 	import EducationCard from '$lib/components/EducationCard.svelte';
+	import StatusCard from '$lib/components/StatusCard.svelte';
+	import ProjectPost from '$lib/components/ProjectPost.svelte';
 	import { ChevronLeft, ChevronRight } from '@lucide/svelte';
 
 	const tabs = [
@@ -296,11 +298,12 @@
 				</Card>
 			</section>
 
-			<section id="feed" aria-labelledby="feed-heading">
-				<Card>
-					<h2 id="feed-heading" class="text-lg font-bold text-text">Posts</h2>
-					<p class="mt-2 text-sm text-muted">Recent posts and updates coming soon.</p>
-				</Card>
+			<section id="feed" aria-labelledby="feed-heading" class="space-y-4">
+				<h2 id="feed-heading" class="sr-only">Posts</h2>
+				<StatusCard />
+				{#each projects as project, i (project.slug)}
+					<ProjectPost {project} isFirst={i === 0} />
+				{/each}
 			</section>
 		</div>
 	</div>

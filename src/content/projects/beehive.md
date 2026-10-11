@@ -2,6 +2,7 @@
 title: Beehive — WordPress Analytics Plugin
 date: '2024-03-01'
 summary: Professional contribution at WPMU DEV. Worked on plugin development, maintenance, and improvements as part of the engineering team.
+problem: Site administrators need comprehensive Google Analytics reporting integrated directly into their WordPress dashboard with customizable user role permissions and minimal frontend overhead.
 status: Maintained
 thumb: /images/projects/beehive-thumb.png
 featured: true

@@ -1,7 +1,7 @@
 import { dev } from '$app/environment';
 import type { Project } from './types';
 
-const required = ['title', 'date', 'summary', 'status', 'thumb'] as const;
+const required = ['title', 'date', 'summary', 'problem', 'status', 'thumb'] as const;
 
 const files = import.meta.glob('/src/content/projects/*.md', { eager: true }) as Record<
 	string,

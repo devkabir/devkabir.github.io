@@ -2,6 +2,7 @@
 title: Defender — WordPress Security Plugin
 date: '2024-03-01'
 summary: Professional contribution at WPMU DEV. Worked on plugin development, maintenance, and improvements as part of the engineering team.
+problem: WordPress websites require multi-layered protection against brute force attacks, unauthorized logins, vulnerability exploits, and file tampering without sacrificing administrative usability or performance.
 status: Maintained
 thumb: /images/projects/defender-thumb.png
 featured: true
