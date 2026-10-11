@@ -170,7 +170,7 @@ All decisions are final; nothing left to decide before implementation.
 - [x] Create `content/projects` directory
 - [x] Create `content/blog` directory (empty until Phase 3)
 - [x] Define required project frontmatter fields
-- [ ] Define required blog frontmatter fields
+- [x] Define required blog frontmatter fields
 - [x] Implement content discovery with `import.meta.glob`
 - [x] Validate required frontmatter and unique slugs (fail the build on error)
 - [ ] Exclude draft/unpublished content from production builds, generated routes and the sitemap

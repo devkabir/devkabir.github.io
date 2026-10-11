@@ -2,6 +2,19 @@ import type { Component } from 'svelte';
 
 export type ProjectStatus = 'Live' | 'Maintained' | 'Archived' | 'In Development';
 
+/** Frontmatter required in every src/content/blog/*.md file. */
+export interface BlogPost {
+	slug: string;
+	title: string;
+	date: string;
+	summary: string;
+	draft?: boolean;
+	tags?: string[];
+	cover?: string;
+	modified?: string;
+	component: Component;
+}
+
 /** Frontmatter required in every src/content/projects/*.md file. */
 export interface Project {
 	slug: string;
