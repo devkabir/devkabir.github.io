@@ -4,11 +4,13 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<script>
+			const d = matchMedia('(prefers-color-scheme: dark)').matches;
+			let s;
 			try {
-				const saved = localStorage.getItem('theme');
-				const dark = matchMedia('(prefers-color-scheme: dark)').matches;
-				document.documentElement.dataset.theme = saved ?? (dark ? 'dark' : 'light');
+				s = localStorage.getItem('theme');
 			} catch {}
+			document.documentElement.dataset.theme =
+				s === 'light' || s === 'dark' ? s : d ? 'dark' : 'light';
 		</script>
 		%sveltekit.head%
 	</head>

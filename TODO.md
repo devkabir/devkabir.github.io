@@ -178,13 +178,13 @@ All decisions are final; nothing left to decide before implementation.
 
 ### 1.3 Theme
 
-- [ ] Use one `data-theme` attribute on the document root
-- [ ] Match the Tailwind `@custom-variant dark` to the `data-theme` selector
-- [ ] Inline script in `app.html` `<head>` to apply saved theme before render (prevents flash)
-- [ ] Theme toggle component
-- [ ] Persist choice in localStorage; handle access failures gracefully
-- [ ] Follow system color scheme changes when no override is saved
-- [ ] If a CSP header is configured: allow the theme init script (hash or nonce)
+- [x] Use one `data-theme` attribute on the document root
+- [x] Match the Tailwind `@custom-variant dark` to the `data-theme` selector
+- [x] Inline script in `app.html` `<head>` to apply saved theme before render (prevents flash)
+- [x] Theme toggle component
+- [x] Persist choice in localStorage; handle access failures gracefully
+- [x] Follow system color scheme changes when no override is saved
+- [x] If a CSP header is configured: allow the theme init script (hash or nonce) — N/A (no CSP configured)
 
 ### 1.4 Header
 
