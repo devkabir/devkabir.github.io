@@ -1,6 +1,10 @@
 {
 	"permissions": {
 		"deny": [
+			"Bash(git)",
+			"Bash(git *)",
+			"Bash(gh)",
+			"Bash(gh *)",
 			"Bash(npm run build)",
 			"Bash(npm run build:*)",
 			"Bash(npm run check)",
