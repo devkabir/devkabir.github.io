@@ -18,19 +18,19 @@ Design: Facebook Profile Experience — visitors should feel they are browsing a
 
 ### Starting Visual Spec (light theme — verify against reference screenshots)
 
-| Element | Starting value |
-| --- | --- |
-| Page background | `#F0F2F5` |
-| Card background | `#FFFFFF` |
-| Primary text | `#050505` |
-| Secondary text | `#65676B` |
-| Accent blue | `#0866FF` |
-| Header height | ~56px |
-| Profile avatar | ~168px desktop |
-| Card radius | ~8px |
-| Main content width | ~1100px |
-| Card spacing | ~16px |
-| Sidebar / feed | ~40% / 60% |
+| Element            | Starting value |
+| ------------------ | -------------- |
+| Page background    | `#F0F2F5`      |
+| Card background    | `#FFFFFF`      |
+| Primary text       | `#050505`      |
+| Secondary text     | `#65676B`      |
+| Accent blue        | `#0866FF`      |
+| Header height      | ~56px          |
+| Profile avatar     | ~168px desktop |
+| Card radius        | ~8px           |
+| Main content width | ~1100px        |
+| Card spacing       | ~16px          |
+| Sidebar / feed     | ~40% / 60%     |
 
 ### Fidelity Rules
 
@@ -84,14 +84,14 @@ Instead of separate Responsive / Accessibility phases, every component is "done"
 
 ### Publication Rules — Company-Owned Products (Defender, Beehive)
 
-| Content | Until approval |
-| --- | --- |
-| Job title and employment history | Generally acceptable if not confidential |
-| Public product descriptions | Use verified public information only |
-| Publicly available screenshots | Check company branding and reuse policy first |
-| Internal architecture or source code | Do not publish |
-| Internal metrics or performance results | Do not publish |
-| Specific personal contributions | Describe only what you're authorized to disclose |
+| Content                                 | Until approval                                   |
+| --------------------------------------- | ------------------------------------------------ |
+| Job title and employment history        | Generally acceptable if not confidential         |
+| Public product descriptions             | Use verified public information only             |
+| Publicly available screenshots          | Check company branding and reuse policy first    |
+| Internal architecture or source code    | Do not publish                                   |
+| Internal metrics or performance results | Do not publish                                   |
+| Specific personal contributions         | Describe only what you're authorized to disclose |
 
 Safe starting description (use only if it accurately reflects the work):
 
@@ -162,7 +162,7 @@ All decisions are final; nothing left to decide before implementation.
 - [x] Create `src/lib/site.ts` — single source for name, email, social links, resume URL, availability
 - [x] Define production site URL and GA4 measurement ID as public env vars (`PUBLIC_SITE_URL`, `PUBLIC_GA_ID`)
 - [x] Define TypeScript types: Project, Tech, Experience, Education
-- [ ] Create base UI components: Button, Card, Badge, Avatar
+- [x] Create base UI components: Button, Card, Badge, Avatar
 
 ### 1.2 Content Pipeline
 

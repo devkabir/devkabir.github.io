@@ -5,8 +5,8 @@
 
 @theme {
 	--font-sans:
-		system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
-		'Apple Color Emoji', 'Segoe UI Emoji';
+		system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji',
+		'Segoe UI Emoji';
 
 	/* Light theme — Design Direction starting values */
 	--color-page: #f0f2f5;

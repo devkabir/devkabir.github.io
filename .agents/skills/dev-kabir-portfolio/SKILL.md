@@ -1,6 +1,6 @@
 ---
-name: "dev-kabir-portfolio"
-description: "Build the Dev Kabir Facebook-style portfolio (SvelteKit 2, Svelte 5, Tailwind v4) from TODO.md with the least code possible, verified and without overengineering."
+name: 'dev-kabir-portfolio'
+description: 'Build the Dev Kabir Facebook-style portfolio (SvelteKit 2, Svelte 5, Tailwind v4) from TODO.md with the least code possible, verified and without overengineering.'
 ---
 
 # Dev Kabir Portfolio — Lazy Dev Mode
@@ -69,19 +69,19 @@ Tailwind v4 theme variables are CSS variables, so dark mode is just overriding t
 @import 'tailwindcss';
 
 @theme {
-  --color-page: #f0f2f5;
-  --color-card: #ffffff;
-  --color-text: #050505;
-  --color-muted: #65676b;
-  --color-accent: #0866ff;
+	--color-page: #f0f2f5;
+	--color-card: #ffffff;
+	--color-text: #050505;
+	--color-muted: #65676b;
+	--color-accent: #0866ff;
 }
 
 [data-theme='dark'] {
-  --color-page: #18191a;
-  --color-card: #242526;
-  --color-text: #e4e6eb;
-  --color-muted: #b0b3b8;
-  color-scheme: dark;
+	--color-page: #18191a;
+	--color-card: #242526;
+	--color-text: #e4e6eb;
+	--color-muted: #b0b3b8;
+	color-scheme: dark;
 }
 ```
 
@@ -91,11 +91,11 @@ Use `bg-page`, `bg-card`, `text-text`, `text-muted`, `text-accent` everywhere.
 
 ```html
 <script>
-  try {
-    const saved = localStorage.getItem('theme');
-    const dark = matchMedia('(prefers-color-scheme: dark)').matches;
-    document.documentElement.dataset.theme = saved ?? (dark ? 'dark' : 'light');
-  } catch {}
+	try {
+		const saved = localStorage.getItem('theme');
+		const dark = matchMedia('(prefers-color-scheme: dark)').matches;
+		document.documentElement.dataset.theme = saved ?? (dark ? 'dark' : 'light');
+	} catch {}
 </script>
 ```
 
@@ -110,19 +110,19 @@ import { dev } from '$app/environment';
 const required = ['title', 'date', 'summary', 'status', 'thumb'] as const;
 
 const files = import.meta.glob('/src/content/projects/*.md', { eager: true }) as Record<
-  string,
-  { default: unknown; metadata: Record<string, any> }
+	string,
+	{ default: unknown; metadata: Record<string, any> }
 >;
 
 export const projects = Object.entries(files)
-  .map(([path, mod]) => {
-    const slug = path.split('/').pop()!.replace('.md', '');
-    for (const key of required)
-      if (!mod.metadata?.[key]) throw new Error(`${slug}: missing "${key}"`);
-    return { slug, ...mod.metadata, component: mod.default };
-  })
-  .filter((p) => dev || !p.draft)
-  .sort((a, b) => +new Date(b.date) - +new Date(a.date));
+	.map(([path, mod]) => {
+		const slug = path.split('/').pop()!.replace('.md', '');
+		for (const key of required)
+			if (!mod.metadata?.[key]) throw new Error(`${slug}: missing "${key}"`);
+		return { slug, ...mod.metadata, component: mod.default };
+	})
+	.filter((p) => dev || !p.draft)
+	.sort((a, b) => +new Date(b.date) - +new Date(a.date));
 ```
 
 Slugs are filenames, so they are unique by definition.
@@ -137,9 +137,9 @@ import { projects } from '$lib/content';
 export const entries = () => projects.map(({ slug }) => ({ slug }));
 
 export const load = ({ params }) => {
-  const project = projects.find((p) => p.slug === params.slug);
-  if (!project) error(404, 'Project not found');
-  return { project };
+	const project = projects.find((p) => p.slug === params.slug);
+	if (!project) error(404, 'Project not found');
+	return { project };
 };
 ```
 
@@ -150,9 +150,9 @@ Universal load (`+page.ts`), so returning the mdsvex component is fine. The site
 ```ts
 // src/lib/track.ts
 export const track = (name: string, params?: Record<string, string>) => {
-  try {
-    (window as any).gtag?.('event', name, params);
-  } catch {}
+	try {
+		(window as any).gtag?.('event', name, params);
+	} catch {}
 };
 ```
 
@@ -165,18 +165,25 @@ Event names are fixed by the TODO: `contact_click`, `copy_email`, `resume_downlo
 ### Carousel — zero JS by default
 
 ```svelte
-<section id="projects" class="bg-card rounded-lg p-4">
-  <h2 class="font-semibold text-text">Featured Projects</h2>
-  <ul class="mt-3 flex snap-x snap-mandatory gap-3 overflow-x-auto">
-    {#each featured as p (p.slug)}
-      <li class="w-56 shrink-0 snap-start">
-        <a href="/projects/{p.slug}">
-          <img src={p.thumb} alt="" width="224" height="168" loading="lazy" class="aspect-[4/3] rounded-lg object-cover" />
-          <span class="mt-2 block font-medium text-text">{p.title}</span>
-        </a>
-      </li>
-    {/each}
-  </ul>
+<section id="projects" class="rounded-lg bg-card p-4">
+	<h2 class="font-semibold text-text">Featured Projects</h2>
+	<ul class="mt-3 flex snap-x snap-mandatory gap-3 overflow-x-auto">
+		{#each featured as p (p.slug)}
+			<li class="w-56 shrink-0 snap-start">
+				<a href="/projects/{p.slug}">
+					<img
+						src={p.thumb}
+						alt=""
+						width="224"
+						height="168"
+						loading="lazy"
+						class="aspect-[4/3] rounded-lg object-cover"
+					/>
+					<span class="mt-2 block font-medium text-text">{p.title}</span>
+				</a>
+			</li>
+		{/each}
+	</ul>
 </section>
 ```
 
