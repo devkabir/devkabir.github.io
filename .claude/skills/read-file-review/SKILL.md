@@ -5,7 +5,7 @@ description: Review a single file for correctness bugs by reading only that one 
 
 # Single-file correctness review
 
-The user has a specific file in mind and wants to know whether it is *correct*. They do not want a repo tour. Every extra grep, build, or test run costs them time and attention they explicitly did not spend, so the discipline here is: read the one file, think hard about it, report what's actually wrong.
+The user has a specific file in mind and wants to know whether it is _correct_. They do not want a repo tour. Every extra grep, build, or test run costs them time and attention they explicitly did not spend, so the discipline here is: read the one file, think hard about it, report what's actually wrong.
 
 ## Resolve the path first
 
