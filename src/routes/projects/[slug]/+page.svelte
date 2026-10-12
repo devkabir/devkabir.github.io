@@ -33,7 +33,7 @@
 	type="article"
 />
 
-<div class="mx-auto max-w-[1100px] px-4 py-4">
+<div class="mx-auto max-w-[1200px] px-4 py-4">
 	<!-- Profile tab navigation anchors -->
 	<nav
 		aria-label="Profile navigation"

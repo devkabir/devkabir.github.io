@@ -1,54 +1,65 @@
-# sv
+# Dev Kabir — Portfolio
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+A personal developer portfolio designed with a Facebook-inspired profile and feed layout. Built with SvelteKit 2, Svelte 5 (Runes), Tailwind CSS v4, and mdsvex.
 
-## Creating a project
+## Features
 
-If you're seeing this, you've probably already done this step. Congrats!
+- **Facebook-Inspired Profile UI**: Cover photo, avatar, collapsible featured projects carousel, profile tabs, and responsive two-column layout (sidebar details + post feed).
+- **Projects & Posts**: Projects presented as interactive feed cards with image lightboxes, stats, tags, and detail pages.
+- **Content Pipeline**: Markdown-driven content with `mdsvex`, typed frontmatter, and publication controls.
+- **Theme & Accessibility**: System/dark/light theme support with high-contrast text and keyboard navigation.
+- **Fast & Static**: Prerendered static site built using `@sveltejs/adapter-static`.
 
-```sh
-# create a new project
-npx sv create my-app
-```
+## Getting Started
 
-To recreate this project with the same configuration:
+### Prerequisites
 
-```sh
-# recreate this project
-pnpm dlx sv@1.1.1 create --template minimal --types ts --add prettier eslint tailwindcss="plugins:none" sveltekit-adapter="adapter:static" mdsvex --install pnpm .
-```
+- Node.js (v20+ recommended)
+- [pnpm](https://pnpm.io/) (v10+ recommended)
 
-## Adding features
-
-Add features to your project with `sv add`:
+### Installation
 
 ```sh
-npx sv add
+pnpm install
 ```
 
-For example, to add Tailwind CSS:
+### Development
+
+Start the development server:
 
 ```sh
-npx sv add tailwindcss
+pnpm dev
 ```
 
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+Or open directly in your browser:
 
 ```sh
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+pnpm dev -- --open
 ```
 
-## Building
-
-To create a production version of your app:
+### Type Checking & Linting
 
 ```sh
-npm run build
+# Type check with svelte-check
+pnpm check
+
+# Lint with ESLint and Prettier
+pnpm lint
+
+# Format code
+pnpm format
 ```
 
-You can preview the production build with `npm run preview`.
+### Building for Production
+
+Build static production output:
+
+```sh
+pnpm build
+```
+
+Preview the production build:
+
+```sh
+pnpm preview
+```

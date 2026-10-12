@@ -5,7 +5,7 @@
 </script>
 
 <footer class="mt-8 border-t border-line bg-card">
-	<div class="mx-auto max-w-[1100px] p-2 sm:p-4">
+	<div class="mx-auto max-w-[1200px] p-2 sm:p-4">
 		<!-- Copyright & Privacy -->
 		<div
 			class="flex flex-col gap-1 text-xs text-muted sm:flex-row sm:items-center sm:justify-between"

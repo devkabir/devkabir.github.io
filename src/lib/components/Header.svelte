@@ -36,6 +36,7 @@
 			closeMobile();
 		}
 	}
+	const navItems = [{ label: 'Home', href: '/', icon: House }];
 </script>
 
 <svelte:window onkeydown={onKeydown} />
@@ -55,20 +56,25 @@
 		</a>
 	</div>
 
-	<!-- Center: Site tabs -->
-	<nav class="hidden items-center self-stretch md:flex" aria-label="Primary">
-		<a
-			href="/"
-			class="relative flex h-full items-center px-10 transition-colors hover:bg-hover {page.url
-				.pathname === '/'
-				? 'border-b-3 border-accent text-accent'
-				: 'text-muted'}"
-			aria-label="Home"
-			aria-current={page.url.pathname === '/' ? 'page' : undefined}
-		>
-			<House class="size-6 stroke-[2.25]" />
-		</a>
-	</nav>
+	<!-- Center: Site tabs (rendered only when there is more than 1 nav item) -->
+	{#if navItems.length > 1}
+		<nav class="hidden items-center self-stretch md:flex" aria-label="Primary">
+			{#each navItems as item (item.href)}
+				{@const Icon = item.icon}
+				<a
+					href={item.href}
+					class="relative flex h-full items-center px-10 transition-colors hover:bg-hover {page.url
+						.pathname === item.href
+						? 'border-b-3 border-accent text-accent'
+						: 'text-muted'}"
+					aria-label={item.label}
+					aria-current={page.url.pathname === item.href ? 'page' : undefined}
+				>
+					<Icon class="size-6 stroke-[2.25]" />
+				</a>
+			{/each}
+		</nav>
+	{/if}
 
 	<!-- Right: Socials, ThemeToggle, Avatar & Mobile Toggle -->
 	<div class="flex items-center gap-2">
@@ -98,26 +104,28 @@
 			<Avatar src="/avatar.jpg" alt={site.name} size={36} loading="eager" />
 		</a>
 
-		<button
-			type="button"
-			bind:this={menuButton}
-			onclick={toggleMobile}
-			class="inline-flex h-11 w-11 cursor-pointer items-center justify-center rounded-full bg-hover text-text transition-colors hover:bg-line/40 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent md:hidden"
-			aria-expanded={mobileOpen}
-			aria-controls="mobile-nav"
-			aria-label={mobileOpen ? 'Close navigation menu' : 'Open navigation menu'}
-		>
-			{#if mobileOpen}
-				<X size={20} aria-hidden="true" />
-			{:else}
-				<Menu size={20} aria-hidden="true" />
-			{/if}
-		</button>
+		{#if navItems.length > 1}
+			<button
+				type="button"
+				bind:this={menuButton}
+				onclick={toggleMobile}
+				class="inline-flex h-11 w-11 cursor-pointer items-center justify-center rounded-full bg-hover text-text transition-colors hover:bg-line/40 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent md:hidden"
+				aria-expanded={mobileOpen}
+				aria-controls="mobile-nav"
+				aria-label={mobileOpen ? 'Close navigation menu' : 'Open navigation menu'}
+			>
+				{#if mobileOpen}
+					<X size={20} aria-hidden="true" />
+				{:else}
+					<Menu size={20} aria-hidden="true" />
+				{/if}
+			</button>
+		{/if}
 	</div>
 </header>
 
 <!-- Mobile Navigation Panel (plain panel, no modal dialog) -->
-{#if mobileOpen}
+{#if navItems.length > 1 && mobileOpen}
 	<div
 		class="fixed inset-0 z-40 bg-black/40 backdrop-blur-xs md:hidden"
 		onclick={closeMobile}
@@ -142,18 +150,21 @@
 		</div>
 
 		<div class="flex flex-col gap-1">
-			<a
-				href="/"
-				onclick={closeMobile}
-				class="flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-hover {page
-					.url.pathname === '/'
-					? 'bg-hover font-semibold text-accent'
-					: 'text-text'}"
-				aria-current={page.url.pathname === '/' ? 'page' : undefined}
-			>
-				<House class="size-5" />
-				<span>Home</span>
-			</a>
+			{#each navItems as item (item.href)}
+				{@const Icon = item.icon}
+				<a
+					href={item.href}
+					onclick={closeMobile}
+					class="flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-hover {page
+						.url.pathname === item.href
+						? 'bg-hover font-semibold text-accent'
+						: 'text-text'}"
+					aria-current={page.url.pathname === item.href ? 'page' : undefined}
+				>
+					<Icon class="size-5" />
+					<span>{item.label}</span>
+				</a>
+			{/each}
 		</div>
 	</nav>
 {/if}

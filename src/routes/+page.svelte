@@ -106,11 +106,11 @@
 	{@html `<script type="application/ld+json">${personSchema}<\/script>`}
 </svelte:head>
 
-<div class="border-b border-line bg-card shadow-xs">
-	<div class="w-full">
+<div class="w-full border-b border-line bg-card shadow-xs">
+	<div class="mx-auto md:max-w-[1200px]">
 		<!-- Cover Photo -->
 		<div
-			class="relative aspect-[138/77] w-full overflow-hidden sm:aspect-auto sm:h-[20rem] md:h-[22rem]"
+			class="relative aspect-[138/77] w-full overflow-hidden rounded-b-lg sm:aspect-auto sm:h-[20rem] md:h-[22rem]"
 		>
 			<img
 				src="/images/cover.png"
@@ -322,7 +322,7 @@
 </div>
 
 <!-- 1.7 Two-Column Layout -->
-<div class="w-full px-4 py-4">
+<div class="mx-auto w-full px-4 py-4 md:max-w-[1200px]">
 	<div class="grid grid-cols-1 gap-4 md:grid-cols-[2fr_3fr]">
 		<!-- Sidebar Column (~40%) -->
 		<div class="flex min-w-0 flex-col gap-4">

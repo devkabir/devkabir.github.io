@@ -9,7 +9,7 @@ export const site = {
 		'Building scalable web applications, secure WordPress plugins, and high-performance integrations.',
 	location: 'Barisal, Bangladesh',
 	workplace: 'WPMU DEV',
-	email: 'dev.kabir01@gmail.com',
+	email: 'dev.kabir01+portfolio@gmail.com',
 	availability: 'Open to select consulting & freelance opportunities',
 	resume: '/Profile.pdf',
 	meeting: '',
