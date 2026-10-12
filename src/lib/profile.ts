@@ -101,13 +101,26 @@ export const techStack: Tech[] = [
 	{
 		name: 'PHP / WordPress',
 		category: 'Backend',
-		evidence: '5+ years, 38+ custom plugins & WPMU DEV products'
+		evidence: '5+ years, 38+ custom plugins & WPMU DEV products',
+		icon: 'php'
 	},
-	{ name: 'Vue 3 / Vue 2', category: 'Frontend', evidence: '60K+ LOC migration at WPMU DEV' },
 	{
-		name: 'JavaScript / TypeScript',
-		category: 'Languages',
-		evidence: '5+ years across all web & plugin projects'
+		name: 'REST APIs & Integrations',
+		category: 'Backend',
+		evidence: 'WooCommerce third-party integrations & custom APIs',
+		icon: 'api'
+	},
+	{
+		name: 'Node.js',
+		category: 'Backend',
+		evidence: 'Custom tooling and API development',
+		icon: 'nodedotjs'
+	},
+	{
+		name: 'Vue 3 / Vue 2',
+		category: 'Frontend',
+		evidence: '60K+ LOC migration at WPMU DEV',
+		icon: 'vuedotjs'
 	},
 	{
 		name: 'React.js',
@@ -122,20 +135,15 @@ export const techStack: Tech[] = [
 		icon: 'tailwindcss'
 	},
 	{
-		name: 'REST APIs & Integrations',
-		category: 'Backend',
-		evidence: 'WooCommerce third-party integrations & custom APIs'
+		name: 'JavaScript / TypeScript',
+		category: 'Languages',
+		evidence: '5+ years across all web & plugin projects',
+		icon: 'javascript'
 	},
 	{
 		name: 'MySQL',
 		category: 'Database',
 		evidence: '5+ years backend data modeling & performance optimization',
 		icon: 'mysql'
-	},
-	{
-		name: 'Node.js',
-		category: 'Backend',
-		evidence: 'Custom tooling and API development',
-		icon: 'nodedotjs'
 	}
 ];

@@ -3,7 +3,7 @@
 	import { site } from '$lib/site';
 	import ThemeToggle from '$lib/components/ThemeToggle.svelte';
 	import Avatar from '$lib/components/Avatar.svelte';
-	import { Menu, X } from '@lucide/svelte';
+	import { House, Menu, X } from '@lucide/svelte';
 	import { siGithub } from 'simple-icons';
 
 	// Simple Icons provides siGithub; LinkedIn is not in Simple Icons (removed in v14), using approved brand SVG path
@@ -50,12 +50,7 @@
 			class="flex items-center gap-2 font-bold text-accent transition-opacity hover:opacity-90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
 			aria-label="{site.name} Home"
 		>
-			<span
-				class="flex h-10 w-10 items-center justify-center rounded-full bg-accent text-lg font-black text-white"
-				aria-hidden="true"
-			>
-				{site.name[0]}
-			</span>
+			<img src="/favicon.svg" alt="" width="40" height="40" class="h-10 w-10 rounded-full" />
 			<span class="hidden text-lg font-bold text-text sm:inline">{site.name}</span>
 		</a>
 	</div>
@@ -64,13 +59,14 @@
 	<nav class="hidden items-center self-stretch md:flex" aria-label="Primary">
 		<a
 			href="/"
-			class="relative flex h-full items-center px-8 text-sm transition-colors hover:bg-hover {page
-				.url.pathname === '/'
-				? 'border-b-3 border-accent font-semibold text-accent'
-				: 'font-medium text-muted'}"
+			class="relative flex h-full items-center px-10 transition-colors hover:bg-hover {page.url
+				.pathname === '/'
+				? 'border-b-3 border-accent text-accent'
+				: 'text-muted'}"
+			aria-label="Home"
 			aria-current={page.url.pathname === '/' ? 'page' : undefined}
 		>
-			Home
+			<House class="size-6 stroke-[2.25]" />
 		</a>
 	</nav>
 
@@ -149,13 +145,14 @@
 			<a
 				href="/"
 				onclick={closeMobile}
-				class="flex items-center rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-hover {page
+				class="flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-hover {page
 					.url.pathname === '/'
 					? 'bg-hover font-semibold text-accent'
 					: 'text-text'}"
 				aria-current={page.url.pathname === '/' ? 'page' : undefined}
 			>
-				Home
+				<House class="size-5" />
+				<span>Home</span>
 			</a>
 		</div>
 	</nav>

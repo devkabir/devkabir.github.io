@@ -22,7 +22,7 @@
 </script>
 
 <article>
-	<Card class="overflow-hidden p-0">
+	<Card padding="none" class="overflow-hidden">
 		<!-- Post Header -->
 		<div class="flex items-center gap-3 p-4 pb-3">
 			<Avatar src="/images/avatar.png" alt={site.name} size={40} class="shrink-0" />

@@ -1,13 +1,25 @@
 <script lang="ts">
 	import Card from './Card.svelte';
 	import { techStack } from '$lib/profile';
-	import { siReact, siTailwindcss, siMysql, siNodedotjs } from 'simple-icons';
+	import {
+		siReact,
+		siTailwindcss,
+		siMysql,
+		siNodedotjs,
+		siPhp,
+		siVuedotjs,
+		siJavascript
+	} from 'simple-icons';
+	import { Network } from '@lucide/svelte';
 
 	const icons: Record<string, { path: string }> = {
 		react: siReact,
 		tailwindcss: siTailwindcss,
 		mysql: siMysql,
-		nodedotjs: siNodedotjs
+		nodedotjs: siNodedotjs,
+		php: siPhp,
+		vuedotjs: siVuedotjs,
+		javascript: siJavascript
 	};
 
 	const categories = Array.from(new Set(techStack.map((t) => t.category)));
@@ -24,7 +36,9 @@
 				<ul class="mt-2 space-y-2">
 					{#each techStack.filter((t) => t.category === category) as tech}
 						<li class="flex items-start gap-2.5 text-sm text-text">
-							{#if tech.icon && icons[tech.icon]}
+							{#if tech.icon === 'api'}
+								<Network class="mt-0.5 size-4 shrink-0 text-muted" aria-hidden="true" />
+							{:else if tech.icon && icons[tech.icon]}
 								<svg
 									viewBox="0 0 24 24"
 									class="mt-0.5 size-4 shrink-0 fill-current text-muted"
