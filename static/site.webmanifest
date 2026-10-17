@@ -1,11 +1,32 @@
 {
 	"name": "Dev Kabir — Senior Web Developer & WordPress Specialist",
 	"short_name": "Dev Kabir",
+	"description": "Portfolio of Dev Kabir, Senior Web Developer & WordPress Specialist building web applications and WordPress solutions.",
+	"start_url": "/",
+	"scope": "/",
+	"id": "/",
+	"display": "standalone",
+	"orientation": "any",
+	"background_color": "#ffffff",
+	"theme_color": "#0866ff",
 	"icons": [
-		{ "src": "/android-chrome-192x192.png", "sizes": "192x192", "type": "image/png" },
-		{ "src": "/android-chrome-512x512.png", "sizes": "512x512", "type": "image/png" }
-	],
-	"theme_color": "#f0f2f5",
-	"background_color": "#f0f2f5",
-	"display": "standalone"
+		{
+			"src": "/android-chrome-192x192.png",
+			"sizes": "192x192",
+			"type": "image/png",
+			"purpose": "any"
+		},
+		{
+			"src": "/android-chrome-512x512.png",
+			"sizes": "512x512",
+			"type": "image/png",
+			"purpose": "any"
+		},
+		{
+			"src": "/android-chrome-512x512.png",
+			"sizes": "512x512",
+			"type": "image/png",
+			"purpose": "maskable"
+		}
+	]
 }

@@ -4,7 +4,7 @@ date: '2024-03-01'
 summary: Security plugin work at WPMU DEV, covering security hardening, Vue 3 migration, and incremental releases through CI/CD.
 problem: WordPress sites need protection against brute force attacks, unauthorized logins, vulnerability exploits, and file tampering, without losing administrative usability or performance.
 status: Maintained
-thumb: /images/projects/defender-thumb.png
+thumb: /images/projects/defender-full.png
 featured: true
 tech:
   - PHP

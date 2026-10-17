@@ -51,7 +51,20 @@
 			class="flex items-center gap-2 font-bold text-accent transition-opacity hover:opacity-90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
 			aria-label="{site.name} Home"
 		>
-			<img src="/favicon.svg" alt="" width="40" height="40" class="h-10 w-10 rounded-full" />
+			<img
+				src="/logo.webp"
+				alt=""
+				width="40"
+				height="40"
+				class="block h-10 w-10 rounded-full dark:hidden"
+			/>
+			<img
+				src="/logo-dark.webp"
+				alt=""
+				width="40"
+				height="40"
+				class="hidden h-10 w-10 rounded-full dark:block"
+			/>
 			<span class="hidden text-lg font-bold text-text sm:inline">{site.name}</span>
 		</a>
 	</div>

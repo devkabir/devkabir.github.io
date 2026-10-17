@@ -113,7 +113,7 @@
 			class="relative aspect-[138/77] w-full overflow-hidden rounded-b-lg sm:aspect-auto sm:h-[20rem] md:h-[22rem]"
 		>
 			<img
-				src="/images/cover.png"
+				src="/images/cover.webp"
 				alt=""
 				width="1376"
 				height="768"
@@ -268,7 +268,7 @@
 						class="no-scrollbar flex snap-x snap-mandatory gap-4 overflow-x-auto pb-2"
 					>
 						{#each featuredProjects as project (project.slug)}
-							<li class="w-[17rem] shrink-0 snap-start">
+							<li class="w-[20rem] md:w-[22rem] lg:w-[24rem] shrink-0 snap-start">
 								<a
 									href="/projects/{project.slug}"
 									class="group flex h-full flex-col overflow-hidden rounded-md border border-line bg-card transition-colors hover:border-accent/40 hover:bg-hover/30 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"

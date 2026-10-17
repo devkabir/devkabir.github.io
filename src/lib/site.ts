@@ -1,3 +1,5 @@
+import { env } from '$env/dynamic/public';
+
 // Single source of truth for identity, contact and links.
 // Empty strings are unverified — fill them in Phase 0 before launch.
 // Consumers must hide any action whose link is still empty.
@@ -17,7 +19,15 @@ export const site = {
 	socials: [
 		{ label: 'GitHub', url: 'https://github.com/devkabir' },
 		{ label: 'LinkedIn', url: 'https://www.linkedin.com/in/dev-kabir' }
-	]
+	],
+	url: (env.PUBLIC_SITE_URL || '').replace(/\/+$/, '')
+};
+
+export const toAbsolute = (path: string): string => {
+	if (!path) return '';
+	if (path.startsWith('http://') || path.startsWith('https://')) return path;
+	const clean = path.startsWith('/') ? path : `/${path}`;
+	return site.url ? `${site.url}${clean}` : clean;
 };
 
 export type Site = typeof site;

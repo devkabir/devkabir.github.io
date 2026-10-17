@@ -1,8 +1,7 @@
 <script lang="ts">
 	import { page } from '$app/state';
-	import { env } from '$env/dynamic/public';
 	import { dev } from '$app/environment';
-	import { site } from '$lib/site';
+	import { site, toAbsolute } from '$lib/site';
 
 	interface Props {
 		title?: string;
@@ -15,19 +14,10 @@
 	let {
 		title,
 		description = site.tagline,
-		image = '/images/cover.png',
+		image = '/images/cover.webp',
 		type = 'website',
 		noindex = false
 	}: Props = $props();
-
-	const siteUrl = (env.PUBLIC_SITE_URL || '').replace(/\/+$/, '');
-
-	function toAbsolute(path: string): string {
-		if (!path) return '';
-		if (path.startsWith('http://') || path.startsWith('https://')) return path;
-		const cleanPath = path.startsWith('/') ? path : `/${path}`;
-		return siteUrl ? `${siteUrl}${cleanPath}` : cleanPath;
-	}
 
 	let fullTitle = $derived(
 		!title || title === `${site.name} — ${site.title}`
@@ -40,7 +30,7 @@
 	);
 	let canonicalUrl = $derived(toAbsolute(pathname));
 	let imageUrl = $derived(toAbsolute(image));
-	let shouldNoindex = $derived(noindex || dev || !siteUrl);
+	let shouldNoindex = $derived(noindex || dev || !site.url);
 </script>
 
 <svelte:head>
