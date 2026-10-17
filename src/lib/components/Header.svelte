@@ -101,7 +101,7 @@
 			aria-label="Profile"
 			class="inline-flex h-11 w-11 items-center justify-center rounded-full focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
 		>
-			<Avatar src="/avatar.jpg" alt={site.name} size={36} loading="eager" />
+			<Avatar src={site.avatar} alt={site.name} size={36} loading="eager" />
 		</a>
 
 		{#if navItems.length > 1}

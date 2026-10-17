@@ -12,6 +12,8 @@ export const site = {
 	availability: 'Open to select consulting & freelance opportunities',
 	resume: '/Profile.pdf',
 	meeting: '',
+	avatar:
+		'https://gravatar.com/avatar/32df0955a7eb0afc0f11799622fe8dc4ad85a7235a32488497ec38a2d163e923?s=336',
 	socials: [
 		{ label: 'GitHub', url: 'https://github.com/devkabir' },
 		{ label: 'LinkedIn', url: 'https://www.linkedin.com/in/dev-kabir' }

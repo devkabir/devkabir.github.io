@@ -35,7 +35,7 @@
 		jobTitle: site.title,
 		description: site.tagline,
 		url: siteUrl ? `${siteUrl}/` : undefined,
-		image: siteUrl ? `${siteUrl}/images/avatar.png` : undefined,
+		image: site.avatar,
 		email: `mailto:${site.email}`,
 		address: {
 			'@type': 'PostalAddress',
@@ -130,7 +130,7 @@
 				<!-- Avatar: overlaps cover on mobile/sm, normal flow (no overlap) on md+ -->
 				<div class="relative z-10 -mt-20 shrink-0 sm:-mt-24 md:mt-4 md:mb-0">
 					<img
-						src="/images/avatar.png"
+						src={site.avatar}
 						alt={site.name}
 						width="168"
 						height="168"
