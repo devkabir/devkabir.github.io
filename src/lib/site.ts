@@ -5,8 +5,7 @@
 export const site = {
 	name: 'Dev Kabir',
 	title: 'Senior Web Developer & WordPress Specialist',
-	tagline:
-		'Building scalable web applications, secure WordPress plugins, and high-performance integrations.',
+	tagline: 'Building web applications, WordPress plugins, and WooCommerce integrations.',
 	location: 'Barisal, Bangladesh',
 	workplace: 'WPMU DEV',
 	email: 'dev.kabir01+portfolio@gmail.com',

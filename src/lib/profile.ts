@@ -46,12 +46,12 @@ export function formatPeriod(start: string, end?: string): string {
 
 export const bio = {
 	intro:
-		'Senior Web Developer and WordPress Specialist with over 5 years of experience building scalable web applications and fast, reliable WordPress plugins. Currently developing and maintaining enterprise-scale plugins at WPMU DEV, including Defender and Beehive, serving tens of thousands of active sites. Focused on clean code, robust performance, and seamless user experiences across complex web solutions.',
-	longBio: `I am a Senior Web Developer and WordPress Specialist with extensive experience architecting scalable web applications and modern WordPress plugins. At WPMU DEV, I engineer key plugins including Defender (security) and Beehive (analytics), modernizing legacy codebases—such as migrating 60K+ lines of code to Vue 3 Composition API—and shipping continuous improvements via automated CI/CD pipelines.
+		'Senior Web Developer and WordPress Specialist with over 5 years of experience building web applications and WordPress plugins. Currently developing and maintaining plugins at WPMU DEV, including Defender and Beehive, which serve tens of thousands of active sites.',
+	longBio: `I am a Senior Web Developer and WordPress Specialist. I build web applications and WordPress plugins. At WPMU DEV, I work on Defender (security) and Beehive (analytics), including migrating 60K+ lines of code to Vue 3 Composition API and shipping updates through automated CI/CD pipelines.
 
-Beyond product engineering, I have delivered over 38 custom plugins on Fiverr with consistent 5-star ratings, specializing in REST API integrations connecting WooCommerce with payment gateways, CRMs, and external shipping providers. I also develop and maintain open-source community solutions, including a CORS resolution plugin adopted by over 6,000 websites worldwide.
+I have also delivered over 38 custom plugins on Fiverr with consistent 5-star ratings, mostly REST API integrations connecting WooCommerce with payment gateways, CRMs, and external shipping providers. I maintain open-source plugins too, including a CORS plugin adopted by over 6,000 websites.
 
-My core technical foundation spans modern PHP, WordPress plugin architecture, JavaScript (React, Vue 3), Node.js, and relational database optimization with MySQL.`
+I work in PHP, WordPress plugin architecture, JavaScript (React, Vue 3), Node.js, and MySQL.`
 };
 
 export const experiences: Experience[] = [
@@ -82,8 +82,8 @@ export const experiences: Experience[] = [
 		details: [
 			'Delivered 38+ custom WordPress plugins with consistent 5-star client ratings.',
 			'Specialized in WooCommerce integrations connecting stores with third-party REST APIs (payment gateways, CRMs, shipping providers).',
-			'Designed secure, scalable APIs and ensured reliable data synchronization between WooCommerce stores and external platforms.',
-			'Diagnosed and resolved complex e-commerce API issues for international clients in fully remote settings.'
+			'Designed APIs and data synchronization between WooCommerce stores and external platforms.',
+			'Diagnosed and resolved e-commerce API issues for international clients, working fully remote.'
 		]
 	}
 ];

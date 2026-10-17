@@ -1,8 +1,8 @@
 ---
 title: Cross-Origin Resource Sharing (CORS) Plugin
 date: '2022-01-01'
-summary: Independent open-source WordPress plugin resolving cross-origin access and REST API headers, adopted by over 6,000 websites.
-problem: Modern decoupled WordPress architectures, headless frontends, and external API integrations often fail due to strict browser CORS policies blocking cross-origin requests.
+summary: Independent open-source WordPress plugin for cross-origin access and REST API headers, adopted by over 6,000 websites.
+problem: Decoupled WordPress setups, headless frontends, and external API integrations fail when browser CORS policies block cross-origin requests.
 status: Live
 thumb: /images/projects/cors-plugin-thumb.png
 featured: true
@@ -16,7 +16,7 @@ repo: https://github.com/devkabir
 
 ### Problem
 
-Modern decoupled WordPress architectures, headless frontends, and external API integrations often fail due to strict browser CORS policies blocking cross-origin requests.
+Decoupled WordPress setups, headless frontends, and external API integrations fail when browser CORS policies block cross-origin requests.
 
 ### Role
 
@@ -24,10 +24,10 @@ Independent Creator & Maintainer.
 
 ### Approach
 
-- Built a lightweight, focused WordPress utility plugin allowing granular control over Cross-Origin Resource Sharing headers.
+- Built a WordPress utility plugin that controls Cross-Origin Resource Sharing headers per origin.
 - Implemented configurable origin, method, and header whitelists for native REST API and custom endpoints.
-- Provided regular updates, documentation, and troubleshooting support for the open-source community.
+- Provided updates, documentation, and troubleshooting support for the open-source community.
 
 ### Result
 
-Adopted by 6,000+ websites worldwide, providing seamless API connectivity and reducing setup friction for decoupled WordPress stacks.
+Adopted by 6,000+ websites, removing manual header configuration for decoupled WordPress stacks.
