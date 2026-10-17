@@ -1,6 +1,0 @@
-[submodule ".claude"]
-	path = .claude
-	url = git@github-dev:devkabir/.agents
-[submodule ".agents"]
-	path = .agents
-	url = git@github-dev:devkabir/.agents
