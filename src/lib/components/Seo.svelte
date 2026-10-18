@@ -14,7 +14,7 @@
 	let {
 		title,
 		description = site.tagline,
-		image = '/images/cover.webp',
+		image = '/images/cover.avif',
 		type = 'website',
 		noindex = false
 	}: Props = $props();

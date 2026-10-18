@@ -25,7 +25,7 @@
 	<Card padding="none" class="overflow-hidden">
 		<!-- Post Header -->
 		<div class="flex items-center gap-3 p-4 pb-3">
-			<Avatar src="/images/avatar.png" alt={site.name} size={40} class="shrink-0" />
+			<Avatar size={40} class="shrink-0" />
 			<div class="min-w-0 flex-1">
 				<div class="flex flex-wrap items-center gap-x-2 gap-y-1">
 					<span class="text-sm font-semibold text-text">{site.name}</span>
@@ -68,7 +68,7 @@
 		<!-- Media: natural aspect ratio (1376x768), full-bleed -->
 		<div class="border-y border-line bg-page">
 			<img
-				src="/images/projects/{project.slug}-full.png"
+				src="/images/projects/{project.slug}-full.avif"
 				alt="Screenshot of {project.title} interface"
 				width="1376"
 				height="768"

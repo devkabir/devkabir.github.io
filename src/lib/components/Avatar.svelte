@@ -1,15 +1,17 @@
 <script lang="ts">
 	import type { HTMLImgAttributes } from 'svelte/elements';
 
+	import { site } from '$lib/site';
+
 	interface Props extends HTMLImgAttributes {
-		src: string;
-		alt: string;
+		src?: string;
+		alt?: string;
 		size?: number;
 	}
 
 	let {
-		src,
-		alt,
+		src = site.avatar,
+		alt = site.name,
 		size = 40,
 		class: className = '',
 		loading = 'lazy',

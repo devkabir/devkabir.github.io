@@ -52,14 +52,14 @@
 			aria-label="{site.name} Home"
 		>
 			<img
-				src="/logo.webp"
+				src="/images/logos/logo.avif"
 				alt=""
 				width="40"
 				height="40"
 				class="block h-10 w-10 rounded-full dark:hidden"
 			/>
 			<img
-				src="/logo-dark.webp"
+				src="/images/logos/logo-dark.avif"
 				alt=""
 				width="40"
 				height="40"

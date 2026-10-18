@@ -4,7 +4,7 @@ date: '2022-01-01'
 summary: Independent open-source WordPress plugin for cross-origin access and REST API headers, adopted by over 6,000 websites.
 problem: Decoupled WordPress setups, headless frontends, and external API integrations fail when browser CORS policies block cross-origin requests.
 status: Live
-thumb: /images/projects/cors-plugin-full.png
+thumb: /images/projects/cors-plugin-full.avif
 featured: true
 tech:
   - PHP

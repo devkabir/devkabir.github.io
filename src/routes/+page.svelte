@@ -113,7 +113,7 @@
 			class="relative aspect-[138/77] w-full overflow-hidden rounded-b-lg sm:aspect-auto sm:h-[20rem] md:h-[22rem]"
 		>
 			<img
-				src="/images/cover.webp"
+				src="/images/cover.avif"
 				alt=""
 				width="1376"
 				height="768"

@@ -8,7 +8,7 @@
 
 <Card>
 	<div class="flex items-start gap-3">
-		<Avatar src="/images/avatar.png" alt={site.name} size={40} class="shrink-0" />
+		<Avatar size={40} class="shrink-0" />
 		<div class="min-w-0 flex-1">
 			<div class="rounded-xl border border-line bg-page px-3.5 py-2.5">
 				<p class="text-sm font-medium text-text">

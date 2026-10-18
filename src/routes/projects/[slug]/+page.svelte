@@ -29,7 +29,7 @@
 <Seo
 	title={project.title}
 	description={project.summary}
-	image="/images/projects/{project.slug}-full.png"
+	image="/images/projects/{project.slug}-full.avif"
 	type="article"
 />
 
@@ -117,7 +117,7 @@
 			<!-- Hero image -->
 			<div class="overflow-hidden rounded-md border border-line bg-page">
 				<img
-					src="/images/projects/{project.slug}-full.png"
+					src="/images/projects/{project.slug}-full.avif"
 					alt="Full screenshot of {project.title} interface"
 					width="1376"
 					height="768"
