@@ -1,7 +1,7 @@
 ---
-title: Cross-Origin Resource Sharing (CORS) Plugin
-date: '2022-01-01'
-summary: Independent open-source WordPress plugin for cross-origin access and REST API headers, adopted by over 6,000 websites.
+title: Enable CORS — WordPress Plugin
+date: '2024-02-01'
+summary: Created and maintain an open-source CORS configuration plugin adopted by 6,000+ websites.
 problem: Decoupled WordPress setups, headless frontends, and external API integrations fail when browser CORS policies block cross-origin requests.
 status: Live
 thumb: /images/projects/cors-plugin-full.avif
@@ -11,6 +11,7 @@ tech:
   - WordPress
   - REST API
   - HTTP Headers
+demo: https://wordpress.org/plugins/enable-cors/
 repo: https://github.com/devkabir
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: Beehive — WordPress Analytics Plugin
-date: '2024-03-01'
+date: '2024-01-01'
 summary: Dashboard reporting work on the Google Analytics plugin at WPMU DEV, covering Vue 3 refactors, bug fixes, and UX changes.
 problem: Site administrators need Google Analytics reporting inside their WordPress dashboard, with per-role permissions and minimal frontend overhead.
 status: Maintained

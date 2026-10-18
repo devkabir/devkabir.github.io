@@ -279,7 +279,7 @@
 										width="272"
 										height="208"
 										loading="lazy"
-										class="h-[13rem] w-full object-cover"
+										class="h-[13rem] w-full object-fill"
 									/>
 									<div class="flex flex-1 flex-col p-3">
 										<Badge class="mb-1.5 self-start">{project.status}</Badge>

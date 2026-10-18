@@ -6,12 +6,12 @@ import { env } from '$env/dynamic/public';
 
 export const site = {
 	name: 'Dev Kabir',
-	title: 'Senior Web Developer & WordPress Specialist',
+	title: 'Senior Software Engineer | PHP, TypeScript, WordPress, Security & AI Integration',
 	tagline: 'Building web applications, WordPress plugins, and WooCommerce integrations.',
 	location: 'Barisal, Bangladesh',
 	workplace: 'WPMU DEV',
 	email: 'dev.kabir01+portfolio@gmail.com',
-	availability: 'Open to select consulting & freelance opportunities',
+	availability: 'Open to remote full-time senior software engineering roles.',
 	resume: '/Profile.pdf',
 	meeting: '',
 	avatar:

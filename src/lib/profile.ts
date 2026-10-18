@@ -46,7 +46,7 @@ export function formatPeriod(start: string, end?: string): string {
 
 export const bio = {
 	intro:
-		'Senior Web Developer and WordPress Specialist with over 5 years of experience building web applications and WordPress plugins. Currently developing and maintaining plugins at WPMU DEV, including Defender and Beehive, which serve tens of thousands of active sites.',
+		'I build WordPress plugins and API integrations in PHP and JavaScript. At WPMU DEV, I work on Defender and Beehive and have migrated 60K+ lines of code to Vue 3 Composition API. I also created Enable CORS, an open-source plugin adopted by 6,000+ websites.',
 	longBio: `I am a Senior Web Developer and WordPress Specialist. I build web applications and WordPress plugins. At WPMU DEV, I work on Defender (security) and Beehive (analytics), including migrating 60K+ lines of code to Vue 3 Composition API and shipping updates through automated CI/CD pipelines.
 
 I have also delivered over 38 custom plugins on Fiverr with consistent 5-star ratings, mostly REST API integrations connecting WooCommerce with payment gateways, CRMs, and external shipping providers. I maintain open-source plugins too, including a CORS plugin adopted by over 6,000 websites.
